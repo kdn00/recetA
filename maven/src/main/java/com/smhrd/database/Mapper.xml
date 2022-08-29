@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper태그 : SQL문 정리하는 태그 -->
+<!-- namespace : id를 그룹화,mapper의경로를 입력 -->
+<mapper namespace="com.smhrd.database.Mapper">
+	<!-- select insert, update, delete태그들이 존재함 -->
+	<!-- id : 해당태그의 고유한 식별자 -->
+	<!-- parameterType : 매개변수 타입 -->
+	<!-- resultType : 리턴 타입 -->
+	<!-- 바인드변수처럼 #{필드명=컬럼명} -->
+	<!-- SQL문에 세미콜론(;) 쓰지 않음! -->
+	<insert id="insertTest" parameterType="com.smhrd.domain.Test">
+		insert into Test values (#{id}, #{pw})	
+	</insert>
+	<select id="selectTest" parameterType="com.smhrd.domain.Test"
+							resultType="com.smhrd.domain.Test">
+	select * from Test where id = #{id} and pw=#{pw}
+	
+	</select>
+
+
+	<!-- <select id="selectBlog" resultType="Blog"> select * from Blog where 
+		id = #{id} </select> -->
+</mapper>
