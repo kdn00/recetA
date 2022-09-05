@@ -23,8 +23,9 @@ public class Join extends HttpServlet {
 		// 1. 데이터 가져오기(id, pw)
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		String tel = request.getParameter("tel");
 
-		Test test = new Test(id, pw);
+		Test test = new Test(id, pw, tel);
 
 		TestDAO dao = new TestDAO();
 		int cnt = dao.insertTest(test);

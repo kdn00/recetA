@@ -12,7 +12,7 @@
 	<!-- 바인드변수처럼 #{필드명=컬럼명} -->
 	<!-- SQL문에 세미콜론(;) 쓰지 않음! -->
 	<insert id="insertTest" parameterType="com.smhrd.domain.Test">
-		insert into Test values (#{id}, #{pw})	
+		insert into Test values (#{id}, #{pw}, #{tel})	
 	</insert>
 	<select id="selectTest" parameterType="com.smhrd.domain.Test"
 							resultType="com.smhrd.domain.Test">
