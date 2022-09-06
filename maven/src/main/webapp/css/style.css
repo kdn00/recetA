@@ -15191,3 +15191,23 @@ disabled look for disabled choices in the results dropdown
 		padding-right: 70px;
 	}
 }
+
+/* 검색창 */
+.search {
+	position: relative;
+	width: 300px;
+}
+input {
+	width: 100%;
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	padding: 10px 12px;
+	font-size: 14px;
+}
+img {
+	position : absolute;
+	width: 17px;
+	top: 10px;
+	right: 12px;
+	margin: 0;
+}
