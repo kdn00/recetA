@@ -12,6 +12,15 @@ button::-moz-focus-inner {
 	border: 0;
 }
 
+/*search */
+
+
+#s_img{
+	height: 20px;
+	margin: 15px 60px 15px 0px;
+	
+}
+
 *:focus {
 	outline: none;
 }
