@@ -15199,15 +15199,17 @@ disabled look for disabled choices in the results dropdown
 	position: relative;
 	width: 300px;
 }
-.input1 {
+
+input {
 	width: 100%;
 	border: 1px solid #bbb;
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 14px;
 }
-.img1 {
-	position : absolute;
+
+img {
+	/* position : absolute; */
 	width: 17px;
 	top: 10px;
 	right: 12px;
