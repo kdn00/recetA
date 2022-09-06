@@ -12,14 +12,7 @@ button::-moz-focus-inner {
 	border: 0;
 }
 
-/*search */
 
-
-#s_img{
-	height: 20px;
-	margin: 15px 60px 15px 0px;
-	
-}
 
 *:focus {
 	outline: none;
@@ -15206,14 +15199,14 @@ disabled look for disabled choices in the results dropdown
 	position: relative;
 	width: 300px;
 }
-input {
+.input1 {
 	width: 100%;
 	border: 1px solid #bbb;
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 14px;
 }
-img {
+.img1 {
 	position : absolute;
 	width: 17px;
 	top: 10px;
