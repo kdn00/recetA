@@ -33,15 +33,72 @@
 		delete from member where m_pw=#{m_pw}
 	</delete>
 	
-<!-- 레시피 상세 sql 
-	select id 하나에 select문 2개 적어도 되는지 물어보기
-	<select id="">
-	select b.b_name "레시피명", p.p_order "과정 순서", p.p_explanation "과정 설명", p.p_url "과정 이미지"
-	from basic b, process p
-	where b.b_code = p.b_code
-	and b.b_name in (select b.b_name
-                	from basic b
-                	where b.b_name =#{레시피이름변수})
-	order by p.p_order
-	</select> -->
+	<!-- 대분류 sql -->
+	<select id="ctypeRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_ctype=#{<!-- 유형분류변수명 -->}
+	</select>
+	
+	<!-- 소분류 sql -->
+	<!-- 음식 분류 -->
+	<select id="ftypeRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_ftype=#{<!-- 음식분류변수명 -->}
+	</select>
+	
+	
+	<!-- 재료별 분류명 -->
+	<select id="itypeRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_itype=#{<!-- 재료별분류변수명 -->}
+	
+	</select>
+	
+	
+	<!-- 조리 시간 -->
+	<select id="timeRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_time=#{<!-- 조리시간변수명 -->}
+	</select>
+	
+	
+	<!-- 분량 -->
+	<select id="amountRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_amount=#{<!-- 분량변수명 -->}
+	</select>
+	
+	
+	<!-- 난이도 -->
+	<select id="difficulteRecipe" parameterType="com.recetA.domain.Recipe"
+				  resultType="com.recetA.domain.Recipe">
+		select b_code, b_name, b_url from basic where b_difficulte=#{<!-- 난이도변수명 -->}
+	</select>
+	
+	<!-- 레시피 상세 sql -->
+	<!-- 코드, 이름, 과정순서, 과정설명, 과정url -->
+	<select id="detailRecipe" parameterType="com.recetA.domain.Recipe"
+				  			  resultType="com.recetA.domain.Recipe">
+		select b.b_name "레시피 명", p.p_order "과정 순서", p.p_explanation "과정 설명", p.p_url "과정 이미지"
+		from basic b, process p
+		where b.b_code = p.b_code
+		and b.b_name in (select b.b_name
+	                	from basic b
+	                	where b.b_name =#{<!-- 레시피이름변수 -->})
+		order by p.p_order
+	</select>
+	
+	
+	<!-- 코드, 재료, 재료양 -->
+	<select id="detailRecipe2" parameterType="com.recetA.domain.Recipe"
+				  			   resultType="com.recetA.domain.Recipe">
+		select b.b_name "레시피 이름", i.i_name "재료", i.i_volume "재료 양"
+		from basic b, ingredient i
+		where b.b_code = i.b_code and b.b_name=#{<!-- 레시피이름변수명 -->}
+
+	</select>
+	
+	
+	
+	
 </mapper>
