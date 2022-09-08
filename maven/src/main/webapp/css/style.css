@@ -15201,7 +15201,7 @@ disabled look for disabled choices in the results dropdown
 }
 
 input {
-	width: 100%;
+	width: 250%;
 	border: 1px solid #bbb;
 	border-radius: 8px;
 	padding: 10px 12px;
@@ -15209,15 +15209,9 @@ input {
 }
 
 img {
-	/* position : absolute; */
+	position : absolute; 
 	width: 17px;
 	top: 10px;
-	right: 12px;
+	left: 700px;
 	margin: 0;
-}
-#corr{
-	width:15%
-}
-#search_search{
-	width:30%
 }
