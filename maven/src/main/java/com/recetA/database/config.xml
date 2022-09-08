@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- DB에 들어갈 정보? 연결할 DB의 정보? -->
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!-- DB 연결 정보가 담긴 파일을 넣어주기 -->
-<properties resource="com/smhrd/database/db.properties"/>
+<!-- DB 연결 정보가 담긴 파일을 넣어주기(파일 경로를 넣어야 하기 때문에 /로 구별)-->
+<properties resource="com/recetA/database/db.properties"/>
 
   <environments default="development">
     <environment id="development">
@@ -17,9 +18,8 @@
       </dataSource>
     </environment>
   </environments>
-    <!-- SQL문이 정리된 <apper.xml 관리 -->
+  <!-- SQL문이 정리된 Mapper.xml 관리 -->
   <mappers>
-    <mapper resource="com/smhrd/database/Mapper.xml"/>
+    <mapper resource="com/recetA/database/Mapper.xml"/>
   </mappers>
-
 </configuration>

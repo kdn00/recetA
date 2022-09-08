@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper태그 : SQL문 정리하는 태그 -->
+<!-- namespace : id를 그룹화 할 수 있다. 보통 mapper의 경로를 입력한다. -->
+<mapper namespace="com.recetA.database.Mapper">
+	<!-- select, insert, update, delete 태그들이 존재함 -->
+	<!-- id : 해당 태그의 고유한 식별자 -->
+	<!-- parameterType : 매개변수 타입 -->
+	<!-- resultType : return 타입 -->
+	<!-- 바인드 변수처럼 #{필드명=컬럼명} -->
+	<!-- sql문에 세미콜론(;) 사용하지 않음 -->
+	
+	<!-- 회원가입 sql -->
+	<insert id="insertMember" parameterType="com.recetA.domain.Member">
+		insert into member values(#{m_key},#{m_id},#{m_pw},#{m_name},#{m_tel})
+	</insert>
+	
+	<!-- 로그인 sql -->
+	<select id="selectMember" parameterType="com.recetA.domain.Member"
+							  resultType="com.recetA.domain.Member">
+		select * from member where m_id=#{m_id} and m_pw=#{m_pw}
+	</select>
+	
+	<!-- 회원 수정 sql -->
+	<update id="updateMember" parameterType="com.recetA.domain.Member">
+		update member set m_name=#{m_name}, m_pw=#{m_pw}, m_tel=#{m_tel}, where m_id=#{m_id}
+	</update>
+	
+	<!-- 회원 탈퇴 sql -->
+	<delete id="deleteMember" parameterType="String">
+		delete from member where m_pw=#{m_pw}
+	</delete>
+	
+<!-- 레시피 상세 sql 
+	select id 하나에 select문 2개 적어도 되는지 물어보기
+	<select id="">
+	select b.b_name "레시피명", p.p_order "과정 순서", p.p_explanation "과정 설명", p.p_url "과정 이미지"
+	from basic b, process p
+	where b.b_code = p.b_code
+	and b.b_name in (select b.b_name
+                	from basic b
+                	where b.b_name =#{레시피이름변수})
+	order by p.p_order
+	</select> -->
+</mapper>
