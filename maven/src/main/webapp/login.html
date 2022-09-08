@@ -169,17 +169,17 @@
           <div class="row row-60 justify-content-center">
             <div class="col-lg-8">
               <h4 class="text-spacing-25 text-transform-none" align="center">로그인</h4>
-              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="LoginCon.java">
                 <div class="row row-20 gutters-20">
                   <div class="col-md-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="contact-your-name-5" type="text" name="name" data-constraints="@Required">
+                      <input class="form-input" id="contact-your-name-5" type="text" name="id" data-constraints="@Required">
                       <label class="form-label" for="contact-your-name-5">ID를 입력해주세요</label>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-wrap">
-                      <input class="form-input" id="contact-email-5" type="email" name="email" data-constraints="@Email @Required">
+                      <input class="form-input" id="contact-email-5" type="password" name="pw" data-constraints="@Required">
                       <label class="form-label" for="contact-email-5">PW를 입력해주세요</label>
                     </div>
                   </div>
@@ -248,6 +248,5 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <!-- coded by Himic-->
-    <!-- !! -->
   </body>
 </html>
