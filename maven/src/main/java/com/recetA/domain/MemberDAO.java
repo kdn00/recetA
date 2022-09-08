@@ -1,12 +1,9 @@
 package com.recetA.domain;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.recetA.database.SqlSessionManager;
-import com.recetA.domain.Member;
 
 public class MemberDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
@@ -93,5 +90,7 @@ public class MemberDAO {
 		} // finally 끝
 		return cnt;
 	} // 회원 탈퇴 끝
+
+
 
 }

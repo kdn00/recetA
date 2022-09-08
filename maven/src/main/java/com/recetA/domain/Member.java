@@ -30,6 +30,11 @@ public class Member {
 		this.m_pw = m_pw;
 	}
 
+	
+	public Member() {
+		super();
+	}
+
 	public int getM_key() {
 		return m_key;
 	}
@@ -74,4 +79,6 @@ public class Member {
 	
 	
 	
+
+
 }

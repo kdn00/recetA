@@ -14,8 +14,9 @@ import com.recetA.domain.MemberDAO;
 public class LoginCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		System.out.println("[LoginCon]");
 
 		// 0. post방식 인코딩
