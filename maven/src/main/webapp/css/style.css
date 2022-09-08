@@ -7083,6 +7083,7 @@ html.tablet .ui-to-top {
 	right: 0;
 	opacity: 1;
 	width: 100%;
+	margin-bottom: 15px;
 	transition: right .3s ease, width .3s ease .3s;
 }
 
@@ -7153,6 +7154,7 @@ html.tablet .ui-to-top {
 	right: 0;
 	opacity: 1;
 	width: 100%;
+	margin-bottom: 15px;
 	transition: right .2s ease, width .2s ease .2s;
 }
 
@@ -8543,6 +8545,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-modern.rd-navbar-static .rd-navbar-brand img {
+	position: initial;
 	width: auto;
 	height: auto;
 	max-width: 160px;
@@ -15201,17 +15204,18 @@ disabled look for disabled choices in the results dropdown
 }
 
 input {
-	width: 600px;
+	width: 494px;
 	border: 1px solid #bbb;
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 14px;
+	margin-left: 218px;
 }
 
 img {
-	/*position : absolute; */
+	position : absolute; 
 	width: 17px;
 	top: 10px;
-	left: 700px;
+	left: 718px;
 	margin: 0;
 }
