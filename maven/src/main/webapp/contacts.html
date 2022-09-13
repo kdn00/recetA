@@ -21,37 +21,6 @@
 </head>
 <body>
   <div class="preloader">
-    <div class="wrapper-triangle">
-      <div class="pen">
-        <div class="line-triangle">
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-        </div>
-        <div class="line-triangle">
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-        </div>
-        <div class="line-triangle">
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-          <div class="triangle"></div>
-        </div>
-      </div>
-    </div>
   </div>
   
   <div class="page">
@@ -198,13 +167,131 @@
       </div>
     </section>
 
-    <hr>
-
-    <!-- 대분류 -->
     <section class="section section-lg bg-default">
-      <div class="container">
-        <div class="tabs-custom row row-50 justify-content-center flex-lg-row-reverse text-center text-md-left" id="tabs-4">     
+      <div class="container-fluid">
+        <div class="row-fluid">   
+          <div class="span2">   
 
+          <div class="col-1">
+            <ul class="nav list-category list-category-down-md-inline-block">
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".0s"><a class="active" href="######" data-toggle="tab">한식</a></li>
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".1s"><a href="######" data-toggle="tab">중식</a></li>
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".2s"><a href="######" data-toggle="tab">일식</a></li>
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".3s"><a href="######" data-toggle="tab">양식</a></li>
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".4s"><a href="######" data-toggle="tab">동남아시아</a></li>
+              <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".5s"><a href="######" data-toggle="tab">퓨전</a></li>
+            </ul>                
+          </div>
+
+        </div>
+
+        <div class="tabs-custom row row-50 justify-content-center text-center text-md-left" id="tabs-4">
+          <div class="span10">
+
+          <!-- 소분류 -->          
+          <table class="table-borderless"> 
+            <tr>
+              <td><input type="checkbox" name="flour" value="b_ftype"> <span> 양념장</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 만두/면류</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 빵/과자</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 찜</span></td>
+              <td><input type="checkbox" name="Steamed" value="b_ftype"> <span> 그라탕/리조또</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 피자</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 찌개/전골/스튜</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 찌개/전골/스튜</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 튀김/커틀릿</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 밑반찬/김치</span></td>   
+            </tr>
+            <tr>          
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 조림</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 구이</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 밥</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 음료</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 나물/생채/샐러드</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 양식</span></td> 
+              <td><input type="checkbox" name="flour" value="b_ftype"> <span>부침</span></td>
+              <td><input type="checkbox" name="roasted" value="b_ftype"> <span> 도시락/간식</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 떡/한과</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 국</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 샌드위치/햄버거</span></td>
+              <td><input type="checkbox" name="soup" value="b_ftype"> <span> 볶음</span></td>              
+            </tr>
+            
+            <!-- 2분류 -->
+            <tr>
+              <td><input type="checkbox" name="nut" value="b_itype"> <span> 견과류</span></td>
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 버섯류</span></td>    
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 쇠고기류</span></td>    
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 돼지고기류</span></td>    
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 콩류</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 기타</span></td>  
+              <td><input type="checkbox" name="chicken" value="b_itype"> <span> 닭고기류</span></td>  
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 알류</span></td>
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 해조류</span></td>    
+              <td><input type="checkbox" name="chicken" value="b_itype"> <span> 곡류</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 채소류</span></td>   
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 밀가루</span></td>    
+              <td><input type="checkbox" name="processedfood" value="b_itype"> <span> 가곡식품류</span></td> 
+              <td><input type="checkbox" name="remainder" value="b_itype"> <span> 어류/패류</span></td>              
+              <td><input type="checkbox" name="fruit" value="b_itype"> <span> 과일류</span></td>     
+            </tr>
+            <tr></tr>
+            <!-- 인분 -->
+            <tr>
+              <td><input type="checkbox" name="foroneperson" value="b_amount"> <span> 1인분</span></td>
+              <td><input type="checkbox" name="mealsfortwo" value="b_amount"> <span> 2인분</span></td>
+              <td><input type="checkbox" name="threeservings" value="b_amount"> <span> 3인분</span></td>
+              <td><input type="checkbox" name="fourservings" value="b_amount"> <span> 4인분</span></td>          
+              </tr>
+            <tr>
+              <td><input type="checkbox" name="easy" value="b_difficulte"> <span> 초보환영</span></td>
+              <td><input type="checkbox" name="normal" value="b_difficulte"> <span> 보통</span></td>
+              <td><input type="checkbox" name="hard" value="b_difficulte"> <span> 어려움</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 5분</span></td>
+              <td><input type="checkbox" name="lessthananhour" value="b_time"> <span> 10분</span></td>
+              <td><input type="checkbox" name="onehour" value="b_time"> <span> 15분</span></td>
+              <td><input type="checkbox" name="twohour" value="b_time"> <span> 20분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 25분</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 30분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 35분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 40분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 50분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 60분</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 70분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 80분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 90분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 120분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 140분</span></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 175분</span></td>
+              <td><input type="checkbox" name="threehour" value="b_time"> <span> 180분</span></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+      </div>
+        </div>
+
+
+      
       <!-- 레시피 이미지 -->
       <!-- <section class="section section-last bg-default"> -->
         <div class="col-8 container-fluid container-inset-0 isotope-wrap">
@@ -270,31 +357,7 @@
               </article>
             </div>
 
-            <div class="col-xs-6 col-sm-4 col-xl-2 isotope-item oh-desktop">
-              <!-- Thumbnail Mary-->
-              <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a class="thumbnail-mary-figure" href="images/gallery-7-1200x800-original.jpg" data-lightgallery="item"><img src="images/gallery-7-311x289.jpg" alt="" width="311" height="289" /></a>
-                <div class="thumbnail-mary-caption">
-                  <div>
-                    <h6 class="thumbnail-mary-title"><a href="#">Diverse menu</a></h6>
-                    <div class="thumbnail-mary-location">Pick Your Favorite dish</div>
-                    </div>
-                  </div>
-              </article>
-            </div>
-            </div>
-          </div>
-
-        <div class="col-2">
-          <ul class="nav list-category list-category-down-md-inline-block">
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".0s"><a class="active" href="######" data-toggle="tab">한식</a></li>
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".1s"><a href="######" data-toggle="tab">중식</a></li>
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".2s"><a href="######" data-toggle="tab">일식</a></li>
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".3s"><a href="######" data-toggle="tab">양식</a></li>
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".4s"><a href="######" data-toggle="tab">동남아시아</a></li>
-            <li class="list-category-item wow fadeInRight" role="presentation" data-wow-delay=".5s"><a href="######" data-toggle="tab">퓨전</a></li>
-          </ul>                
-        </div>      
-
+           
       </section>
     </div>
     </section>
