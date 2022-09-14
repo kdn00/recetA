@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>recetA 홈페이지에 오신걸 환영합니다.</title>
+    <title>recetA-개인정보수정</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -42,8 +42,8 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-        <!-- Sidebar Start -->
+        
+		<!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="main.jsp" class="nav-item nav-link active"><i class="bi bi-egg-fried"></i>HOME</a>
+                    <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
                         <a href="recipe.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -119,127 +119,15 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Sale & Revenue Start 
+            <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <img src="https://mediahub.seoul.go.kr/wp-content/uploads/2020/10/d13ea4a756099add8375e6c795b827ab.jpg">
-                </div>
-            </div>
-             Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start 
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    ㄴㄴ
-                </div>
-            </div>
-             Sales Chart End -->
-
-
-            <!-- Recent Sales Start 
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    ㄴㄴ
-                </div>
-            </div>
-             Recent Sales End -->
-
-
-            <!-- Widgets Start 
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    ㄴㄴㄴㄴㄴ
-                    
-                </div>
-            </div>
-             Widgets End -->
-
-             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">메뉴 추천</h6>
-                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
-                                  </div>
-                                  <div class="carousel-item">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
-                                  </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Next</span>
-                                </button>
-                              </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>한식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>중식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>일식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>양식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>동남아시아</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>퓨전</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
+                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+                    <div class="col-md-6 text-center">
+                        <h3>This is blank page</h3>
                     </div>
                 </div>
             </div>
+            <!-- Blank End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

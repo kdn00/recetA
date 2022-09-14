@@ -275,3 +275,13 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+#table{
+    /* text-align: left; */
+    /* background: rgb(252, 252, 250); */
+    font-weight: bold;
+}
+
+#btn{
+    float: right;
+}
