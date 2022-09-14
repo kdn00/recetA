@@ -72,7 +72,7 @@
                             <label for="floatingText">NAME</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="floatingInput" placeholder="-없이입력">
+                            <input type="num" class="form-control" id="floatingInput" placeholder="-없이입력">
                             <label for="floatingInput">전화번호</label>
                         </div>
                         
