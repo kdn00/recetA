@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>recetA-회원가입</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,14 +43,13 @@
         </div>
         <!-- Spinner End -->
 
-
         <!-- Sign Up Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <a href="index.html" class="">
+                            <a href="main.jsp" class="">
                                 <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i> recetA</h3>
                             </a>
                             <h3>회원가입</h3>
@@ -78,7 +77,7 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">회원가입</button>
-                        <p class="text-center mb-0">Already have an Account? <a href="signin.html">로그인</a></p>
+                        <p class="text-center mb-0">Already have an Account? <a href="signin.jsp">로그인</a></p>
                     </div>
                 </div>
             </div>
