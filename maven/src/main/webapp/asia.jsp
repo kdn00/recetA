@@ -64,7 +64,7 @@
                 <div class="navbar-nav w-100">
                     <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
-                        <a href="recipe.jsp" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="korean.jsp" class="dropdown-item">한식</a>
                             <a href="chinese.jsp" class="dropdown-item">중식</a>
@@ -239,7 +239,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -247,7 +247,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -255,7 +255,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>                            
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -263,7 +263,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>                            
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -271,7 +271,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>                            
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -279,7 +279,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="#">
-                            <img src="img/gallery-3-311x289.jpg" alt="" width="311" height="289"><br>                            
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
                             <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
                             </a>
                         </div>
@@ -310,13 +310,12 @@
             </div>
             <!-- Blank End -->
 
-
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">recetA</a><span>, 팀장:송영지 팀원:강태준, 김기범, 김도연, 김동현</span> 
+                            &copy; <a href="main.jsp">recetA</a><span>, 팀장:송영지 팀원:강태준, 김기범, 김도연, 김동현</span> 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -330,7 +329,7 @@
         <!-- Content End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="main.jsp" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

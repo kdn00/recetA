@@ -63,13 +63,13 @@
                 <div class="navbar-nav w-100">
                     <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
-                        <a href="recipe.jsp" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="korean.jsp" class="dropdown-item">한식</a>
                             <a href="chinese.jsp" class="dropdown-item">중식</a>
                             <a href="japanese.jsp" class="dropdown-item">일식</a>
                             <a href="western.jsp" class="dropdown-item">양식</a>
-                            <a href="asia.jsp" class="dropdown-item">동남아시아</a>
+                            <a href="asia.jsp" class="dropdown-item active">동남아시아</a>
                             <a href="fusion.jsp" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
@@ -119,12 +119,22 @@
             </nav>
             <!-- Navbar End -->
 
+ 			<!-- Blank Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+                    <div class="col-md-6 text-center">
+                        <h3>This is blank page</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Blank End -->
+
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">recetA</a><span>, 팀장:송영지 팀원:강태준, 김기범, 김도연, 김동현</span> 
+                            &copy; <a href="main.jsp">recetA</a><span>, 팀장:송영지 팀원:강태준, 김기범, 김도연, 김동현</span> 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
