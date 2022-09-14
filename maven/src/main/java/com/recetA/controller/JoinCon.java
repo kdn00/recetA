@@ -1,6 +1,9 @@
 package com.recetA.controller;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +17,9 @@ import com.recetA.domain.MemberDAO;
 
 public class JoinCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	PreparedStatement psmt = null;
+	ResultSet rs = null;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -29,8 +35,9 @@ public class JoinCon extends HttpServlet {
 		String m_tel = request.getParameter("tel");
 
 		// 2. 수집된 데이터를 Member 객체에 담기
-		Member vo = new Member(5, m_id, m_pw, m_name, m_tel);
-		System.out.println(m_id + " " + m_pw + " " + m_name + " " + m_tel);
+		
+		Member vo = new Member(m_id, m_pw, m_name, m_tel);
+		
 
 		// 3. MemberMapper.xml SQL문 만들고 오기
 
@@ -39,24 +46,31 @@ public class JoinCon extends HttpServlet {
 		// 5. MemberDAO 객체 생성, 메소드 호출
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.insertMember(vo);
-
-		// 6. 명령 후 처리
 		if (cnt > 0) {
 			System.out.println("회원가입 성공");
-			// 회원가입 정보를 유지한채로~~
-			// login으로 이동!
-			// 정보를 유지할 필요가 없으면 sendRedirect()이동
-			// response.sendRedirect("login.jsp");
-			// 정보를 유지해야 한다면 forward방식 이동
-			// --> request 영역에 정보를 저장
-
-			RequestDispatcher rd = request.getRequestDispatcher("login.html");
-			request.setAttribute("joinInfo", vo);
-			rd.forward(request, response);
-
 		} else {
 			System.out.println("회원가입 실패");
-			response.sendRedirect("signup.html");
+		}
+		
+		
+		dao = new MemberDAO();
+		Member SelectKey = dao.insertMember2(m_id);
+		if (SelectKey != null)  {
+			System.out.println("키 검색 성공");
+		} else {
+			System.out.println("키 검색 실패");
+
+		}
+		
+		int key = SelectKey.getM_key();
+		dao = new MemberDAO();
+		cnt = dao.insertMember3(key);
+		if (cnt > 0) {
+			System.out.println("냉장고 키 성공");
+			response.sendRedirect("login.jsp");
+		} else {
+			System.out.println("냉장고 키 실패");
+			response.sendRedirect("main.jsp");
 		}
 	}
 

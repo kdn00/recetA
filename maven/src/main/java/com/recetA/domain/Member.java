@@ -16,7 +16,7 @@ public class Member {
 		this.m_tel = m_tel;
 	}
 	
-	// 회원 수정 객체
+	// 회원 수정 객체 --> 수정해야할 것같긴 함
 	public Member(String m_id, String m_pw, String m_name, String m_tel) {
 		this.m_id = m_id;
 		this.m_pw = m_pw;
@@ -29,8 +29,16 @@ public class Member {
 		this.m_id = m_id;
 		this.m_pw = m_pw;
 	}
-
-	
+	// 냉장고 키 값 검색 조건
+	public Member(String m_id) {
+		this.m_id = m_id;
+	}
+	// 냉장고 키 값 입력
+	public Member(int m_key) {
+		super();
+		this.m_key = m_key;
+	}
+	// 오류 방지용 빈 객체
 	public Member() {
 		super();
 	}
