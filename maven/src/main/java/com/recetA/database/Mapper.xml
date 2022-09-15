@@ -29,7 +29,6 @@
 		insert into refri values(refri_seq.nextval,#{m_key})
 	</insert>
 	
-	
 	<!-- 로그인 sql -->
 	<select id="selectMember" parameterType="com.recetA.domain.Member"
 							  resultType="com.recetA.domain.Member">
