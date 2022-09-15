@@ -121,120 +121,195 @@
             <!-- Navbar End -->
 
           <!-- Blank Start -->
-             <div class="container-fluid px-4 pt-4" style="margin-top: 50px;">
-                <div class="row g-4" style="margin-top: opx;">
-                    <div class="col-sm-12 ">
+            <div class="container-fluid pt-4 px-4">
+                <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
+                <!-- 소분류 -->    
+                <form>      
+                <table class="table table-bordered" id="table"> 
+                    <tr>
+                        <td rowspan="5" style="vertical-align:middle;">1분류</td>
+                        <td><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="만두/면류"> <span> 만두/면류</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="빵/과자"> <span> 빵/과자</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="찜"> <span> 찜</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="그라탕/리조또"> <span> 그라탕/리조또</span></td>
+                    </tr>
+                    <tr>                               
+                        <td><input type="checkbox" name="b_ftype" value="피자"> <span> 피자</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="찌개/전골/스튜"> <span> 찌개/전골/스튜</span></td> 
+                        <td><input type="checkbox" name="b_ftype" value="튀김/커틀릿"> <span> 튀김/커틀릿</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="밑반찬/김치"> <span> 밑반찬/김치</span></td>  
+                        <td><input type="checkbox" name="b_ftype" value="조림"> <span> 조림</span></td>
+                    </tr>
+                    <tr> 
+                        <td><input type="checkbox" name="b_ftype" value="구이"> <span> 구이</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="밥"> <span> 밥</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="음료"> <span> 음료</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="나물/생채/샐러드"> <span> 나물/생채/샐러드</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="양식"> <span> 양식</span></td>                         
+                    </tr>
+                    <tr>                                
+                        <td><input type="checkbox" name="b_ftype" value="부침"> <span> 부침</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="도시락/간식"> <span> 도시락/간식</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="떡/한과"> <span> 떡/한과</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="국"> <span> 국</span></td>
+                        <td><input type="checkbox" name="b_ftype" value="샌드위치/햄버거"> <span> 샌드위치/햄버거</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_ftype" value="볶음"> <span> 볶음</span></td>      
+                        <td></td><td></td><td></td><td></td>
+                    </tr>
+                    
+                    <!-- 2분류 -->
+                    <tr>
+                        <td rowspan="3" style="vertical-align:middle;">2분류</td>
+                        <td><input type="checkbox" name="b_itype" value="견과류"> <span> 견과류</span></td>
+                        <td><input type="checkbox" name="b_itype" value="버섯류"> <span> 버섯류</span></td>    
+                        <td><input type="checkbox" name="b_itype" value="쇠고기류"> <span> 쇠고기류</span></td>    
+                        <td><input type="checkbox" name="b_itype" value="돼지고기류"> <span> 돼지고기류</span></td>    
+                        <td><input type="checkbox" name="b_itype" value="콩류"> <span> 콩류</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_itype" value="기타"> <span> 기타</span></td>  
+                        <td><input type="checkbox" name="b_itype" value="닭고기류"> <span> 닭고기류</span></td>  
+                        <td><input type="checkbox" name="b_itype" value="알류"> <span> 알류</span></td>
+                        <td><input type="checkbox" name="b_itype" value="해조류"> <span> 해조류</span></td>    
+                        <td><input type="checkbox" name="b_itype" value="곡류"> <span> 곡류</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_itype" value="곡류"> <span> 채소류</span></td>   
+                        <td><input type="checkbox" name="b_itype" value="밀가루"> <span> 밀가루</span></td>    
+                        <td><input type="checkbox" name="b_itype" value="가곡식품류"> <span> 가곡식품류</span></td> 
+                        <td><input type="checkbox" name="b_itype" value="어류/패류"> <span> 어류/패류</span></td>              
+                        <td><input type="checkbox" name="b_itype" value="과일류"> <span> 과일류</span></td>     
+                    </tr>
+                    <tr></tr>
+                    <!-- 인분 -->
+                    <tr>
+                        <td style="vertical-align:middle;">3분류</td>
+                        <td><input type="checkbox" name="b_amount" value="1인분"> <span> 1인분</span></td>
+                        <td><input type="checkbox" name="b_amount" value="2인분"> <span> 2인분</span></td>
+                        <td><input type="checkbox" name="b_amount" value="3인분"> <span> 3인분</span></td>
+                        <td><input type="checkbox" name="b_amount" value="4인분"> <span> 4인분</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:middle;">4분류</td>
+                        <td><input type="checkbox" name="b_difficulte" value="초보환영"> <span> 초보환영</span></td>
+                        <td><input type="checkbox" name="b_difficulte" value="보통"> <span> 보통</span></td>
+                        <td><input type="checkbox" name="b_difficulte" value="어려움"> <span> 어려움</span></td>
+                        <td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4" style="vertical-align:middle;">5분류</td>
+                        <td><input type="checkbox" name="b_time" value="5분"> <span> 5분</span></td>
+                        <td><input type="checkbox" name="b_time" value="10분"> <span> 10분</span></td>
+                        <td><input type="checkbox" name="b_time" value="15분"> <span> 15분</span></td>
+                        <td><input type="checkbox" name="b_time" value="20분"> <span> 20분</span></td>
+                        <td><input type="checkbox" name="b_time" value="25분"> <span> 25분</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_time" value="30분"> <span> 30분</span></td>
+                        <td><input type="checkbox" name="b_time" value="35분"> <span> 35분</span></td>
+                        <td><input type="checkbox" name="b_time" value="40분"> <span> 40분</span></td>
+                        <td><input type="checkbox" name="b_time" value="50분"> <span> 50분</span></td>
+                        <td><input type="checkbox" name="b_time" value="60분"> <span> 60분</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_time" value="70분"> <span> 70분</span></td>
+                        <td><input type="checkbox" name="b_time" value="80분"> <span> 80분</span></td>
+                        <td><input type="checkbox" name="b_time" value="90분"> <span> 90분</span></td>
+                        <td><input type="checkbox" name="b_time" value="120분"> <span> 120분</span></td>
+                        <td><input type="checkbox" name="b_time" value="140분"> <span> 140분</span></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="b_time" value="175분"> <span> 175분</span></td>
+                        <td><input type="checkbox" name="b_time" value="180분"> <span> 180분</span></td>
+                        <td></td><td></td><td></td>
+                    </tr>
+                </table>                 
+                <div class=" d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning rounded-pill m-2">소분류 검색</button>   
+                </div> 
+                </form>
+                      
+            </div>
+            <!-- 소분류 끝 -->
+
+            <!-- 레시피  -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h2>레시피 이름 --> ###</h2></span>
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
                         </div>
                     </div>
-
-                    <div class="container-fluid px-4" style="display: flex;">
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="text-center rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table text-start align-middle table-bordered mb-0">                                        
-                                            <tr class="text-dark">
-                                                <th scope="col">[재료]</th>
-                                                <th scope="col">[양]</th>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                    </table>  
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="text-center rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table text-start align-middle table-bordered mb-0">
-                                        
-                                            <tr class="text-dark">
-                                                <th scope="col">[재료]</th>
-                                                <th scope="col">[양]</th>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                    </table>                                    
-                                </div>
-                            </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
                         </div>
                     </div>
-                    
-                    <!-- 스탭 -->
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
                         </div>
                     </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                   
-                   <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
                         </div>
                     </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                   
-                   <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
                         </div>
                     </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
                     </div>
-                   <!-- 스탭 끝 -->
-                    
                 </div>
+            </div>
+            <!-- 레시피 끝 -->
+
+            <!-- 페이지 번호 -->
+            <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 페이지 번호 끝 -->                
             </div>
             <!-- Blank End -->
 
