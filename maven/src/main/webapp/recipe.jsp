@@ -48,8 +48,8 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row">
-                    <h3 class="text-primary text-white"><i class="fa fa-hashtag me-2"></i> recetA</h3>
+                <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row rounded">
+                    <h3 class="text-primary text-white mb-0"><i class="fa fa-hashtag me-2"></i> recetA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -163,10 +163,7 @@
                                                 <td>Paid</td>
                                             </tr>
                                     </table>
-                                    <br>
-
-                                    
-                                </div>
+                                 </div>
                             </div>
                         </div>
 
@@ -201,8 +198,7 @@
                                                 <td>01 Jan 2045</td>
                                                 <td>Paid</td>
                                             </tr>
-                                    </table>
-                                    
+                                    </table>                                   
                                 </div>
                             </div>
                         </div>
@@ -213,7 +209,47 @@
                         </div>
                     </div>
                     <div>
-                        <img src="img/gallery-3-311x289.jpg" class="float-start" id="step">
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                    
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
                         <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
                     </div>
                     <!-- <div class="col-sm-12">
