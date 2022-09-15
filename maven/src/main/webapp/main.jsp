@@ -46,8 +46,8 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row">
-                    <h3 class="text-primary text-white"><i class="fa fa-hashtag me-2"></i> recetA</h3>
+                <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row rounded">
+                    <h3 class="text-primary text-white mb-0"><i class="fa fa-hashtag me-2"></i> recetA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
