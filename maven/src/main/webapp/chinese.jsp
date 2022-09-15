@@ -125,7 +125,7 @@
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                 <!-- 소분류 -->    
                 <form>      
-                <table class="table table-bordere" style="vertical-align:middle;" id="table"> 
+                <table class="table table-bordere="1" style="vertical-align:middle;" id="table"> 
                     <tr>
                         <td rowspan="5">1분류</td>
                         <td><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
