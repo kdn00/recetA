@@ -38,11 +38,93 @@
 	
 	<!-- 회원 수정 sql -->
 	<update id="updateMember" parameterType="com.recetA.domain.Member">
-		update member set m_name=#{m_name}, m_pw=#{m_pw}, m_tel=#{m_tel}, where m_id=#{m_id}
+		update member set m_pw=#{m_pw}, m_tel=#{m_tel} where m_id=#{m_id}
 	</update>
 	
-	<!-- 회원 탈퇴 sql -->
-	<delete id="deleteMember" parameterType="String">
-		delete from member where m_pw=#{m_pw}
+	<!-- 회원 탈퇴 sql = 외래 키로 되어있어서 자식 삭제 후 부모 삭제 테크타야함-->
+	<!-- 나만의 냉장고 삭제 및 회원 탈퇴 sql -->
+	<delete id ="deleteFridge" parameterType="String">
+		delete from keep where r_key=#{m_key}
 	</delete>
+	<delete id="deleteMember1" parameterType="String">
+		delete from refri where r_key=#{m_key}
+	</delete>
+	<delete id="deleteMember" parameterType="String">
+		delete from member where m_key=#{m_key}
+	</delete>
+	<!-- 회원 탈퇴 끝 -->
+	<!-- 레시피 조리순서 sql -->
+	<select id="selectDetailRecipe" parameterType="com.recetA.domain.Member">
+		select p_order, p_explanation from process where b_code = #{b_code}
+	</select>
+	
+	
+	<!-- Basic Vo 파일 사용 -->
+	<!-- 대분류 선택x 랜덤 띄우기 -->
+	<!-- 오늘의 추천 메뉴도 이거 쓰면 되겠다... -->
+	<!-- selectRecipe -> 레시피 상세 페이지 sql로 넘어감 -->
+	<select id="selectRecipe" parameterType="com.recetA.domain.Basic"
+				  			resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic
+	</select>
+	
+	<!-- 대분류 sql -->
+	<select id="selectbCtype" parameterType="com.recetA.domain.Basic"
+				  			resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+	</select>
+	
+	<!-- 소분류 sql -->
+	<!-- 음식 분류 -->
+	<!-- 대분류 값을 받아와서 and로 처리 : where절에 b_ctype=#{b_ctype} and 추가 -->
+	<select id="selectbFtype" parameterType="com.recetA.domain.Basic"
+							 resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_ftype=#{b_ftype}
+	</select>
+	
+	<!-- 재료 분류 -->
+	<select id="selectbItype" parameterType="com.recetA.domain.Basic"
+							 resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_itype=#{b_itype}
+	</select>
+	
+	<!-- 조리 시간 -->
+	<select id="selectbTime" parameterType="com.recetA.domain.Basic"
+							 resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_time=#{b_time}
+	</select>
+	
+	<!-- n인분 -->
+	<select id="selectbAmount" parameterType="com.recetA.domain.Basic"
+							 resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_amount=#{b_amount}
+	</select>
+	
+	<!-- 난이도 -->
+	<select id="selectbDifficulte" parameterType="com.recetA.domain.Basic"
+							 resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_difficulte=#{b_difficulte}
+	</select>
+	
+	<!-- 레시피 상세 페이지 sql -->
+	<!-- 레시피 이름 출력 -->
+	<select id="selectbName" parameterType="com.recetA.domain.Basic"
+							 		resultType="com.recetA.domain.Basic">
+		select b_name from basic where b_code=#{b_code}
+	</select>
+	
+	<!-- Ingredient Vo 사용 -->
+	<!-- 재료 이름, 재료 용량 출력 -->
+	<select id="selectRecipedetail" parameterType="com.recetA.domain.Ingredient"
+								 resultType="com.recetA.domain.Ingredient">
+		select i_name, i_volume from ingredient where b_code=#{b_code}
+	</select>
+	
+	<!-- Process Vo 사용 -->
+	<!-- 과정 순서, 과정 설명, 과정 이미지 출력 -->
+	<select id="selectRecipedetail2" parameterType="com.recetA.domain.Process"
+								 resultType="com.recetA.domain.Process">
+		select p_order, p_explanation, p_url from process where b_code=#{b_code} order by p_order
+	</select>
+	
 </mapper>

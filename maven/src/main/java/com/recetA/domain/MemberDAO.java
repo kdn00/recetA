@@ -47,7 +47,7 @@ public class MemberDAO {
 			sqlSession.close();
 		} // finally 끝
 		return insertMember;
-	} // 로그인 끝
+	} // m_key select 끝
 	
 	// 회원가입 때 냉장고 키 추가 기능 구현
 	public int insertMember3(int key) {

@@ -40,6 +40,30 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.SearchCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RecipepageCon</servlet-name>
+  	<display-name>RecipepageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.RecipepageCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MenuCon</servlet-name>
+  	<display-name>MenuCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.MenuCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecipedetailpageCon</servlet-name>
+  	<display-name>RecipedetailpageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.RecipedetailpageCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Recipepage2Con</servlet-name>
+  	<display-name>Recipepage2Con</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Recipepage2Con</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -63,6 +87,22 @@
   <servlet-mapping>
   	<servlet-name>SearchCon</servlet-name>
   	<url-pattern>/SearchCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecipepageCon</servlet-name>
+  	<url-pattern>/RecipepageCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MenuCon</servlet-name>
+  	<url-pattern>/MenuCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecipedetailpageCon</servlet-name>
+  	<url-pattern>/RecipedetailpageCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Recipepage2Con</servlet-name>
+  	<url-pattern>/Recipepage2Con</url-pattern>
   </servlet-mapping>
   
 </web-app>
