@@ -281,7 +281,10 @@
     /* background: rgb(252, 252, 250); */
     font-weight: bold;
 }
+/* #btn{
+    width: 50%;
+} */
 
-#btn{
-    float: right;
+#step{
+    margin-right: 30px;
 }

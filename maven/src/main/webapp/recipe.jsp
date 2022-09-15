@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,12 +120,120 @@
             </nav>
             <!-- Navbar End -->
 
- 			<!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6 text-center">
-                        <h3>This is blank page</h3>
+          <!-- Blank Start -->
+             <div class="container-fluid px-4 pt-4" style="margin-top: 50px;">
+                <div class="row g-4" style="margin-top: opx;">
+                    <div class="col-sm-12 ">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <span><h2>레시피 이름 --> ###</h2></span>
+                        </div>
                     </div>
+
+                    <div class="container-fluid px-4" style="display: flex;">
+                        <div class="col-sm-12 col-xl-6">
+                            <div class="text-center rounded p-4">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table text-start align-middle table-bordered mb-0">                                        
+                                            <tr class="text-dark">
+                                                <th scope="col">[재료]</th>
+                                                <th scope="col">[양]</th>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                    </table>  
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-xl-6">
+                            <div class="text-center rounded p-4">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table text-start align-middle table-bordered mb-0">
+                                        
+                                            <tr class="text-dark">
+                                                <th scope="col">[재료]</th>
+                                                <th scope="col">[양]</th>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                            <tr>
+                                                <td>01 Jan 2045</td>
+                                                <td>Paid</td>
+                                            </tr>
+                                    </table>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 스탭 -->
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                   
+                   <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                   
+                   <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-3 text-center">
+                            <span><h3>step1</h3></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/aaa.jpg" class="float-start" id="step">
+                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                    </div>
+                   <!-- 스탭 끝 -->
+                    
                 </div>
             </div>
             <!-- Blank End -->

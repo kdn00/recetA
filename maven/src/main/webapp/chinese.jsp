@@ -122,10 +122,10 @@
 
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row vh-198 bg-light rounded align-items-center justify-content-center mx-0">
+                <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                 <!-- 소분류 -->    
                 <form>      
-                <table class="table " id="table"> 
+                <table class="table table-bordere" style="vertical-align:middle;" id="table"> 
                     <tr>
                         <td rowspan="5">1분류</td>
                         <td><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
@@ -162,7 +162,7 @@
                     
                     <!-- 2분류 -->
                     <tr>
-                        <td rowspan="3">2분류</td>
+                        <td rowspan="3" style="vertical-align:middle;">2분류</td>
                         <td><input type="checkbox" name="b_itype" value="견과류"> <span> 견과류</span></td>
                         <td><input type="checkbox" name="b_itype" value="버섯류"> <span> 버섯류</span></td>    
                         <td><input type="checkbox" name="b_itype" value="쇠고기류"> <span> 쇠고기류</span></td>    
@@ -186,7 +186,7 @@
                     <tr></tr>
                     <!-- 인분 -->
                     <tr>
-                        <td>3분류</td>
+                        <td style="vertical-align:middle;">3분류</td>
                         <td><input type="checkbox" name="b_amount" value="1인분"> <span> 1인분</span></td>
                         <td><input type="checkbox" name="b_amount" value="2인분"> <span> 2인분</span></td>
                         <td><input type="checkbox" name="b_amount" value="3인분"> <span> 3인분</span></td>
@@ -194,14 +194,14 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>4분류</td>
+                        <td style="vertical-align:middle;">4분류</td>
                         <td><input type="checkbox" name="b_difficulte" value="초보환영"> <span> 초보환영</span></td>
                         <td><input type="checkbox" name="b_difficulte" value="보통"> <span> 보통</span></td>
                         <td><input type="checkbox" name="b_difficulte" value="어려움"> <span> 어려움</span></td>
                         <td></td><td></td>
                     </tr>
                     <tr>
-                        <td rowspan="4">5분류</td>
+                        <td rowspan="4" style="vertical-align:middle;">5분류</td>
                         <td><input type="checkbox" name="b_time" value="5분"> <span> 5분</span></td>
                         <td><input type="checkbox" name="b_time" value="10분"> <span> 10분</span></td>
                         <td><input type="checkbox" name="b_time" value="15분"> <span> 15분</span></td>
@@ -228,8 +228,11 @@
                         <td></td><td></td><td></td>
                     </tr>
                 </table>                 
-                <button type="submit" class="btn btn-warning rounded-pill m-2" id="btn">소분류 검색</button>     
-                </form>      
+                <div class=" d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning rounded-pill m-2">소분류 검색</button>   
+                </div> 
+                </form>
+                      
             </div>
             <!-- 소분류 끝 -->
 
@@ -289,7 +292,7 @@
             <!-- 레시피 끝 -->
 
             <!-- 페이지 번호 -->
-            <nav aria-label="Page navigation">
+            <nav aria-label="Page navigation" class="d-flex justify-content-center">
                 <ul class="pagination">
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
