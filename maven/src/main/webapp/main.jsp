@@ -192,7 +192,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="korean.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>한식</h6></button><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
@@ -200,7 +200,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="chinese.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>중식</h6></button><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="japanese.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>일식</h6></button><br>
                                 <img src="./img/aaa.jpg">
                             </a>
@@ -216,7 +216,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="western.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>양식</h6></button><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
@@ -224,7 +224,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="asia.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>동남아시아</h6></button><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
@@ -232,7 +232,7 @@
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="#">
+                            <a href="fusion.jsp">
                                 <button type="button" class="btn btn-outline-link m-2"><h6>퓨전</h6></button><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
