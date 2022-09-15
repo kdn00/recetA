@@ -29,20 +29,9 @@
 		insert into refri values(refri_seq.nextval,#{m_key})
 	</insert>
 	
-	
 	<!-- 로그인 sql -->
 	<select id="selectMember" parameterType="com.recetA.domain.Member"
 							  resultType="com.recetA.domain.Member">
 		select * from member where m_id=#{m_id} and m_pw=#{m_pw}
 	</select>
-	
-	<!-- 회원 수정 sql -->
-	<update id="updateMember" parameterType="com.recetA.domain.Member">
-		update member set m_name=#{m_name}, m_pw=#{m_pw}, m_tel=#{m_tel}, where m_id=#{m_id}
-	</update>
-	
-	<!-- 회원 탈퇴 sql -->
-	<delete id="deleteMember" parameterType="String">
-		delete from member where m_pw=#{m_pw}
-	</delete>
 </mapper>
