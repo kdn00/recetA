@@ -23,7 +23,7 @@ public class Member {
 		this.m_name = m_name;
 		this.m_tel = m_tel;
 	}
-
+	
 	// 로그인, 마이페이지 확인 객체
 	public Member(String m_id, String m_pw) {
 		this.m_id = m_id;
@@ -38,6 +38,14 @@ public class Member {
 		super();
 		this.m_key = m_key;
 	}
+	//회원수정 객체-->이쪽이 진짜
+	public Member(String m_id, String m_pw, String m_tel) {
+		super();
+		this.m_id = m_id;
+		this.m_pw = m_pw;
+		this.m_tel = m_tel;
+	}
+
 	// 오류 방지용 빈 객체
 	public Member() {
 		super();

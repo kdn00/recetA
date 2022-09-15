@@ -111,10 +111,45 @@ public class MemberDAO {
 	
 
 	// 회원 탈퇴
-	public int deleteMember(String email) {
+	//나만의 냉장고 삭제 시작
+	public int deleteMember1(String m_key) {
 		int cnt = 0;
 		try {
-			cnt = sqlSession.update("deleteMember", email);
+			cnt = sqlSession.update("deleteMember1", m_key);
+			if (cnt > 0) {
+				System.out.println("회원 탈퇴 성공");
+				sqlSession.commit();
+
+			} else {
+				System.out.println("회원 탈퇴 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return cnt;
+	} // 삭제 끝
+	public int deleteFridge1(String k_key) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("deleteFridge1", k_key);
+			if (cnt > 0) {
+				System.out.println("회원 탈퇴 성공");
+				sqlSession.commit();
+				
+			} else {
+				System.out.println("회원 탈퇴 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return cnt;
+	} // 삭제 끝
+	public int deleteMember(String m_key) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("deleteMember", m_key);
 			if (cnt > 0) {
 				System.out.println("회원 탈퇴 성공");
 				sqlSession.commit();
@@ -128,7 +163,26 @@ public class MemberDAO {
 		} // finally 끝
 		return cnt;
 	} // 회원 탈퇴 끝
+	
+	public int deleteFridge(String m_key) {
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("deleteFridge", m_key);
+			if (cnt > 0) {
+				System.out.println("회원 탈퇴 성공");
+				sqlSession.commit();
 
-
-
+			} else {
+				System.out.println("회원 탈퇴 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return cnt;
+	} // 삭제 끝
+	
 }
+
+
+

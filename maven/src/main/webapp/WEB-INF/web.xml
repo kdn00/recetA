@@ -40,6 +40,24 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.SearchCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DetailCon</servlet-name>
+  	<display-name>DetailCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.DetailCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DetailCon2</servlet-name>
+  	<display-name>DetailCon2</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.DetailCon2</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteCon2</servlet-name>
+  	<display-name>DeleteCon2</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.DeleteCon2</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -63,6 +81,18 @@
   <servlet-mapping>
   	<servlet-name>SearchCon</servlet-name>
   	<url-pattern>/SearchCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetailCon</servlet-name>
+  	<url-pattern>/DetailCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetailCon2</servlet-name>
+  	<url-pattern>/DetailCon2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteCon2</servlet-name>
+  	<url-pattern>/DeleteCon2</url-pattern>
   </servlet-mapping>
   
 </web-app>
