@@ -120,20 +120,62 @@
             <!-- Navbar End -->
 
             <!-- Blank Start -->
-            <div >
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-4" style="text-align: center;">
+                            <h6 class="mb-4">개인정보수정</h6>
+                            <form>
+                                <div class="mb-3" style="text-align: center;">
+                                    <!-- <label for="exampleInputEmail1" class="form-label">ID</label> -->
+                                    <input placeholder="ID" type="text" class="form-control" id="exampleInputEmail1" style="width: 50%; margin-left: 25%; ">
+                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div> -->
+                                </div>
+                                <div class="mb-3" style="text-align: center;">
+                                    <!-- <label for="exampleInputPassword1" class="form-label">비밀번호</label> -->
+                                    <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
+                                </div>
+                                <!-- <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">비밀번호확인</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>  -->
+                                <div class="mb-3" style="text-align: center;">
+                                    <!-- <label for="exampleInputPassword1" class="form-label">전화번호</label> -->
+                                    <input placeholder="TEL" type="tel" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
+                                </div>
+                                <!-- <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div> -->
+                                <button type="submit" class="btn btn-primary">회원정보 수정</button>
+                                <button type="submit" class="btn btn-primary">회원탈퇴</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- <div >
                 <divid="tabs-4-2">
                                  <ul>
-                                    <li>
+                                    <li> -->
                                        <!-- 폼태그 넣기 -->
-                                       <form action="UpdateCon" method="post">
+                                       <!-- <form action="UpdateCon" method="post">
                                           <li>접속한 아이디 : <input type="text" placeholder="recetA"
                                              disabled />
                                           </li> <br>
                                           <li>비밀번호 : <input type="password" name="pw">
-                                          </li> <br>
+                                          </li> <br> -->
                                           <!-- <li>비밀번호 확인 : <input type="password" name="pw_check">
                            </li> <br> -->
-                                          <li>전화번호 : <input type="text" name="tel">
+                                          <!-- <li>전화번호 : <input type="text" name="tel">
                                           </li> <br> <input type="submit" value="회원정보 수정"
                                              class="btn btn-warning border-2">
                                        </form> <br>
@@ -141,7 +183,7 @@
                                           href="DeleteCon?id=">회원탈퇴</a></td>
                                  </ul>
                               </div>
-            </div>
+            </div> -->
             <!-- Blank End -->
 
             <!-- Footer Start -->
