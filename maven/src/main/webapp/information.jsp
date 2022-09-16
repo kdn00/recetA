@@ -120,12 +120,27 @@
             <!-- Navbar End -->
 
             <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6 text-center">
-                        <h3>This is blank page</h3>
-                    </div>
-                </div>
+            <div >
+                <divid="tabs-4-2">
+                                 <ul>
+                                    <li>
+                                       <!-- 폼태그 넣기 -->
+                                       <form action="UpdateCon" method="post">
+                                          <li>접속한 아이디 : <input type="text" placeholder="recetA"
+                                             disabled />
+                                          </li> <br>
+                                          <li>비밀번호 : <input type="password" name="pw">
+                                          </li> <br>
+                                          <!-- <li>비밀번호 확인 : <input type="password" name="pw_check">
+                           </li> <br> -->
+                                          <li>전화번호 : <input type="text" name="tel">
+                                          </li> <br> <input type="submit" value="회원정보 수정"
+                                             class="btn btn-warning border-2">
+                                       </form> <br>
+                                       <td><a class="btn btn-danger border-2"
+                                          href="DeleteCon?id=">회원탈퇴</a></td>
+                                 </ul>
+                              </div>
             </div>
             <!-- Blank End -->
 

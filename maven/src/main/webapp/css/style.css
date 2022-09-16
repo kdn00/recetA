@@ -288,3 +288,9 @@
 #step{
     margin-right: 30px;
 }
+
+ul{
+	list-style:none;
+	padding-left: 0px;
+	
+}

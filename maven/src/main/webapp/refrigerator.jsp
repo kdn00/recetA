@@ -1,3 +1,5 @@
+<%@page import="com.recetA.domain.RefriMember"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,7 +7,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>recetA-나의 냉장고</title>
+    <title>recetA-개인정보수정</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -109,48 +111,79 @@
                         
                         <!-- 로그인 후 드롭다운 되는 코드 -->
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-                            <a href="refrigerator.jsp" class="dropdown-item active">나의 냉장고</a>
+                            <a href="information.jsp" class="dropdown-item active">개인정보수정</a>
+                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                         </div>
-                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->  
+                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
                     </div>
                 </div>
             </nav>
             <!-- Navbar End -->
 
             <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6 text-center">
-                        
+            <div>
+                <div id="tabs-4-1">
+                                 <ul>
+                                 </ul>
 
+                                 <ul style="word-spacing: 10px">
+                                 <%
+                           List<RefriMember> refri = null;
+                           if (refri == null) {
+                              refri = (List) session.getAttribute("refri");
+                           }else
+                           
+                                    for (int i = 0; i < refri.size(); i++) {
+                                    %>
+                                    <li><%=refri.get(i).getS_name()%> <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
+                                       <%=refri.get(i).getK_edate()%> 
+                                       
+                                    </li>
+                                    <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
-                    </div>
-                </div>
+                                    <%
+                                    }
+                                    %>
+                                    <li>
+                                       재료명 남은개수 유통기한
+                                    </li>
+                                    <br>
+                                    <br>
+                                    <form action="Ingred_update" method="post">
+                                       <input type="text" placeholder="재료명" id="corr3" name="name"> 
+                                       <input type="number" placeholder="개수" id="corr" name="volume"> 
+                                       <select id="Select_box" aria-label="Floating label select example" name="unit">
+                                          <option selected>단위 선택</option>
+                                          <option value="g">g</option>
+                                          <option value="kg">kg</option>
+                                          <option value="mL">mL</option>
+                                          <option value="L">L</option>
+                                          <option value="개">개</option>
+                                          <option value="쪽">쪽</option>
+                                          <option value="통">통</option>
+                                          <option value="마리">마리</option>
+                                          <option value="전팀장님">도연</option>
+                                    </select>
+                                       <input type="date"id="corr2" name="edate"> 
+                                       <input type="submit" value="수정" class="Ingred_update">
+                                    </form>
+                                    <form action="Ingred_del" method="post">
+                                    
+                                    <input type="submit" value="삭제" class="Ingred_del">
+                                    </form>
+                                    <br>
+                                    <br>
+                                    <form action="Search_ingred" method="post">
+                                       <li><input type="text" placeholder="검색할 재료를 적어주세요!"
+                                          name="search_ingred" id="search_ingred"> <input
+                                          type="submit" value="검색" class="search_ingred"></li>
+                                    </form>
+                                    <!-- 검색해서 받아온 데이터 출력하기 -->
+                                 </ul>
+                              </div>
             </div>
             <!-- Blank End -->
-
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
