@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --primary: #e67e39;
     --light: #F3F6F9;
     --dark: #191C24;
 }
@@ -278,46 +278,14 @@
 
 #table{
     /* text-align: left; */
-    /* background: white; */
+    /* background: rgb(252, 252, 250); */
     font-weight: bold;
 }
 
 #btn{
-    width: 50%;
+    float: right;
 }
 
 #step{
     margin-right: 30px;
-}
-ul{
-	list-style:none;
-	padding-left: 0px;
-	
-}
-
-/* 개수 카운트 */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-opacity: 1;
-}
-/* 개수 카운트 끝 */
-
-#corr{
-    width: 80px;
-}
-
-#search_ingred{
-    width: 25%;
-}
-
-#table-refrigerator{
-    width: auto;
-}
-
-#table-refrigerator-count{
-    width: 45%;
-}
-
-#Select_box{
-    width: 130px;
 }
