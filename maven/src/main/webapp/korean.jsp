@@ -229,7 +229,7 @@
                     </tr>
                 </table>                 
                 <div class=" d-flex justify-content-center">
-                <button type="submit" class="btn btn-warning rounded-pill m-2">소분류 검색</button>   
+                <button type="submit" class="btn btn-warning rounded-pill m-2" id="btn">소분류 검색</button>   
                 </div> 
                 </form>
                       

@@ -122,66 +122,84 @@
             <!-- Navbar End -->
 
             <!-- Blank Start -->
-            <div>
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12">
+                        <div class="bg-light rounded h-100 p-4">
+                        <span><h2>나의 냉장고</h2></span>
+                        <br>
+
                 <div id="tabs-4-1">
-                                 <ul>
-                                 </ul>
+                    <ul style="word-spacing: 10px">
+             <%--  <%
+                        List<RefriMember> refri = null;
+                            if (refri == null) {
+                                refri = (List) session.getAttribute("refri");
+                            }else
+                            for (int i = 0; i < refri.size(); i++) {
+                            %>
+                                <li><%=refri.get(i).getS_name()%> <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
+                                <%=refri.get(i).getK_edate()%> 
+                                </li>
+                        <br>
+                        <% } %> --%>
+                        
+                        
+                        <table class="table table-borderless" id="table-refrigerator-count">
+                            <tr>
+                                <td>재료명</td>
+                                <td>남은개수</td>
+                                <!-- <td> </td> -->
+                            <!-- <th>유통기한</th> -->
+                            </tr>
+                        </table>
 
-                                 <ul style="word-spacing: 10px">
-                                 <%
-                           List<RefriMember> refri = null;
-                           if (refri == null) {
-                              refri = (List) session.getAttribute("refri");
-                           }else
-                           
-                                    for (int i = 0; i < refri.size(); i++) {
-                                    %>
-                                    <li><%=refri.get(i).getS_name()%> <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
-                                       <%=refri.get(i).getK_edate()%> 
-                                       
-                                    </li>
-                                    <br>
-
-                                    <%
-                                    }
-                                    %>
-                                    <li>
-                                       재료명 남은개수 유통기한
-                                    </li>
-                                    <br>
-                                    <br>
-                                    <form action="Ingred_update" method="post">
-                                       <input type="text" placeholder="재료명" id="corr3" name="name"> 
-                                       <input type="number" placeholder="개수" id="corr" name="volume"> 
-                                       <select id="Select_box" aria-label="Floating label select example" name="unit">
-                                          <option selected>단위 선택</option>
-                                          <option value="g">g</option>
-                                          <option value="kg">kg</option>
-                                          <option value="mL">mL</option>
-                                          <option value="L">L</option>
-                                          <option value="개">개</option>
-                                          <option value="쪽">쪽</option>
-                                          <option value="통">통</option>
-                                          <option value="마리">마리</option>
-                                          <option value="전팀장님">도연</option>
+                            <table class="table table-borderless" id="table-refrigerator">
+                            <tr>
+                                <td>
+                                <form action="Ingred_update" method="post">
+                                    <input type="text" placeholder="재료명" id="corr3" name="name">
+                                </td>
+                                <td id="table-refrigerator-td"> 
+                                    <input type="number" placeholder="개수" id="corr" name="volume"> 
+                                </td>
+                                <td>   
+                                    <select id="Select_box" aria-label="Floating label select example" name="unit">
+                                        <option selected>단위 선택</option>
+                                        <option value="g">g</option>
+                                        <option value="kg">kg</option>
+                                        <option value="mL">mL</option>
+                                        <option value="L">L</option>
+                                        <option value="개">개</option>
+                                        <option value="쪽">쪽</option>
+                                        <option value="통">통</option>
+                                        <option value="마리">마리</option>
                                     </select>
-                                       <input type="date"id="corr2" name="edate"> 
-                                       <input type="submit" value="수정" class="Ingred_update">
-                                    </form>
-                                    <form action="Ingred_del" method="post">
-                                    
-                                    <input type="submit" value="삭제" class="Ingred_del">
-                                    </form>
-                                    <br>
-                                    <br>
-                                    <form action="Search_ingred" method="post">
-                                       <li><input type="text" placeholder="검색할 재료를 적어주세요!"
-                                          name="search_ingred" id="search_ingred"> <input
-                                          type="submit" value="검색" class="search_ingred"></li>
-                                    </form>
-                                    <!-- 검색해서 받아온 데이터 출력하기 -->
-                                 </ul>
-                              </div>
+                                </td>
+                                <td>
+                                    <input type="submit" value="수정" class="btn btn-primary">
+                                </td>
+                                <td>
+                                </form>
+                                <form action="Ingred_del" method="post">
+                                    <input type="submit" value="삭제" class="btn btn-primary">
+                                </form>
+                            </td>
+                        </tr>
+                        </table>
+                    <br><br>
+                    <form action="Search_ingred" method="post">
+                        <li>
+                            <input type="text" placeholder="검색할 재료를 적어주세요!" name="search_ingred" id="search_ingred">
+                            <input type="submit" value="검색" class="btn btn-primary">
+                        </li>
+                    </form>
+                        <!-- 검색해서 받아온 데이터 출력하기 -->
+                    </ul>
+                </div>
+
+
+            </div>
             </div>
             <!-- Blank End -->
 
