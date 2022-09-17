@@ -1,5 +1,12 @@
+<%@page import="com.recetA.domain.Member"%>
+<%@page import="java.util.List"%>
+<%@page import="com.recetA.domain.Basic"%>
+<%@page import="com.recetA.domain.BasicDAO"%>
+<%@page import="java.util.Random"%>
+<%@page import="javax.servlet.http.HttpSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,10 +38,58 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-    <div class="container-xxl position-relative bg-white d-flex p-0">
+	<%
+	// 로그인 세션 불러오기
+	Member loginMember = (Member)session.getAttribute("loginMember");
+	System.out.println(loginMember);
+	
+	//랜덤 메뉴 추천 1개
+	System.out.println("[RandomRecipe]");
+
+	// 0. post방식 인코딩
+	request.setCharacterEncoding("UTF-8");
+
+	// 1. 파라미터 수집
+	// 1-1. 랜덤 추천은 파라미터 수집x
+	Random rand = new Random();
+	int b_code = rand.nextInt(500);
+
+	// 2. 수집된 데이터를 객체에 담기
+	// 2-1. 수집한게 없어서 안 담음
+
+	// 3. Mapper.xml에서 SQL문 만들어 오기
+	// 레시피명, 레시피 url 검색
+
+	// 4. BasicDAO에 메소드 생성하기
+	// 4-1. 랜덤 레시피 출력 함수 : ArrayList<Basic> selectRandom()
+
+	// 5. BasicDAO에서 생성한 메소드 호출하기
+	// 5-1. 랜덤 레시피 분류 출력 함수 : ArrayList<Basic> selectRandom()
+	BasicDAO dao = new BasicDAO();
+	Basic randomrecipe = dao.selectRandom(b_code);
+	System.out.println(randomrecipe.getB_code());
+	System.out.println(randomrecipe.getB_name());
+	System.out.println(randomrecipe.getB_url());
+
+	// 6. 명령 후 처리
+	if (randomrecipe != null) {
+		// 정보 유지를 위해 세션에 로그인 정보 저장
+		// 1. 세션 객체 생성
+		/* HttpSession session = request.getSession(); */
+
+		// 2. 세션에 저장
+		session.setAttribute("randomrecipe", randomrecipe);
+		Basic randomrecipesession = (Basic) session.getAttribute("randomrecipe");
+
+	} else {
+
+	}
+	%>
+	<div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -56,21 +111,30 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">ID</h6>
-                        <span>이름</span>
-                    </div>
+						<%-- JSTL 방식 --%>
+						<c:choose>
+							<c:when test="${empty loginMember}">
+								<h6 class="mb-0">ID</h6>
+								<span>이름</span>
+							</c:when>
+							<c:otherwise>
+								<h6 class="mb-0">${loginMember.m_id}</h6>
+								<%-- <span>이름</span> --%>
+							</c:otherwise>
+						</c:choose>
+					</div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="main.jsp" class="nav-item nav-link active"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="korean.jsp" class="dropdown-item">한식</a>
-                            <a href="chinese.jsp" class="dropdown-item">중식</a>
-                            <a href="japanese.jsp" class="dropdown-item">일식</a>
-                            <a href="western.jsp" class="dropdown-item">양식</a>
-                            <a href="asia.jsp" class="dropdown-item">동남아시아</a>
-                            <a href="fusion.jsp" class="dropdown-item">퓨전</a>
+                            <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
+                            <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
+                            <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item">일식</a>
+                            <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
+                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
+                            <a href="RecipepageCon?b_ctype=fusion" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
                     <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
@@ -135,8 +199,6 @@
                 </div>
             </div>
              Sales Chart End -->
-
-
             <!-- Recent Sales Start 
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
@@ -144,8 +206,6 @@
                 </div>
             </div>
              Recent Sales End -->
-
-
             <!-- Widgets Start 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -156,12 +216,13 @@
             </div>
              Widgets End -->
 
-             <div class="container-fluid pt-4 px-4">
+                <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    
+                    <c:choose>
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">메뉴 추천</h6>
+                        	<%-- 랜덤 추천 레시피명인데... 이건 레시피명을 띄워야하나 말아야하나 / 이미지 아래에 띄워야하나 --%>
+                            <h6 class="mb-4"><%=randomrecipe.getB_name()%><%-- 메뉴 추천 --%></h6>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -170,7 +231,10 @@
                                 </div>
                                 <div class="carousel-inner">
                                   <div class="carousel-item active">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
+                                  	<%-- a태그는 주석처리 해놨다가 레시피 상세 페이지 con파일 완성되면 주석 풀기 --%>
+                                    <%-- <a href="RecipedetailpageCon?b_code="${randomrecipe.b_code}""> --%>
+                                    <img src="${randomrecipe.b_url}" height="547" class="d-block w-100" alt="...">
+                                    <%-- </a> --%>
                                   </div>
                                   <div class="carousel-item">
                                     <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
@@ -190,50 +254,51 @@
                               </div>
                         </div>
                     </div>
+                    </c:choose>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="korean.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>한식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="chinese.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>중식</h6></button><br>
-                                <img src="./img/aaa.jpg">
-                                </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="japanese.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>일식</h6></button><br>
+                            <a href="RecipepageCon?b_ctype=korean">
+                                <h6>한식</h6><br>
                                 <img src="./img/aaa.jpg">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="western.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>양식</h6></button><br>
+                            <a href="RecipepageCon?b_ctype=chinese">
+                                <h6>중식</h6><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="asia.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>동남아시아</h6></button><br>
+                            <a href="RecipepageCon?b_ctype=japanese">
+                                <h6>일식</h6><br>
+                                <img src="./img/aaa.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center" >
+                            <a href="RecipepageCon?b_ctype=western">
+                                <h6>양식</h6><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
-                            <a href="fusion.jsp">
-                                <button type="button" class="btn btn-outline-link m-2"><h6>퓨전</h6></button><br>
+                            <a href="RecipepageCon?b_ctype=asia">
+                                <h6>동남아시아</h6><br>
+                                <img src="./img/aaa.jpg">
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center" >
+                            <a href="RecipepageCon?b_ctype=fusion">
+                                <h6>퓨전</h6><br>
                                 <img src="./img/aaa.jpg">
                                 </a>
                         </div>

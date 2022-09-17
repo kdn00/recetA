@@ -62,16 +62,16 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
+                    <a href="main.jsp" class="nav-item nav-link active"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="korean.jsp" class="dropdown-item">한식</a>
-                            <a href="chinese.jsp" class="dropdown-item active">중식</a>
-                            <a href="japanese.jsp" class="dropdown-item">일식</a>
-                            <a href="western.jsp" class="dropdown-item">양식</a>
-                            <a href="asia.jsp" class="dropdown-item">동남아시아</a>
-                            <a href="fusion.jsp" class="dropdown-item">퓨전</a>
+                            <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
+                            <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
+                            <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item">일식</a>
+                            <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
+                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
+                            <a href="RecipepageCon?b_ctype=fusion" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
                     <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
@@ -124,11 +124,11 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                 <!-- 소분류 -->    
-                <form>      
+                <form action="RecipesmallpageCon" method="post">         
                 <table class="table table-bordered" id="table"> 
                     <tr>
                         <td rowspan="5" style="vertical-align:middle;">1분류</td>
-                        <td><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
+                        <td><input type="hidden" name="b_ctype" value="chinese"><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
                         <td><input type="checkbox" name="b_ftype" value="만두/면류"> <span> 만두/면류</span></td>
                         <td><input type="checkbox" name="b_ftype" value="빵/과자"> <span> 빵/과자</span></td>
                         <td><input type="checkbox" name="b_ftype" value="찜"> <span> 찜</span></td>

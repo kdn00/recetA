@@ -54,13 +54,13 @@
                             </a>
                             <h3>회원가입</h3>
                         </div>
-                        
+                        <form action="JoinCon" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="ID">
+                            <input type="text" name="id" class="form-control" id="floatingInput" placeholder="ID">
                             <label for="floatingInput">ID</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         <!-- <div class="form-floating mb-3">
@@ -68,16 +68,17 @@
                             <label for="floatingPassword">Password 확인</label>
                         </div> -->
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingText" placeholder="NAME">
-                            <label for="floatingText">NAME</label>
+                            <input type="text" name="name" class="form-control" id="floatingText" placeholder="NAME">
+                            <label for="floatingText">이름</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="num" class="form-control" id="floatingInput" placeholder="-없이입력">
+                            <input type="num" name="tel" class="form-control" id="floatingInput" placeholder="-없이입력">
                             <label for="floatingInput">전화번호</label>
                         </div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">회원가입</button>
-                        <p class="text-center mb-0">Already have an Account? <a href="signin.jsp">로그인</a></p>
+                        </form>
+                        <p class="text-center mb-0">Already have an Account? <a href="signin.jsp">로그인</a></p>      
                     </div>
                 </div>
             </div>

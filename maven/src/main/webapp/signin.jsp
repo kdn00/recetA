@@ -54,16 +54,19 @@
                             </a>
                             <h3>로그인</h3>
                         </div>
+						<!-- LoginCon으로 보낼 form태그 위치 -->
+						<form action="LoginCon" method="post">
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="text" name="id" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">ID</label>
                         </div>
                         <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">로그인</button>
+                        </form>
                         <p class="text-center mb-0">Don't have an Account? <a href="signup.jsp">회원가입</a></p>
                     </div>
                 </div>
