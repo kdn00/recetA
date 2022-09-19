@@ -88,6 +88,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.Ingred_delCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RefriCon</servlet-name>
+  	<display-name>RefriCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.RefriCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -143,5 +149,9 @@
   <servlet-mapping>
   	<servlet-name>Ingred_delCon</servlet-name>
   	<url-pattern>/Ingred_delCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RefriCon</servlet-name>
+  	<url-pattern>/RefriCon</url-pattern>
   </servlet-mapping> 
 </web-app>
