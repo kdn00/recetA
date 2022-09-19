@@ -74,7 +74,7 @@
                         <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
-                            <a href="RecipepageCon?b_ctype=chinese active" class="dropdown-item">중식</a>
+                            <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item active">중식</a>
                             <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item">일식</a>
                             <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
                             <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
