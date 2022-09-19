@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
     <title>recetA-레시피_동남아시아</title>

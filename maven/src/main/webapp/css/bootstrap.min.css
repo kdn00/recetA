@@ -45,7 +45,7 @@
 
 body {
     margin: 0;
-    font-family: "Heebo", sans-serif;
+    font-family: "EliceDigitalBaeum-Bd", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -8365,7 +8365,6 @@ fieldset:disabled .btn {
 
 .bg-danger {
     background-color: #dc3545 !important
-    
 }
 
 .bg-light {

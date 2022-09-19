@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
     <title>recetA 홈페이지에 오신걸 환영합니다.</title>

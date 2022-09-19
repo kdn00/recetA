@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
     <title>recetA-회원가입</title>
