@@ -119,7 +119,6 @@
 							</c:when>
 							<c:otherwise>
 								<h6 class="mb-0">${loginMember.m_id}</h6>
-								<%-- <span>이름</span> --%>
 							</c:otherwise>
 						</c:choose>
 					</div>
