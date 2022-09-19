@@ -176,7 +176,7 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                         <%="" %>
                         <%} %>
                         " class="float-start" id="step" width="300px">
-                        <span><%=p.getP_explanation() %></span> 
+                        <span><ul><li><%=p.getP_explanation() %></li></ul></span> 
                     </div>
                     <%} %>
                     </div>             
