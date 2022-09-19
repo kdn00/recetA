@@ -6,7 +6,7 @@
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,6 +170,8 @@
                         <i class="bi bi-person-check"></i>
                             <span class="d-none d-lg-inline-flex">로그인</span>
                     </a>
+                    <%-- 지워야할 로그아웃 --%>
+                    <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                         
                         <!-- 로그인 후 드롭다운 되는 코드 -->
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -218,10 +220,10 @@
 
                 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <c:choose>
+                    
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                        	<%-- 랜덤 추천 레시피명인데... 이건 레시피명을 띄워야하나 말아야하나 / 이미지 아래에 띄워야하나 --%>
+                        	<!-- 랜덤 추천 레시피명인데... 이건 레시피명을 띄워야하나 말아야하나 / 이미지 아래에 띄워야하나 -->
                             <h6 class="mb-4"><%=randomrecipe.getB_name()%><%-- 메뉴 추천 --%></h6>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
@@ -254,7 +256,7 @@
                               </div>
                         </div>
                     </div>
-                    </c:choose>
+                    
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=korean">
