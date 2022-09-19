@@ -154,8 +154,8 @@
 	                <a href="#" class="sidebar-toggler flex-shrink-0">
 	                    <i class="fa fa-bars"></i>
 	                </a>
-	                <form class="d-none d-md-flex ms-4">
-	                    <input class="form-control border-0" type="search" placeholder="Search">
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
 	                </form>
 	                <div class="navbar-nav align-items-center ms-auto">
 	                <c:choose> 
@@ -192,7 +192,7 @@
                        		</a>
                        		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                            <a href="Key_Con" class="dropdown-item">나의 냉장고</a>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                             </div>
                    		    </div>
@@ -243,8 +243,7 @@
                     
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                        	<!-- 랜덤 추천 레시피명인데... 이건 레시피명을 띄워야하나 말아야하나 / 이미지 아래에 띄워야하나 -->
-                            <h6 class="mb-4"><%=randomrecipe.getB_name()%><%-- 메뉴 추천 --%></h6>
+                            <h6 class="mb-4">메뉴 추천</h6>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -254,9 +253,9 @@
                                 <div class="carousel-inner">
                                   <div class="carousel-item active">
                                   	<%-- a태그는 주석처리 해놨다가 레시피 상세 페이지 con파일 완성되면 주석 풀기 --%>
-                                    <%-- <a href="RecipedetailpageCon?b_code="${randomrecipe.b_code}""> --%>
+                                    <a href="RecipedetailpageCon?b_code=${randomrecipe.b_code}">
                                     <img src="${randomrecipe.b_url}" height="547" class="d-block w-100" alt="...">
-                                    <%-- </a> --%>
+                                    </a>
                                   </div>
                                   <div class="carousel-item">
                                     <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
@@ -280,48 +279,48 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=korean">
-                                <h6>한식</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>한식</h4><br>
+                                <img src="./img/korean.jpg" width="311" height="289">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=chinese">
-                                <h6>중식</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>중식</h4><br>
+                                <img src="img/chinese3.jpg" width="311" height="289">
                                 </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=japanese">
-                                <h6>일식</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>일식</h4><br>
+                                <img src="./img/japanese.jpg" width="311" height="289">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=western">
-                                <h6>양식</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>양식</h4><br>
+                                <img src="./img/western.jpg" width="311" height="289">
                                 </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=asia">
-                                <h6>동남아시아</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>동남아시아</h4><br>
+                                <img src="./img/asia.jpg" width="311" height="289">
                                 </a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="RecipepageCon?b_ctype=fusion">
-                                <h6>퓨전</h6><br>
-                                <img src="./img/aaa.jpg">
+                                <h4>퓨전</h4><br>
+                                <img src="http://file.okdab.com/UserFiles/searching/recipe/110800.jpg" width="311" height="289">
                                 </a>
                         </div>
                     </div>

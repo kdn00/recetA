@@ -100,9 +100,9 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
+	                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="signup.jsp" class="nav-link" >

@@ -27,6 +27,13 @@ public class RecipepageCon extends HttpServlet {
 
 		// 0. post방식 인코딩
 		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("selectbFtype");
+		session.removeAttribute("selectbItype");
+		session.removeAttribute("selectbTime");
+		session.removeAttribute("selectbAmount");
+		session.removeAttribute("selectbDifficulte");
 
 		// 1. 파라미터 수집
 		// 1-1. 대분류 파라미터 수집 : name값으로 b_code값을 넣어 그걸 받아온다.
@@ -67,7 +74,7 @@ public class RecipepageCon extends HttpServlet {
 		if (bigbasic != null) {
 			// 정보 유지를 위해 세션에 로그인 정보 저장
 			// 1. 세션 객체 생성
-			HttpSession session = request.getSession();
+			session = request.getSession();
 
 			// 2. 세션에 저장
 			session.setAttribute("bigbasic", bigbasic);

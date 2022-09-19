@@ -26,6 +26,16 @@ public class RecipesmallpageCon extends HttpServlet {
 
 		// 0. post방식 인코딩
 		request.setCharacterEncoding("UTF-8");
+		
+		// 1. 세션 객체 생성
+		HttpSession session = request.getSession();
+		session.removeAttribute("bigbasic");
+		session.removeAttribute("selectbFtype");
+		session.removeAttribute("selectbItype");
+		session.removeAttribute("selectbTime");
+		session.removeAttribute("selectbAmount");
+		session.removeAttribute("selectbDifficulte");
+		
 
 		// 1. 파라미터 수집
 		// 1-1. 대분류 파라미터 수집 : name값으로 b_code값을 넣어 그걸 받아온다.
@@ -79,16 +89,14 @@ public class RecipesmallpageCon extends HttpServlet {
 			// 6. 명령 후 처리
 			if (selectbFtype != null) {
 				// 정보 유지를 위해 세션에 로그인 정보 저장
-				// 1. 세션 객체 생성
-				HttpSession session = request.getSession();
-
+				
 				// 2. 세션에 저장
 				session.setAttribute("selectbFtype", selectbFtype);
-				for (int i = 0; i < selectbFtype.size(); i++) {
-					System.out.println(selectbFtype.get(i).getB_code());
-					System.out.println(selectbFtype.get(i).getB_name());
-					System.out.println(selectbFtype.get(i).getB_url());
-				}
+//				for (int i = 0; i < selectbFtype.size(); i++) {
+//					System.out.println(selectbFtype.get(i).getB_code());
+//					System.out.println(selectbFtype.get(i).getB_name());
+//					System.out.println(selectbFtype.get(i).getB_url());
+//				}
 
 			} else {
 			}
@@ -119,15 +127,15 @@ public class RecipesmallpageCon extends HttpServlet {
 			if (selectbItype != null) {
 				// 정보 유지를 위해 세션에 로그인 정보 저장
 				// 1. 세션 객체 생성
-				HttpSession session = request.getSession();
+				session = request.getSession();
 
 				// 2. 세션에 저장
 				session.setAttribute("selectbItype", selectbItype);
-				for (int i = 0; i < selectbItype.size(); i++) {
-					System.out.println(selectbItype.get(i).getB_code());
-					System.out.println(selectbItype.get(i).getB_name());
-					System.out.println(selectbItype.get(i).getB_url());
-				}
+//				for (int i = 0; i < selectbItype.size(); i++) {
+//					System.out.println(selectbItype.get(i).getB_code());
+//					System.out.println(selectbItype.get(i).getB_name());
+//					System.out.println(selectbItype.get(i).getB_url());
+//				}
 			} else {
 			}
 		} // 재료 분류 끝
@@ -157,7 +165,7 @@ public class RecipesmallpageCon extends HttpServlet {
 			if (selectbTime != null) {
 				// 정보 유지를 위해 세션에 로그인 정보 저장
 				// 1. 세션 객체 생성
-				HttpSession session = request.getSession();
+				session = request.getSession();
 
 				// 2. 세션에 저장
 				session.setAttribute("selectbTime", selectbTime);
@@ -195,7 +203,7 @@ public class RecipesmallpageCon extends HttpServlet {
 			if (selectbAmount != null) {
 				// 정보 유지를 위해 세션에 로그인 정보 저장
 				// 1. 세션 객체 생성
-				HttpSession session = request.getSession();
+				session = request.getSession();
 
 				// 2. 세션에 저장
 				session.setAttribute("selectbAmount", selectbAmount);
@@ -233,7 +241,7 @@ public class RecipesmallpageCon extends HttpServlet {
 			if (selectbDifficulte != null) {
 				// 정보 유지를 위해 세션에 로그인 정보 저장
 				// 1. 세션 객체 생성
-				HttpSession session = request.getSession();
+				session = request.getSession();
 
 				// 2. 세션에 저장
 				session.setAttribute("selectbDifficulte", selectbDifficulte);

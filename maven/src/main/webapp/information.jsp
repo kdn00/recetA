@@ -112,8 +112,8 @@
 	                <a href="#" class="sidebar-toggler flex-shrink-0">
 	                    <i class="fa fa-bars"></i>
 	                </a>
-	                <form class="d-none d-md-flex ms-4">
-	                    <input class="form-control border-0" type="search" placeholder="Search">
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
 	                </form>
 	                <div class="navbar-nav align-items-center ms-auto">
 	                <c:choose> 
@@ -169,16 +169,16 @@
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4" style="text-align: center;">
                             <h6 class="mb-4">개인정보수정</h6>
-                            <form>
-                                <div class="mb-3" style="text-align: center;">
+                            <div class="mb-3" style="text-align: center;">
                                     <!-- <label for="exampleInputEmail1" class="form-label">ID</label> -->
-                                    <input placeholder="ID" type="text" class="form-control" id="exampleInputEmail1" style="width: 50%; margin-left: 25%; ">
+                                    <input placeholder="${loginMember.m_id}" type="text" class="form-control" id="exampleInputEmail1" style="width: 50%; margin-left: 25%;" disabled/>
                                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                     </div> -->
                                 </div>
+                            <form action="UpdateCon" method="post">
                                 <div class="mb-3" style="text-align: center;">
                                     <!-- <label for="exampleInputPassword1" class="form-label">비밀번호</label> -->
-                                    <input placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
+                                    <input name="pw" placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
                                 </div>
                                 <!-- <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">비밀번호확인</label>
@@ -186,15 +186,16 @@
                                 </div>  -->
                                 <div class="mb-3" style="text-align: center;">
                                     <!-- <label for="exampleInputPassword1" class="form-label">전화번호</label> -->
-                                    <input placeholder="TEL" type="tel" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
+                                    <input name="tel" placeholder="TEL" type="text" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
                                 </div>
                                 <!-- <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                 </div> -->
                                 <button type="submit" class="btn btn-primary">회원정보 수정</button>
-                                <button type="submit" class="btn btn-primary">회원탈퇴</button>
-                            </form>
+                                </form>
+                                <a href="DeleteCon2"><button class="btn btn-primary">회원탈퇴</button></a>
+                                
                         </div>
                     </div>
                 </div>

@@ -176,5 +176,136 @@ public class BasicDAO {
 		} // finally 끝
 		return searchresult;
 	} // 검색 끝
+	
+	// 페이징 기능
+	// 검색 카운트
+	public int pagingsearch(String search) {
+		int pagesearch = 0;
+		try {
+			pagesearch = sqlSession.selectOne("pagingsearch", search);
+			if (pagesearch != 0) {
+				System.out.println("검색 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("검색 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagesearch;
+	} // 검색 카운트 끝	
+	
+	
+	// 대분류 카운트
+	public int pagingbCtype(String b_ctype) {
+		int pagebCtype = 0;
+		try {
+			pagebCtype = sqlSession.selectOne("pagingbCtype", b_ctype);
+			if (pagebCtype != 0) {
+				System.out.println("대분류 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("대분류 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebCtype;
+	} // 대분류 카운트 끝
+	
+	
+	// 소분류 카운트(5개)
+	// 1. 음식 분류 카운트
+	public int pagingbFtype(Basic b_ftype) {
+		int pagebFtype = 0;
+		try {
+			pagebFtype = sqlSession.selectOne("pagingbFtype", b_ftype);
+			if (pagebFtype != 0) {
+				System.out.println("음식 분류 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("음식 분류 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebFtype;
+	} // 음식 분류 카운트 끝
+	
+	
+	// 2. 재료 분류 카운트
+	public int pagingbItype(Basicitype b_itype) {
+		int pagebItype = 0;
+		try {
+			pagebItype = sqlSession.selectOne("pagingbItype", b_itype);
+			if (pagebItype != 0) {
+				System.out.println("재료 분류 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("재료 분류 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebItype;
+	} // 재료 분류 카운트 끝	
+	
+	// 3. 조리 시간 카운트
+	public int pagingbTime(Basictime b_time) {
+		int pagebtime = 0;
+		try {
+			pagebtime = sqlSession.selectOne("pagingbTime", b_time);
+			if (pagebtime != 0) {
+				System.out.println("조리 시간 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("조리 시간 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebtime;
+	} // 조리 시간 카운트 끝
+	
+	// 4. n인분 카운트
+	public int pagingbAmount(Basicamount b_amount) {
+		int pagebamount = 0;
+		try {
+			pagebamount = sqlSession.selectOne("pagingbAmount", b_amount);
+			if (pagebamount != 0) {
+				System.out.println("n인분 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("n인분 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebamount;
+	} // n인분 카운트 끝	
+	
+	// 5. 난이도 카운트
+	public int pagingbbDifficulte(Basicdifficulte b_difficulte) {
+		int pagebdifficulte = 0;
+		try {
+			pagebdifficulte = sqlSession.selectOne("pagingbbDifficulte", b_difficulte);
+			if (pagebdifficulte != 0) {
+				System.out.println("난이도 카운트 dao 성공");
+				sqlSession.commit();
+			} else {
+				System.out.println("난이도 카운트 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return pagebdifficulte;
+	} // 난이도 카운트 끝	
 
 }

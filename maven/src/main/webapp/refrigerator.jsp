@@ -112,8 +112,8 @@
 	                <a href="#" class="sidebar-toggler flex-shrink-0">
 	                    <i class="fa fa-bars"></i>
 	                </a>
-	                <form class="d-none d-md-flex ms-4">
-	                    <input class="form-control border-0" type="search" placeholder="Search">
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
 	                </form>
 	                <div class="navbar-nav align-items-center ms-auto">
 	                <c:choose> 
@@ -206,14 +206,14 @@
                             <table class="table table-borderless" id="table-refrigerator">
                             <tr>
                                 <td>
-                                <form action="Ingred_update" method="post">
-                                    <input type="text" placeholder="재료명" id="corr3" name="name">
+                                <form action="Ingred_updateCon" method="post">
+                                    <input type="text" placeholder="재료명" id="corr3" name="s_name">
                                 </td>
                                 <td id="table-refrigerator-td"> 
-                                    <input type="number" placeholder="개수" id="corr" name="volume"> 
+                                    <input type="number" placeholder="개수" id="corr" name="k_volume"> 
                                 </td>
                                 <td>   
-                                    <select id="Select_box" aria-label="Floating label select example" name="unit">
+                                    <select id="Select_box" aria-label="Floating label select example" name="k_unit">
                                         <option selected>단위 선택</option>
                                         <option value="g">g</option>
                                         <option value="kg">kg</option>
@@ -234,13 +234,45 @@
                         </tr>
                         </table>
                     <br><br>
-                    <form action="Search_ingred" method="post">
+                    
+                    <form action="Ingred_search" method="post">
                         <li>
-                            <input type="text" placeholder="검색할 재료를 적어주세요!" name="search_ingred" id="search_ingred">
+                            <input type="text" placeholder="검색할 재료를 적어주세요!" name="s_name" id="search_ingred">
                             <input type="submit" value="검색" class="btn btn-primary">
                         </li>
                     </form>
                         <!-- 검색해서 받아온 데이터 출력하기 -->
+                        <%
+                        List<RefriMember> Ingred_search = (List) session.getAttribute("Ingred_search");
+                            if (Ingred_search != null) {
+                            for (int i = 0; i < Ingred_search.size(); i++) {
+                            %>
+                            <tr>
+                                <td><%=Ingred_search.get(i).getS_name()%> 
+                                </td>
+                                <form action="Ingred_plusCon?s_name=<%=Ingred_search.get(i).getS_name()%>" method="post">
+                                <td>
+                                <input type="number" placeholder="개수" id="corr" name="k_volume2">
+                                </td>
+                                <td>   
+                                    <select id="Select_box" aria-label="Floating label select example" name="k_unit2">
+                                        <option selected>단위 선택</option>
+                                        <option value="g">g</option>
+                                        <option value="kg">kg</option>
+                                        <option value="mL">mL</option>
+                                        <option value="L">L</option>
+                                        <option value="개">개</option>
+                                        <option value="쪽">쪽</option>
+                                        <option value="통">통</option>
+                                        <option value="마리">마리</option>
+                                    </select>
+                                </td>
+                                <input type="submit" value="추가" class="plus">
+                                </form>
+                          	</tr>
+                        <br>
+                        <%}
+                          }%> 
                     </ul>
                 </div>
 

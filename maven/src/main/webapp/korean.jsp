@@ -112,8 +112,8 @@
 	                <a href="#" class="sidebar-toggler flex-shrink-0">
 	                    <i class="fa fa-bars"></i>
 	                </a>
-	                <form class="d-none d-md-flex ms-4">
-	                    <input class="form-control border-0" type="search" placeholder="Search">
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
 	                </form>
 	                <div class="navbar-nav align-items-center ms-auto">
 	                <c:choose> 
@@ -176,7 +176,7 @@
                 <table class="table table-bordered" id="table"> 
                     <tr>
                         <td rowspan="3" style="vertical-align:middle;">1분류</td>
-                        <td><input type="hidden" name="b_ctype" value="asia"><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
+                        <td><input type="hidden" name="b_ctype" value="korean"><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
                         <td><input type="checkbox" name="b_ftype" value="만두/면류"> <span> 만두/면류</span></td>
                         <td><input type="checkbox" name="b_ftype" value="빵/과자"> <span> 빵/과자</span></td>
                         <td><input type="checkbox" name="b_ftype" value="찜"> <span> 찜</span></td>
@@ -276,61 +276,114 @@
                 </form>                      
             </div>
             <!-- 소분류 끝 -->
-
+			<!-- 여기부터 복사 붙여넣기 -->
             <!-- 레시피  -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
+                <!-- 소분류 세션 진행 -->
+                <%
+              		
+                // 소분류 세션 null 확인하기
+               	// 1. selectbFtype 세션 null 확인하기
+               	if(session.getAttribute("selectbFtype")!=null){
+               		List<Basic> selectbFtype = (List) session.getAttribute("selectbFtype");
+               		
+               		for(int i=0; i<selectbFtype.size(); i++){ %>
+               		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectbFtype.get(i).getB_code()%>">
+                            <img src="<%=selectbFtype.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbFtype.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
+                    <%}
+               		}// selectbFtype 세션 null 확인 끝
+               	
+               	// 2. selectbItype 세션 null 확인하기
+               	if(session.getAttribute("selectbItype")!=null){
+               		List<Basic> selectbItype = (List) session.getAttribute("selectbItype");
+               		
+               		for(int i=0; i<selectbItype.size(); i++){ %>
+               		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectbItype.get(i).getB_code()%>">
+                            <img src="<%=selectbItype.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbItype.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
+                    <%}
+               		}// selectbItype 세션 null 확인 끝
+               	
+               	// 3. selectbTime 세션 null 확인하기
+               	if(session.getAttribute("selectbTime")!=null){
+               		List<Basic> selectbTime = (List) session.getAttribute("selectbTime");
+               		
+               		for(int i=0; i<selectbTime.size(); i++){ %>
+               		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectbTime.get(i).getB_code()%>">
+                            <img src="<%=selectbTime.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbTime.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
+                    <%}
+               		}// selectbTime 세션 null 확인 끝
+               	
+               	// 4. selectbAmount 세션 null 확인하기
+               	if(session.getAttribute("selectbAmount")!=null){
+               		List<Basic> selectbAmount = (List) session.getAttribute("selectbAmount");
+               		
+               		for(int i=0; i<selectbAmount.size(); i++){ %>
+               		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectbAmount.get(i).getB_code()%>">
+                            <img src="<%=selectbAmount.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbAmount.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
+                    <%}
+               		}// selectbAmount 세션 null 확인 끝
+               	
+               	// 5. selectbDifficulte 세션 null 확인하기
+               	if(session.getAttribute("selectbDifficulte")!=null){
+               		List<Basic> selectbDifficulte = (List) session.getAttribute("selectbDifficulte");
+               		
+               		for(int i=0; i<selectbDifficulte.size(); i++){ %>
+               		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectbDifficulte.get(i).getB_code()%>">
+                            <img src="<%=selectbDifficulte.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbDifficulte.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
+                    <%}
+               		}// selectbDifficulte 세션 null 확인 끝
+               	
+               	
+                // 소분류 먼저 if로 null값 확인 후 대분류 null 확인 진행
+                // 소분류con에서 대분류 세션을 지우고 진행할 것임
+              	if (session.getAttribute("bigbasic") != null) {
+              		List<Basic> bigbasic = (List) session.getAttribute("bigbasic");
+              		for(int i=0; i<bigbasic.size(); i++){ %>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=bigbasic.get(i).getB_code()%>">
+                            <img src="<%=bigbasic.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= bigbasic.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
+                    <%} }  %>
+                    
                 </div>
             </div>
             <!-- 레시피 끝 -->
+            <!-- 여기까지 복사 붙여넣기 -->
 
             <!-- 페이지 번호 -->
             <nav aria-label="Page navigation" class="d-flex justify-content-center">
