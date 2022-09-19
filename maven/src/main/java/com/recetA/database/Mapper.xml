@@ -52,11 +52,6 @@
 		delete from member where m_key=#{m_key}
 	</delete>
 	<!-- 회원 탈퇴 끝 -->
-	<!-- 레시피 조리순서 sql -->
-	<select id="selectDetailRecipe" parameterType="com.recetA.domain.Member">
-		select p_order, p_explanation from process where b_code = #{b_code}
-	</select>
-	
 	
 	<!-- Basic Vo 파일 사용 -->
 	<!-- 대분류 선택x 랜덤 띄우기 -->
@@ -64,7 +59,7 @@
 	<!-- selectRecipe -> 레시피 상세 페이지 sql로 넘어감 -->
 	<select id="selectRecipe" parameterType="com.recetA.domain.Basic"
 				  			resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic
+		select b_code, b_name, b_url from basic where b_code=#{b_code}
 	</select>
 	
 	<!-- 대분류 sql -->
@@ -76,33 +71,44 @@
 	<!-- 소분류 sql -->
 	<!-- 음식 분류 -->
 	<!-- 대분류 값을 받아와서 and로 처리 : where절에 b_ctype=#{b_ctype} and 추가 -->
+	<!-- 대분류 가져와서 교집합으로 처리!!! -->
 	<select id="selectbFtype" parameterType="com.recetA.domain.Basic"
 							 resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_ftype=#{b_ftype}
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+		intersect
+		select b_code, b_name, b_url from basic where b_ftype=#{b_ftype}
 	</select>
 	
 	<!-- 재료 분류 -->
 	<select id="selectbItype" parameterType="com.recetA.domain.Basic"
 							 resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_itype=#{b_itype}
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+		intersect
+		select b_code, b_name, b_url from basic where b_itype=#{b_itype}
 	</select>
 	
 	<!-- 조리 시간 -->
 	<select id="selectbTime" parameterType="com.recetA.domain.Basic"
 							 resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_time=#{b_time}
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+		intersect
+		select b_code, b_name, b_url from basic where b_time=#{b_time}
 	</select>
 	
 	<!-- n인분 -->
 	<select id="selectbAmount" parameterType="com.recetA.domain.Basic"
 							 resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_amount=#{b_amount}
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+		intersect
+		select b_code, b_name, b_url from basic where b_amount=#{b_amount}
 	</select>
 	
 	<!-- 난이도 -->
 	<select id="selectbDifficulte" parameterType="com.recetA.domain.Basic"
 							 resultType="com.recetA.domain.Basic">
-		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype} and b_difficulte=#{b_difficulte}
+		select b_code, b_name, b_url from basic where b_ctype=#{b_ctype}
+		intersect
+		select b_code, b_name, b_url from basic where b_difficulte=#{b_difficulte}
 	</select>
 	
 	<!-- 레시피 상세 페이지 sql -->

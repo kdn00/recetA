@@ -50,8 +50,7 @@ public class JoinCon extends HttpServlet {
 			System.out.println("회원가입 성공");
 		} else {
 			System.out.println("회원가입 실패");
-		}
-		
+		}	
 		
 		dao = new MemberDAO();
 		Member SelectKey = dao.insertMember2(m_id);
@@ -59,7 +58,6 @@ public class JoinCon extends HttpServlet {
 			System.out.println("키 검색 성공");
 		} else {
 			System.out.println("키 검색 실패");
-
 		}
 		
 		int key = SelectKey.getM_key();
@@ -67,7 +65,7 @@ public class JoinCon extends HttpServlet {
 		cnt = dao.insertMember3(key);
 		if (cnt > 0) {
 			System.out.println("냉장고 키 성공");
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("signin.jsp");
 		} else {
 			System.out.println("냉장고 키 실패");
 			response.sendRedirect("main.jsp");

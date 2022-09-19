@@ -47,23 +47,11 @@
   	<servlet-class>com.recetA.controller.RecipepageCon</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>MenuCon</servlet-name>
-  	<display-name>MenuCon</display-name>
-  	<description></description>
-  	<servlet-class>com.recetA.controller.MenuCon</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>RecipedetailpageCon</servlet-name>
   	<display-name>RecipedetailpageCon</display-name>
   	<description></description>
   	<servlet-class>com.recetA.controller.RecipedetailpageCon</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>Recipepage2Con</servlet-name>
-  	<display-name>Recipepage2Con</display-name>
-  	<description></description>
-  	<servlet-class>com.recetA.controller.Recipepage2Con</servlet-class>
-  	</servlet>
   <servlet>
   	<servlet-name>DetailCon</servlet-name>
   	<display-name>DetailCon</display-name>
@@ -81,6 +69,18 @@
   	<display-name>DeleteCon2</display-name>
   	<description></description>
   	<servlet-class>com.recetA.controller.DeleteCon2</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RandomRecipe</servlet-name>
+  	<display-name>RandomRecipe</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.RandomRecipe</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RecipesmallpageCon</servlet-name>
+  	<display-name>RecipesmallpageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.RecipesmallpageCon</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
@@ -107,22 +107,13 @@
   	<url-pattern>/SearchCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-
   	<servlet-name>RecipepageCon</servlet-name>
   	<url-pattern>/RecipepageCon</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MenuCon</servlet-name>
-  	<url-pattern>/MenuCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>RecipedetailpageCon</servlet-name>
   	<url-pattern>/RecipedetailpageCon</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Recipepage2Con</servlet-name>
-  	<url-pattern>/Recipepage2Con</url-pattern>
-	</servlet-mapping>
 	<servlet-mapping>
   	<servlet-name>DetailCon</servlet-name>
   	<url-pattern>/DetailCon</url-pattern>
@@ -135,5 +126,12 @@
   	<servlet-name>DeleteCon2</servlet-name>
   	<url-pattern>/DeleteCon2</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>RandomRecipe</servlet-name>
+  	<url-pattern>/RandomRecipe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RecipesmallpageCon</servlet-name>
+  	<url-pattern>/RecipesmallpageCon</url-pattern>
+  </servlet-mapping> 
 </web-app>

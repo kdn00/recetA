@@ -51,7 +51,7 @@ public class LoginCon extends HttpServlet {
 
 		} else {
 			// login.jsp로 이동
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("signin.jsp");
 		}
 	}
 

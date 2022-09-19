@@ -60,8 +60,21 @@ public class Basic {
 		this.b_amount = b_amount;
 		this.b_difficulte = b_difficulte;
 	}
-
 	
+	// 음식분류
+	public Basic(String b_ctype, String b_ftype) {
+		super();
+		this.b_ctype = b_ctype;
+		this.b_ftype = b_ftype;
+	}
+	
+	// 대분류, 소분류 게시글 띄우기
+	public Basic(int b_code, String b_name, String b_url) {
+		super();
+		this.b_code = b_code;
+		this.b_name = b_name;
+		this.b_url = b_url;
+	}
 
 	// 오류 방지용 빈 객체
 	public Basic() {
