@@ -69,7 +69,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <%-- JSTL 방식 --%>
+                        <%-- JSTL  방식 --%>
 						<c:choose>
 							<c:when test="${empty loginMember}">
 								<h6 class="mb-0">ID</h6>
