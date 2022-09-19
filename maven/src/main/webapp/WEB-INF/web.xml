@@ -82,6 +82,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.RecipesmallpageCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Ingred_delCon</servlet-name>
+  	<display-name>Ingred_delCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Ingred_delCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -133,5 +139,9 @@
   <servlet-mapping>
   	<servlet-name>RecipesmallpageCon</servlet-name>
   	<url-pattern>/RecipesmallpageCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Ingred_delCon</servlet-name>
+  	<url-pattern>/Ingred_delCon</url-pattern>
   </servlet-mapping> 
 </web-app>

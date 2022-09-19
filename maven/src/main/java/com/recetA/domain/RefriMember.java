@@ -7,22 +7,21 @@ public class RefriMember {
 	private String s_name;
 	private int k_volume;
 	private String k_unit;
-	private String k_edate;
-
+	private int r_key;
+	
 	// 냉장고 보유재료 객체
-	public RefriMember(int m_key) {
-			this.m_key = m_key;
+	public RefriMember(int r_key) {
+			this.r_key = r_key;
 		}
 
-	public RefriMember(int m_key, String s_name, int k_volume, String k_unit, String k_edate) {
+
+	public RefriMember(int r_key, String s_name, int k_volume, String k_unit) {
 		super();
-		this.m_key = m_key;
+		this.r_key = r_key;
 		this.s_name = s_name;
 		this.k_volume = k_volume;
 		this.k_unit = k_unit;
-		this.k_edate = k_edate;
 	}
-
 
 
 	public RefriMember() {
@@ -39,6 +38,16 @@ public class RefriMember {
 		this.m_key = m_key;
 	}
 
+
+
+	public int getR_key() {
+		return r_key;
+	}
+
+
+	public void setR_key(int r_key) {
+		this.r_key = r_key;
+	}
 
 
 	public String getS_name() {
@@ -65,18 +74,11 @@ public class RefriMember {
 		this.k_unit = k_unit;
 	}
 
-	public String getK_edate() {
-		return k_edate;
-	}
-
-	public void setK_edate(String k_edate) {
-		this.k_edate = k_edate;
-	}
 
 	@Override
 	public String toString() {
-		return "RefriMember [m_key=" + m_key + ", s_name=" + s_name + ", k_volume=" + k_volume + ", k_unit=" + k_unit
-				+ ", k_edate=" + k_edate + "]";
+		return "RefriMember [r_key=" + r_key + ", s_name=" + s_name + ", k_volume=" + k_volume + ", k_unit=" + k_unit
+				+ "]";
 	}
 	
 	

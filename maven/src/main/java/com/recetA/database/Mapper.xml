@@ -132,4 +132,27 @@
 		select p_order, p_explanation, p_url from process where b_code=#{b_code} order by p_order
 	</select>
 	
+<!-- 냉장고 -->
+	
+	<!-- 보유재료 검색 -->
+	<select id="refri_search"
+		parameterType="com.recetA.domain.RefriMember"
+		resultType="com.recetA.domain.RefriMember">
+		select a.r_key, b.s_name, b.k_volume, b.k_unit from refri a, keep b where
+		a.r_key=b.r_key and b.r_key=#{r_key}
+	</select>
+
+	<!-- 재료 개수 수정 -->
+	<update id="ingred_update"
+		parameterType="com.recetA.domain.RefriMember">
+		update keep set k_volume=#{k_volume}, k_unit=#{k_unit}
+		where r_key=#{r_key} and s_name=#{s_name}
+	</update>
+
+
+	<!-- 재료 삭제 -->
+	<delete id="Ingred_del" parameterType="String">
+		delete from keep where s_name=#{s_name}
+	</delete>
+	
 </mapper>

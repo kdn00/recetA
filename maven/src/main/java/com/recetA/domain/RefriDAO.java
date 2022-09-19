@@ -18,12 +18,13 @@ public class RefriDAO {
 		List<RefriMember> refri = null;
 		try {
 			refri = sqlSession.selectList("refri_search", vo);
-
+			System.out.println(refri);
+			
 			if (refri != null) {
-				System.out.println("로그인 성공");
+				System.out.println("재료확인 성공");
 				sqlSession.commit();
 			} else {
-				System.out.println("로그인 실패");
+				System.out.println("재료확인 실패");
 				sqlSession.rollback();
 			}
 		} finally {
@@ -49,5 +50,22 @@ public class RefriDAO {
 			sqlSession.close();
 		} // finally 끝
 		return cnt;
-	} //재재료 수정 기능 끝
+	} //재료 수정 기능 끝
+	
+	
+	// 재료 삭제 기능 구현
+		public int Ingred_del (String s_name) {
+			int cnt=0;
+			try {
+				cnt = sqlSession.delete("Ingred_del",s_name);
+				if(cnt>0) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			} finally {
+			sqlSession.close();
+			}//finally 끝
+			return cnt;
+		} // 회원삭제 끝
 }

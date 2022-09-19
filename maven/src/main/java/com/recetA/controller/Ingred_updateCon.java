@@ -2,6 +2,7 @@ package com.recetA.controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,18 +19,19 @@ public class Ingred_updateCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		System.out.println("들어왔어요");
 		HttpSession session = request.getSession();
-		RefriMember refri = (RefriMember)session.getAttribute("refri");
-		
+		List<RefriMember> refri = (List) session.getAttribute("refri");
 		String s_name = request.getParameter("s_name");
+		System.out.println(s_name);
 		int k_volume =  Integer.parseInt(request.getParameter("k_volume"));
+		System.out.println(k_volume);
 		String k_unit = request.getParameter("k_unit");
-		Date k_edate = request.getParameter("k_edate");
-		System.out.println(k_edate);
-		int m_key = refri.getM_key();
-		
+		System.out.println(k_unit);
+		/* 유통기한 주석처리 String k_edate = request.getParameter("k_edate"); */
+		int r_key = refri.get(0).getR_key();
+		System.out.println(r_key);
 		
 		// 2. 수집된 데이터를 Member 객체에 담기
-		RefriMember RefriMember = new RefriMember(m_key, s_name, k_volume, k_unit, k_edate);
+		RefriMember RefriMember = new RefriMember(r_key, s_name, k_volume, k_unit);
 		
 		
 		// 3. Mapper.xml에서 SQL문 만들고 오기
@@ -45,15 +47,11 @@ public class Ingred_updateCon extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("개수 수정 성공");
-			// 회원정보를 다시 세션에 저장
-			// 같은 세션의 이름에 덮어쓰기 하기
-			session.setAttribute("ingred_update", RefriMember);
-			
 		}else {
 			System.out.println("개수 수정 실패");
 		}
 
-		response.sendRedirect("blank.jsp");		
+		response.sendRedirect("RefriCon");		
 		
 		
 	}
