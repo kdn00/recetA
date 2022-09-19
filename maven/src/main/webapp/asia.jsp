@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,15 +62,15 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="main.jsp" class="nav-item nav-link active"><i class="bi bi-egg-fried"></i>HOME</a>
+                    <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
+                        <a class="nav-link dropdown-toggle  active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
                             <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
                             <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item">일식</a>
                             <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
-                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
+                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item active">동남아시아</a>
                             <a href="RecipepageCon?b_ctype=fusion" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
@@ -123,41 +123,41 @@
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
+                    
+                        <div class="bg-light rounded h-100 p-2 text-center" style="margin-bottom: 2%; ">
+                            <span><h2>동남아시아</h2></span>
+                        </div>
+                    <br>
                 <!-- 소분류 -->    
                 <form action="RecipesmallpageCon" method="post">  
                 <table class="table table-bordered" id="table"> 
                     <tr>
-                        <td rowspan="5" style="vertical-align:middle;">1분류</td>
+                        <td rowspan="3" style="vertical-align:middle;">1분류</td>
                         <td><input type="hidden" name="b_ctype" value="asia"><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
                         <td><input type="checkbox" name="b_ftype" value="만두/면류"> <span> 만두/면류</span></td>
                         <td><input type="checkbox" name="b_ftype" value="빵/과자"> <span> 빵/과자</span></td>
                         <td><input type="checkbox" name="b_ftype" value="찜"> <span> 찜</span></td>
-                        <td><input type="checkbox" name="b_ftype" value="그라탕/리조또"> <span> 그라탕/리조또</span></td>
-                    </tr>
-                    <tr>                               
+                        <td><input type="checkbox" name="b_ftype" value="그라탕/리조또"> <span> 그라탕/리조또</span></td>                             
                         <td><input type="checkbox" name="b_ftype" value="피자"> <span> 피자</span></td>
-                        <td><input type="checkbox" name="b_ftype" value="찌개/전골/스튜"> <span> 찌개/전골/스튜</span></td> 
+                        <td><input type="checkbox" name="b_ftype" value="찌개/전골/스튜"> <span> 찌개/전골/스튜</span></td>
+                    </tr>
+                    <tr>   
                         <td><input type="checkbox" name="b_ftype" value="튀김/커틀릿"> <span> 튀김/커틀릿</span></td>
                         <td><input type="checkbox" name="b_ftype" value="밑반찬/김치"> <span> 밑반찬/김치</span></td>  
                         <td><input type="checkbox" name="b_ftype" value="조림"> <span> 조림</span></td>
-                    </tr>
-                    <tr> 
                         <td><input type="checkbox" name="b_ftype" value="구이"> <span> 구이</span></td>
                         <td><input type="checkbox" name="b_ftype" value="밥"> <span> 밥</span></td>
                         <td><input type="checkbox" name="b_ftype" value="음료"> <span> 음료</span></td>
                         <td><input type="checkbox" name="b_ftype" value="나물/생채/샐러드"> <span> 나물/생채/샐러드</span></td>
-                        <td><input type="checkbox" name="b_ftype" value="양식"> <span> 양식</span></td>                         
                     </tr>
-                    <tr>                                
+                    <tr> 
+                        <td><input type="checkbox" name="b_ftype" value="양식"> <span> 양식</span></td>                                                   
                         <td><input type="checkbox" name="b_ftype" value="부침"> <span> 부침</span></td>
                         <td><input type="checkbox" name="b_ftype" value="도시락/간식"> <span> 도시락/간식</span></td>
                         <td><input type="checkbox" name="b_ftype" value="떡/한과"> <span> 떡/한과</span></td>
                         <td><input type="checkbox" name="b_ftype" value="국"> <span> 국</span></td>
                         <td><input type="checkbox" name="b_ftype" value="샌드위치/햄버거"> <span> 샌드위치/햄버거</span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="b_ftype" value="볶음"> <span> 볶음</span></td>      
-                        <td></td><td></td><td></td><td></td>
+                        <td><input type="checkbox" name="b_ftype" value="볶음"> <span> 볶음</span></td>
                     </tr>
                     
                     <!-- 2분류 -->
@@ -168,20 +168,21 @@
                         <td><input type="checkbox" name="b_itype" value="쇠고기류"> <span> 쇠고기류</span></td>    
                         <td><input type="checkbox" name="b_itype" value="돼지고기류"> <span> 돼지고기류</span></td>    
                         <td><input type="checkbox" name="b_itype" value="콩류"> <span> 콩류</span></td>
+                        <td><input type="checkbox" name="b_itype" value="기타"> <span> 기타</span></td>  
+                        <td><input type="checkbox" name="b_itype" value="닭고기류"> <span> 닭고기류</span></td>                        
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="b_itype" value="기타"> <span> 기타</span></td>  
-                        <td><input type="checkbox" name="b_itype" value="닭고기류"> <span> 닭고기류</span></td>  
                         <td><input type="checkbox" name="b_itype" value="알류"> <span> 알류</span></td>
                         <td><input type="checkbox" name="b_itype" value="해조류"> <span> 해조류</span></td>    
                         <td><input type="checkbox" name="b_itype" value="곡류"> <span> 곡류</span></td>
-                    </tr>
-                    <tr>
                         <td><input type="checkbox" name="b_itype" value="곡류"> <span> 채소류</span></td>   
                         <td><input type="checkbox" name="b_itype" value="밀가루"> <span> 밀가루</span></td>    
                         <td><input type="checkbox" name="b_itype" value="가곡식품류"> <span> 가곡식품류</span></td> 
-                        <td><input type="checkbox" name="b_itype" value="어류/패류"> <span> 어류/패류</span></td>              
-                        <td><input type="checkbox" name="b_itype" value="과일류"> <span> 과일류</span></td>     
+                        <td><input type="checkbox" name="b_itype" value="어류/패류"> <span> 어류/패류</span></td>
+                    </tr>
+                    <tr>             
+                        <td><input type="checkbox" name="b_itype" value="과일류"> <span> 과일류</span></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>  
                     </tr>
                     <tr></tr>
                     <!-- 인분 -->
@@ -191,48 +192,45 @@
                         <td><input type="checkbox" name="b_amount" value="2인분"> <span> 2인분</span></td>
                         <td><input type="checkbox" name="b_amount" value="3인분"> <span> 3인분</span></td>
                         <td><input type="checkbox" name="b_amount" value="4인분"> <span> 4인분</span></td>
-                        <td></td>
+                        <td></td><td></td><td></td>
                     </tr>
                     <tr>
                         <td style="vertical-align:middle;">4분류</td>
                         <td><input type="checkbox" name="b_difficulte" value="초보환영"> <span> 초보환영</span></td>
                         <td><input type="checkbox" name="b_difficulte" value="보통"> <span> 보통</span></td>
                         <td><input type="checkbox" name="b_difficulte" value="어려움"> <span> 어려움</span></td>
-                        <td></td><td></td>
+                        <td></td><td></td><td></td><td></td>
                     </tr>
                     <tr>
-                        <td rowspan="4" style="vertical-align:middle;">5분류</td>
+                        <td rowspan="3" style="vertical-align:middle;">5분류</td>
                         <td><input type="checkbox" name="b_time" value="5분"> <span> 5분</span></td>
                         <td><input type="checkbox" name="b_time" value="10분"> <span> 10분</span></td>
                         <td><input type="checkbox" name="b_time" value="15분"> <span> 15분</span></td>
                         <td><input type="checkbox" name="b_time" value="20분"> <span> 20분</span></td>
                         <td><input type="checkbox" name="b_time" value="25분"> <span> 25분</span></td>
-                    </tr>
-                    <tr>
                         <td><input type="checkbox" name="b_time" value="30분"> <span> 30분</span></td>
                         <td><input type="checkbox" name="b_time" value="35분"> <span> 35분</span></td>
+                    </tr>
+                    <tr>
                         <td><input type="checkbox" name="b_time" value="40분"> <span> 40분</span></td>
                         <td><input type="checkbox" name="b_time" value="50분"> <span> 50분</span></td>
                         <td><input type="checkbox" name="b_time" value="60분"> <span> 60분</span></td>
-                    </tr>
-                    <tr>
                         <td><input type="checkbox" name="b_time" value="70분"> <span> 70분</span></td>
                         <td><input type="checkbox" name="b_time" value="80분"> <span> 80분</span></td>
                         <td><input type="checkbox" name="b_time" value="90분"> <span> 90분</span></td>
                         <td><input type="checkbox" name="b_time" value="120분"> <span> 120분</span></td>
-                        <td><input type="checkbox" name="b_time" value="140분"> <span> 140분</span></td>
                     </tr>
                     <tr>
+                        <td><input type="checkbox" name="b_time" value="140분"> <span> 140분</span></td>
                         <td><input type="checkbox" name="b_time" value="175분"> <span> 175분</span></td>
                         <td><input type="checkbox" name="b_time" value="180분"> <span> 180분</span></td>
-                        <td></td><td></td><td></td>
+                        <td></td><td></td><td></td><td></td>
                     </tr>
                 </table>                 
                 <div class=" d-flex justify-content-center">
                 <button type="submit" class="btn btn-warning rounded-pill m-2" id="btn">소분류 검색</button>   
                 </div> 
-                </form>
-                      
+                </form>                      
             </div>
             <!-- 소분류 끝 -->
 

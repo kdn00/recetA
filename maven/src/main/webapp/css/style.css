@@ -280,6 +280,7 @@
     /* text-align: left; */
     /* background: rgb(252, 252, 250); */
     font-weight: bold;
+    width: auto;
 }
 
 #btn{
