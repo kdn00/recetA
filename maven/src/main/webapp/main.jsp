@@ -205,7 +205,7 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Sale & Revenue Start 
+            <!-- Sale & Revenue  Start 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <img src="https://mediahub.seoul.go.kr/wp-content/uploads/2020/10/d13ea4a756099add8375e6c795b827ab.jpg">
