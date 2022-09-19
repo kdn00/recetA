@@ -140,6 +140,12 @@
 	</select>
 	
 <!-- 냉장고 -->
+	<!-- 키값 가져오기 -->
+	<select id="m_key_search" parameterType="String"
+							resultType="Integer">
+		select m_key from member where m_id=#{m_id}
+	</select>
+	
 	
 	<!-- 보유재료 검색 -->
 	<select id="refri_search"
@@ -162,6 +168,7 @@
 		delete from keep where s_name=#{s_name}
 	</delete>
 	
+
 	<!-- 페이징 sql -->
 	<!-- 검색 결과 페이징 -->
 	<select id="pagingsearch" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
@@ -199,7 +206,16 @@
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_difficulte}
 	</select>
 	
+
+	<!-- 재료 검색 -->
+	<select id="Ingred_search"	parameterType="com.recetA.domain.RefriMember"
+								resultType="com.recetA.domain.RefriMember">
+		select s_name from search where s_name like '%'||#{s_name}||'%'
+	</select>
 	
-	
+	<!-- 보유재료 추가 -->
+	<insert id="Ingred_plus" parameterType="com.recetA.domain.RefriMember">
+		INSERT INTO KEEP (k_key, r_key, k_volume, s_name, k_unit, k_edate) VALUES(refri_seq.nextval,#{r_key},#{k_volume},#{s_name},#{k_unit},null)
+	</insert>
 	
 </mapper>
