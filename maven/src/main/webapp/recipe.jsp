@@ -175,7 +175,7 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                         <%=p.getP_url() %><%} else{%>
                         <%="" %>
                         <%} %>
-                        " class="float-start" id="step">
+                        " class="float-start" id="step" width="300px">
                         <span><%=p.getP_explanation() %></span> 
                     </div>
                     <%} %>
