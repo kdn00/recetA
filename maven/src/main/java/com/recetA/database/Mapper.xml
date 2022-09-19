@@ -162,4 +162,44 @@
 		delete from keep where s_name=#{s_name}
 	</delete>
 	
+	<!-- 페이징 sql -->
+	<!-- 검색 결과 페이징 -->
+	<select id="pagingsearch" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_name LIKE '%'||#{search}||'%'
+	</select>
+	
+	<!-- 대분류 페이징 -->
+	<select id="pagingbCtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype}
+	</select>
+	
+	<!-- 소분류 페이징 -->
+	<!-- 음식 분류 -->
+	<select id="pagingbFtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_ftype}
+	</select>
+	
+	<!-- 재료 분류 -->
+	<select id="pagingbItype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_itype}
+	</select>
+	
+	<!-- 조리 시간 -->
+	<select id="pagingbTime" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_time}
+	</select>
+	
+	<!-- n인분 -->
+	<select id="pagingbAmount" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_amount}
+	</select>
+	
+	<!-- 난이도 -->
+	<select id="pagingbbDifficulte" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_difficulte}
+	</select>
+	
+	
+	
+	
 </mapper>
