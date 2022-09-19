@@ -131,26 +131,33 @@
 
                 <div id="tabs-4-1">
                     <ul style="word-spacing: 10px">
-             <%--  <%
-                        List<RefriMember> refri = null;
-                            if (refri == null) {
-                                refri = (List) session.getAttribute("refri");
-                            }else
-                            for (int i = 0; i < refri.size(); i++) {
-                            %>
-                                <li><%=refri.get(i).getS_name()%> <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
-                                <%=refri.get(i).getK_edate()%> 
-                                </li>
-                        <br>
-                        <% } %> --%>
+               
                         
                         
                         <table class="table table-borderless" id="table-refrigerator-count">
                             <tr>
                                 <td>재료명</td>
                                 <td>남은개수</td>
-                                <!-- <td> </td> -->
-                            <!-- <th>유통기한</th> -->
+                                <%
+                        List<RefriMember> refri = (List) session.getAttribute("refri");
+                            if (refri != null) {
+                            for (int i = 0; i < refri.size(); i++) {
+                            %>
+                            <tr>
+                                <td><%=refri.get(i).getS_name()%> 
+                                </td>
+                                <td>
+                                <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
+                                </td>
+                                <td>
+                                <a href="Ingred_delCon?s_name=<%=refri.get(i).getS_name()%>" class="btn btn-primary">삭제</a>
+                                </td>
+                                
+                          	</tr>
+                        <br>
+                        <%}
+                          }%> 
+                                
                             </tr>
                         </table>
 
@@ -180,9 +187,6 @@
                                     <input type="submit" value="수정" class="btn btn-primary">
                                 </td>
                                 <td>
-                                </form>
-                                <form action="Ingred_del" method="post">
-                                    <input type="submit" value="삭제" class="btn btn-primary">
                                 </form>
                             </td>
                         </tr>
