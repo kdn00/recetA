@@ -88,6 +88,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.Ingred_delCon</servlet-class>
   </servlet>
+    <servlet>
+  	<servlet-name>Ingred_updateCon</servlet-name>
+  	<display-name>Ingred_updateCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Ingred_updateCon</servlet-class>
+  </servlet>
   <servlet>
   	<servlet-name>RefriCon</servlet-name>
   	<display-name>RefriCon</display-name>
@@ -99,6 +105,24 @@
   	<display-name>PagingCon</display-name>
   	<description></description>
   	<servlet-class>com.recetA.controller.PagingCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Ingred_plusCon</servlet-name>
+  	<display-name>Ingred_plusCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Ingred_plusCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Ingred_search</servlet-name>
+  	<display-name>Ingred_search</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Ingred_search</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Key_Con</servlet-name>
+  	<display-name>Key_Con</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Key_Con</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
@@ -163,5 +187,21 @@
   <servlet-mapping>
   	<servlet-name>PagingCon</servlet-name>
   	<url-pattern>/PagingCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Ingred_plusCon</servlet-name>
+  	<url-pattern>/Ingred_plusCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Ingred_search</servlet-name>
+  	<url-pattern>/Ingred_search</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Ingred_updateCon</servlet-name>
+  	<url-pattern>/Ingred_updateCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Key_Con</servlet-name>
+  	<url-pattern>/Key_Con</url-pattern>
   </servlet-mapping> 
 </web-app>
