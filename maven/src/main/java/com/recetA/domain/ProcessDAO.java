@@ -1,4 +1,8 @@
 package com.recetA.domain;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -7,14 +11,13 @@ import com.recetA.domain.Process;
 public class ProcessDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
-	
-	//과정 순서, 과정 설명, 과정 이미지 출력
-	public int selectDetailRecipe(String b_code) {
-		int cnt = 0;
+	public List<Process> selectDetailRecipe(int b_code) {
+		List<Process> cnt = null;
 		try {
-			cnt = sqlSession.update("selectRecipedetail2", b_code);
+			
+			cnt = sqlSession.selectList("selectRecipedetail2", b_code);
 
-			if (cnt != 0) {
+			if (cnt != null) {
 				System.out.println("상세 레시피 공개 성공");
 				sqlSession.commit();
 			} else {

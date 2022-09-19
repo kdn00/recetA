@@ -141,8 +141,8 @@ public class BasicDAO {
 	} // 난이도 끝	
 
 	// 상세 페이지 레시피 이름 출력
-	public String selectbName(int b_code) {
-		String b_name = null;
+	public List<Basic> selectbName(int b_code) {
+		List<Basic> b_name = null;
 		try {
 			b_name = sqlSession.selectOne("selectbName", b_code);
 			if (b_name != null) {
