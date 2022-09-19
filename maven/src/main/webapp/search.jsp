@@ -1,13 +1,12 @@
-<%@page import="com.recetA.domain.RefriMember"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>recetA-개인정보수정</title>
+    <title>recetA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,12 +43,12 @@
             </div>
         </div>
         <!-- Spinner End -->
-        
-		<!-- Sidebar Start -->
+
+        <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row rounded">
-                    <h3 class="text-primary text-white mb-0"><i class="fa fa-hashtag me-2"></i> recetA</h3>
+                    <h3 class="text-primary text-white"><i class="fa fa-hashtag me-2"></i> recetA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -67,15 +66,15 @@
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="korean.jsp" class="dropdown-item">한식</a>
-                            <a href="chinese.jsp" class="dropdown-item">중식</a>
-                            <a href="japanese.jsp" class="dropdown-item">일식</a>
-                            <a href="western.jsp" class="dropdown-item">양식</a>
-                            <a href="asia.jsp" class="dropdown-item">동남아시아</a>
-                            <a href="fusion.jsp" class="dropdown-item">퓨전</a>
+                            <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
+                            <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
+                            <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item">일식</a>
+                            <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
+                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
+                            <a href="RecipepageCon?b_ctype=fusion" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
-                    <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>
+                    <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
                 </div>
             </nav>
         </div>
@@ -105,17 +104,17 @@
                     <!-- 로그인 후 드롭다운 되는 코드
                     <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> -->
                     <a href="signin.jsp" class="nav-link">
-                        <i class="bi bi-person-check"></i>
-                            <span class="d-none d-lg-inline-flex">로그인</span>
+                    	<i class="bi bi-person-check"></i>
+                    	<span class="d-none d-lg-inline-flex">로그인</span>
                     </a>
                         
                         <!-- 로그인 후 드롭다운 되는 코드 -->
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="information.jsp" class="dropdown-item active">개인정보수정</a>
+                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                         </div>
-                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
+                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->                       
                     </div>
                 </div>
             </nav>
@@ -123,89 +122,90 @@
 
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
+                <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
+                
+                <div class="col-sm-12 ">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <span><h2>'검색어명'의 검색결과입니다.</h2></span>
+                        </div>
+                    </div>
+            <!-- 레시피  -->
+            <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4">
-                        <span><h2>나의 냉장고</h2></span>
-                        <br>
-
-                <div id="tabs-4-1">
-                    <ul style="word-spacing: 10px">
-               
-                        
-                        
-                        <table class="table table-borderless" id="table-refrigerator-count">
-                            <tr>
-                                <td>재료명</td>
-                                <td>남은개수</td>
-                                <%
-                        List<RefriMember> refri = (List) session.getAttribute("refri");
-                            if (refri != null) {
-                            for (int i = 0; i < refri.size(); i++) {
-                            %>
-                            <tr>
-                                <td><%=refri.get(i).getS_name()%> 
-                                </td>
-                                <td>
-                                <%=refri.get(i).getK_volume()%><%=refri.get(i).getK_unit()%>
-                                </td>
-                                <td>
-                                <a href="Ingred_delCon?s_name=<%=refri.get(i).getS_name()%>" class="btn btn-primary">삭제</a>
-                                </td>
-                                
-                          	</tr>
-                        <br>
-                        <%}
-                          }%> 
-                                
-                            </tr>
-                        </table>
-
-                            <table class="table table-borderless" id="table-refrigerator">
-                            <tr>
-                                <td>
-                                <form action="Ingred_update" method="post">
-                                    <input type="text" placeholder="재료명" id="corr3" name="name">
-                                </td>
-                                <td id="table-refrigerator-td"> 
-                                    <input type="number" placeholder="개수" id="corr" name="volume"> 
-                                </td>
-                                <td>   
-                                    <select id="Select_box" aria-label="Floating label select example" name="unit">
-                                        <option selected>단위 선택</option>
-                                        <option value="g">g</option>
-                                        <option value="kg">kg</option>
-                                        <option value="mL">mL</option>
-                                        <option value="L">L</option>
-                                        <option value="개">개</option>
-                                        <option value="쪽">쪽</option>
-                                        <option value="통">통</option>
-                                        <option value="마리">마리</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="submit" value="수정" class="btn btn-primary">
-                                </td>
-                                <td>
-                                </form>
-                            </td>
-                        </tr>
-                        </table>
-                    <br><br>
-                    <form action="Search_ingred" method="post">
-                        <li>
-                            <input type="text" placeholder="검색할 재료를 적어주세요!" name="search_ingred" id="search_ingred">
-                            <input type="submit" value="검색" class="btn btn-primary">
-                        </li>
-                    </form>
-                        <!-- 검색해서 받아온 데이터 출력하기 -->
-                    </ul>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4 text-center">
+                            <a href="#">
+                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
+                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
+            <!-- 레시피 끝 -->
+
+            <!-- 페이지 번호 -->
+            <nav aria-label="Page navigation" class="d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- 페이지 번호 끝 -->                
             </div>
             <!-- Blank End -->
+
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -224,6 +224,7 @@
             <!-- Footer End -->
         </div>
         <!-- Content End -->
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
