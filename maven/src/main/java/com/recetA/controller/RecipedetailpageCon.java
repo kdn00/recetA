@@ -24,9 +24,9 @@ public class RecipedetailpageCon extends HttpServlet {
 		
 		
 		HttpSession session = request.getSession();
-		int b_code =2;
-		
-		//int b_code = Integer.parseInt(session.getAttribute("b_code"));
+		//int b_code =2;
+		String aaa = (String) request.getParameter("b_code");
+		int b_code = Integer.parseInt(aaa);
 		
 		//p_order, p_explanation, p_url
 		ProcessDAO dao = new ProcessDAO();
@@ -59,7 +59,7 @@ public class RecipedetailpageCon extends HttpServlet {
 					//session.setAttribute("order", l.getP_order());
 					//session.setAttribute("exp", l.getP_explanation());
 					//session.setAttribute("url", l.getP_url());
-					response.sendRedirect("recipe2.jsp");
+					response.sendRedirect("recipe.jsp");
 				}
 				}
 		} else {

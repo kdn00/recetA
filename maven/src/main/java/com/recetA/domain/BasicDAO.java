@@ -144,7 +144,7 @@ public class BasicDAO {
 	public List<Basic> selectbName(int b_code) {
 		List<Basic> b_name = null;
 		try {
-			b_name = sqlSession.selectOne("selectbName", b_code);
+			b_name = sqlSession.selectList("selectbName", b_code);
 			if (b_name != null) {
 				System.out.println("상세 레시피 이름 dao 성공");
 				sqlSession.commit();

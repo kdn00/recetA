@@ -1,7 +1,10 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.recetA.domain.Process"%>
+<%@page import="com.recetA.domain.Ingredient" %>
+<%@page import="com.recetA.domain.Basic" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
+<%@page import ="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +39,12 @@
 </head>
 
 <body>
+<% 
+request.setCharacterEncoding("UTF-8");
+List<Ingredient> cnt2 = (List)session.getAttribute("cnt2");
+List<Process> cnt = (List)session.getAttribute("cnt");
+List<Basic> cnt3 = (List)session.getAttribute("cnt3");
+%>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -126,7 +135,9 @@
                 <div class="row g-4" style="margin-top: opx;">
                     <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h2>레시피 이름 --> ###</h2></span>
+                        <%for(Basic b : cnt3){ %>
+                            <span><h2><%=b.getB_name() %></h2></span>
+                         <%} %>
                         </div>
                     </div>
 
@@ -142,159 +153,33 @@
                                                 <th scope="col">[재료]</th>
                                                 <th scope="col">[양]</th>
                                             </tr>
+                                            <%for(Ingredient i : cnt2){ %>
                                             <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
+                                                <td><%=i.getI_name() %></td>
+                                                <td><%=i.getI_volume() %></td>
                                             </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
+                                           <%} %>
                                     </table>
                                  </div>
                             </div>
-                        </div>
-
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="text-center rounded p-4">
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table text-start align-middle table-bordered mb-0">
-                                        
-                                            <tr class="text-dark">
-                                                <th scope="col">[재료]</th>
-                                                <th scope="col">[양]</th>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01 Jan 2045</td>
-                                                <td>Paid</td>
-                                            </tr>
-                                    </table>                                   
-                                </div>
-                            </div>
-                        </div>
+                        </div>                        
                     </div>
+                    <%for(Process p : cnt){ %>
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
+                            <span><h3><%=p.getP_order() %></h3></span>
                         </div>
                     </div>
                     <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
+                        <img src="<%if(p.getP_url()!= null){ %>
+                        <%=p.getP_url() %><%} else{%>
+                        <%="" %>
+                        <%} %>
+                        " class="float-start" id="step">
+                        <span><%=p.getP_explanation() %></span> 
                     </div>
-                    
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3>step1</h3></span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    <!-- <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h4>step2</h4></span><br>
-                        </div>
-                    </div>
-                    <div >
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h4>step3</h4></span><br>
-                        </div>
-                    </div>
-                    <div >
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h4>step4</h4></span><br>
-                        </div>
-                    </div>
-                    <div >
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h4>step5</h4></span><br>
-                        </div>
-                    </div>
-                    <div >
-                        <img src="./img/aaa.jpg" class="float-start" id="step">
-                        <span>asdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrfasdfasdfasdlf;kjaslke jlkasjdfioawjefopiqwjedfioajsdfl;kjqawopeiifjaso;idjfo;awqiejrf</span> 
-                    </div> -->
-                    <!-- <div class="col-sm-12 ">
-                        <div class="bg-light rounded h-100 p-4 text-center" >
-                                <button type="button" class="btn btn-outline-link m-2"><h6>step2</h6></button><br>
-                        </div>
-                    </div> -->
-                    
-                </div>
+                    <%} %>
+                    </div>             
             </div>
             <!-- Blank End -->
 
