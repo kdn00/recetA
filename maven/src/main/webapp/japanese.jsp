@@ -68,8 +68,17 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">ID</h6>
-                        <span>이름</span>
+                        <%-- JSTL 방식 --%>
+						<c:choose>
+							<c:when test="${empty loginMember}">
+								<h6 class="mb-0">ID</h6>
+								<span>이름</span>
+							</c:when>
+							<c:otherwise>
+								<h6 class="mb-0">${loginMember.m_id}</h6>
+								<%-- <span>이름</span> --%>
+							</c:otherwise>
+						</c:choose>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
