@@ -94,6 +94,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.RefriCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PagingCon</servlet-name>
+  	<display-name>PagingCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.PagingCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -153,5 +159,9 @@
   <servlet-mapping>
   	<servlet-name>RefriCon</servlet-name>
   	<url-pattern>/RefriCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PagingCon</servlet-name>
+  	<url-pattern>/PagingCon</url-pattern>
   </servlet-mapping> 
 </web-app>

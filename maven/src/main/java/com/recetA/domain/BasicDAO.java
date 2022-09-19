@@ -48,7 +48,7 @@ public class BasicDAO {
 		return bigbasic;
 	} // 대분류 끝
 
-	// 소분류 처리 기능 --> 다시 고민해야함
+	// 소분류 처리 기능
 	// 5개 함수 다 만들래...
 	// 음식 분류 기능
 	public List<Basic> selectbFtype(Basic b_ftype) {
@@ -121,7 +121,7 @@ public class BasicDAO {
 		} // finally 끝
 		return smallbasic;
 	} // n인분 끝
-	
+
 	// 난이도 기능
 	public List<Basic> selectbDifficulte(Basicdifficulte b_difficulte) {
 		List<Basic> smallbasic = null;
@@ -138,7 +138,7 @@ public class BasicDAO {
 			sqlSession.close();
 		} // finally 끝
 		return smallbasic;
-	} // 난이도 끝	
+	} // 난이도 끝
 
 	// 상세 페이지 레시피 이름 출력
 	public List<Basic> selectbName(int b_code) {
@@ -157,5 +157,24 @@ public class BasicDAO {
 		} // finally 끝
 		return b_name;
 	} // 상세 페이지에 레시피 이름 출력 끝
+
+	// 검색 처리 기능
+	public List<Basic> selectsearch(String search) {
+		List<Basic> searchresult = null;
+		try {
+			searchresult = sqlSession.selectList("selectsearch", search);
+			if (searchresult != null) {
+				System.out.println("검색 dao 성공");
+				System.out.println(searchresult.get(0).getB_name());
+				sqlSession.commit();
+			} else {
+				System.out.println("검색 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return searchresult;
+	} // 검색 끝
 
 }

@@ -1,6 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="com.recetA.domain.Basic"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
@@ -32,6 +34,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -121,65 +124,32 @@
             <!-- Navbar End -->
 
             <!-- Blank Start -->
+            <%
+            	String search = (String)session.getAttribute("search");
+            %>
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                 
                 <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h2>'검색어명'의 검색결과입니다.</h2></span>
+                            <span><h2><%=search%>의 검색결과입니다.</h2></span>
                         </div>
                     </div>
             <!-- 레시피  -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
+                  <%if (session.getAttribute("selectsearch") != null) {
+                	  List<Basic> selectsearch = (List) session.getAttribute("selectsearch");
+              			for(int i=0; i<selectsearch.size(); i++){ %>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=selectsearch.get(i).getB_code()%>">
+                            <img src="<%=selectsearch.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectsearch.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
+                    <%} }  %>
                 </div>
             </div>
             <!-- 레시피 끝 -->

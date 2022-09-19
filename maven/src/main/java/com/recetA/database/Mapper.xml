@@ -110,6 +110,13 @@
 		intersect
 		select b_code, b_name, b_url from basic where b_difficulte=#{b_difficulte}
 	</select>
+
+	<!-- 검색 sql -->
+	<select id="selectsearch" parameterType="com.recetA.domain.Basic"
+				  			resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from basic where b_name LIKE '%'||#{search}||'%'
+	</select>
+	
 	
 	<!-- 레시피 상세 페이지 sql -->
 	<!-- 레시피 이름 출력 -->
