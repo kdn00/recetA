@@ -1,3 +1,4 @@
+<%@page import="com.recetA.domain.MemberDAO"%>
 <%@page import="com.recetA.domain.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="com.recetA.domain.Basic"%>
@@ -13,7 +14,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-공지사항</title>
+    <title>recetA-회원관리</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,7 +47,9 @@
 <body>
 	<%
 	// 로그인 세션 불러오기
-	Member loginMember = (Member)session.getAttribute("loginMember"); %>
+	Member loginMember = (Member)session.getAttribute("loginMember");
+	MemberDAO dao = new MemberDAO();
+	List<Member> memberlist = dao.memberAll();%>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -151,6 +154,11 @@
                        		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                             <c:if test="${loginMember.m_id eq 'admin'}">
+	                            <!-- admin만 -->
+	                             <a href="Manager.jsp" class="dropdown-item">회원관리</a>
+	                             <!-- admin만 끝 -->
+	                             </c:if>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                             </div>
                    		    </div>
@@ -168,13 +176,13 @@
             	<div class="row vh-198 rounded align-items-center justify-content-center mx-0">                
                 	<div class="col-sm-12" style="margin-top: opx;">
                 		<div class="bg-light rounded h-100 p-4 text-center" style="margin-bottom:23px;">
-                            <span><h2>공지사항</h2></span>
+                            <span><h2>회원관리</h2></span>
                         </div>
                     </div>
             
             <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">회원정보</h6>
+                        <h6 class="mb-0"></h6>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered  mb-0" id="managerment">
@@ -187,24 +195,14 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                 <%for(Member m : memberlist){ %>
                                 <tr>
-                                    <td>a0123</td>
-                                    <td>영지</td>
-                                    <td>123</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">삭제</a></td>
+                                    <td><%=m.getM_id() %></td>
+                                    <td><%=m.getM_name() %></td>
+                                    <td><%=m.getM_tel() %></td>
+                                    <td><a class="btn btn-sm btn-primary" href="AdminDeleteCon?m_key=<%=m.getM_key() %>">삭제</a></td>
                                 </tr>
-                                <tr>
-                                    <td>b0123</td>
-                                    <td>동현</td>
-                                    <td>123</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">삭제</a></td>
-                                </tr>
-                                <tr>
-                                    <td>c0123</td>
-                                    <td>기범</td>
-                                    <td>123</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">삭제</a></td>
-                                </tr>
+                               <%} %>
                             </tbody>
                         </table>
                     </div>

@@ -1,5 +1,7 @@
 package com.recetA.domain;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -108,7 +110,22 @@ public class MemberDAO {
 		return cnt;
 	} // 회원수정 끝
 
-	
+	//관리자 전용 회원조회
+		public List<Member> memberAll(){
+			List<Member> memberlist = null;
+			
+			try {
+				memberlist = sqlSession.selectList("memberAll");
+				if(memberlist != null) {
+					sqlSession.commit();
+				}else {
+					sqlSession.rollback();
+				}
+			}finally {
+				sqlSession.close();
+			}	
+			return memberlist;
+		}//회원조회 끝
 
 	// 회원 탈퇴
 	//나만의 냉장고 삭제 시작
@@ -129,7 +146,7 @@ public class MemberDAO {
 		} // finally 끝
 		return cnt;
 	} // 삭제 끝
-	public int deleteFridge1(String k_key) {
+	public int deleteFridge1(int k_key) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.update("deleteFridge1", k_key);

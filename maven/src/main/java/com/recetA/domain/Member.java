@@ -24,6 +24,15 @@ public class Member {
 		this.m_tel = m_tel;
 	}
 	
+	//회원정보 조회용
+			public Member(int m_key, String m_id, String m_name, String m_tel) {
+				super();
+				this.m_key = m_key;
+				this.m_id = m_id;
+				this.m_name = m_name;
+				this.m_tel = m_tel;
+	}
+			
 	// 로그인, 마이페이지 확인 객체
 	public Member(String m_id, String m_pw) {
 		this.m_id = m_id;

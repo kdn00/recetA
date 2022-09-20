@@ -52,6 +52,12 @@
 		delete from member where m_key=#{m_key}
 	</delete>
 	<!-- 회원 탈퇴 끝 -->
+	<!-- 관리자 회원정보 확인 -->
+	<select id="memberAll" parameterType="com.recetA.domain.Member"
+							resultType="com.recetA.domain.Member">
+		select m_key, m_id, m_name, m_tel from member
+	</select>
+	<!-- 확인 끝 -->
 	
 	<!-- Basic Vo 파일 사용 -->
 	<!-- 대분류 선택x 랜덤 띄우기 -->
