@@ -267,7 +267,7 @@
                                         <option value="마리">마리</option>
                                     </select>
                                 </td>
-                                <input type="submit" value="추가" class="plus">
+                                <input type="submit" value="추가" class="btn btn-outline-primary">
                                 </form>
                           	</tr>
                         <br>
