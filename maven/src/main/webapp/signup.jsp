@@ -36,6 +36,9 @@
 <script>
         function check_pw(){
             var pw = document.getElementById('floatingPassword').value;
+            var SC = ["!","@","#","$","%"];
+            var check_SC = 0;
+            
             if(document.getElementById('floatingPassword').value !='' && document.getElementById('floatingPassword2').value!=''){
                 if(document.getElementById('floatingPassword').value==document.getElementById('floatingPassword2').value){
                     document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
@@ -43,12 +46,43 @@
                 }
                 else{
                     document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
-                    document.getElementById('check').style.color='red';
+                    document.getElementById('check').style.color='firebrick';
                 }
             }
         }
     </script>
-
+<script>
+	function signup() {
+		var pw = document.getElementById('floatingPassword').value;
+		var SC = ["!","@","#","$","%","^","&","*"];
+        var check_SC = 0;
+		if(pw.length < 6 || pw.length>16){
+            window.alert('비밀번호는 6글자 이상, 16글자 이하만 이용 가능합니다.');
+            document.getElementById('pw').value='';
+            return false;
+        }
+        for(var i=0;i<SC.length;i++){
+            if(pw.indexOf(SC[i]) != -1){
+                check_SC = 1;
+            }
+        }
+        if(check_SC == 0){
+            window.alert('!,@,#,$,%,^,&,* 의 특수문자가 들어가 있지 않습니다.')
+            document.getElementById('pw').value='';
+            return false;
+        }
+        if(document.getElementById('floatingPassword').value !='' && document.getElementById('floatingPassword2').value!=''){
+            if(document.getElementById('floatingPassword').value==document.getElementById('floatingPassword2').value){
+            	window.alert('회원가입 성공');
+            	document.getElementById('frm').submit();
+            }
+            else{
+            	window.alert('비밀번호가 일치하지 않습니다.');
+            	return false;
+            }
+        }
+	}
+</script>
 
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -71,14 +105,14 @@
                             </a>
                             <h3>회원가입</h3>
                         </div>
-                        <form action="JoinCon" method="post">
+                        <form id="frm" action="JoinCon" method="post">
                         <div class="form-floating mb-3">
                             <input type="text" name="id" class="form-control" id="floatingInput" placeholder="ID">
                             <label for="floatingInput">ID</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password" onchange="check_pw()">
-                            <label for="floatingPassword">Password</label>
+                            <label for="floatingPassword">Password (특수문자 포함 6자 이상)</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" name="pw2" class="form-control" id="floatingPassword2" placeholder="Password" onchange="check_pw()">
@@ -91,15 +125,14 @@
                         </div> -->
                         <div class="form-floating mb-3">
                             <input type="text" name="name" class="form-control" id="floatingText" placeholder="NAME">
-                            <label for="floatingText">이름</label>
+                            <label for="floatingText">Name</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="num" name="tel" class="form-control" id="floatingInput" placeholder="-없이입력">
-                            <label for="floatingInput">전화번호</label>
+                            <label for="floatingInput">Tel</label>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">회원가입</button>
                         </form>
+                        <a href="#" onclick="return signup()" class="btn btn-primary py-3 w-100 mb-4">회원가입</a>
                         <p class="text-center mb-0">Already have an Account? <a href="signin.jsp">로그인</a></p>      
                     </div>
                 </div>
