@@ -1,11 +1,13 @@
+<%@page import="com.recetA.domain.RefriMember"%>
 <%@page import="com.recetA.domain.Member"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="com.recetA.domain.Process"%>
-<%@page import="com.recetA.domain.Ingredient" %>
-<%@page import="com.recetA.domain.Basic" %>
+<%@page import="java.util.List"%>
+<%@page import="com.recetA.domain.Basic"%>
+<%@page import="com.recetA.domain.BasicDAO"%>
+<%@page import="java.util.Random"%>
+<%@page import="javax.servlet.http.HttpSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import ="java.util.List" %>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +45,9 @@
 </head>
 
 <body>
-<%
+	<%
 	// 로그인 세션 불러오기
-	Member loginMember = (Member)session.getAttribute("loginMember");
-	%>
+	Member loginMember = (Member)session.getAttribute("loginMember"); %>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -69,14 +70,23 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">ID</h6>
-                        <span>이름</span>
+                        <%-- JSTL 방식 --%>
+						<c:choose>
+							<c:when test="${empty loginMember}">
+								<h6 class="mb-0">ID</h6>
+								<span>이름</span>
+							</c:when>
+							<c:otherwise>
+								<h6 class="mb-0">${loginMember.m_id}</h6>
+								<%-- <span>이름</span> --%>
+							</c:otherwise>
+						</c:choose>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
                             <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
@@ -96,43 +106,63 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="signup.jsp" class="nav-link" >
-                            <i class="bi bi-person-circle"></i>
-                            <span class="d-none d-lg-inline-flex">회원가입</span>
-                        </a>
-                    </div>
-                    <div class="nav-item dropdown">
-                    <!-- 로그인 후 드롭다운 되는 코드
-                    <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> -->
-                    <a href="signin.jsp" class="nav-link">
-                    	<i class="bi bi-person-check"></i>
-                    	<span class="d-none d-lg-inline-flex">로그인</span>
-                    </a>
-                        
-                        <!-- 로그인 후 드롭다운 되는 코드 -->
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+	                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+	                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+	                </a>
+	                <a href="#" class="sidebar-toggler flex-shrink-0">
+	                    <i class="fa fa-bars"></i>
+	                </a>
+	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
+	                </form>
+	                <div class="navbar-nav align-items-center ms-auto">
+	                <c:choose> 
+		                <c:when test="${empty loginMember}">
+		                     <div class="nav-item dropdown">
+		                        <a href="signup.jsp" class="nav-link" >
+		                            <i class="bi bi-person-circle"></i>
+		                            <span class="d-none d-lg-inline-flex">회원가입</span>
+		                        </a>
+		                     </div>
+		                     <div class="nav-item dropdown">
+		                     <%-- 로그인 후 드롭다운 되는 코드
+		                     <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> --%>
+		                     <a href="signin.jsp" class="nav-link">
+		                        <i class="bi bi-person-check"></i>
+		                            <span class="d-none d-lg-inline-flex">로그인</span>
+		                     </a>
+		                </c:when>
+	                    <%-- 지워야할 로그아웃 --%>
+		                <c:otherwise>
+		               		<div class="nav-item dropdown">
+		                    <%-- <a href="LogoutCon" class="dropdown-item">로그아웃</a> --%>
+		                        
+		                        <%-- 로그인 후 드롭다운 되는 코드 --%>
+		                        <%-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+		                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
+		                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+		                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
+		                        </div> --%>
+		                    <div class="nav-item dropdown">
+                      		<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                      			<i class="bi bi-person-bounding-box"></i>  
+                            		<span class="d-none d-lg-inline-flex">${loginMember.m_id} 님 환영합니다~!</span>
+                       		</a>
+                       		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
-                            <a href="bookmark.jsp" class="dropdown-item active">즐겨찾기</a>
+							<a href="bookmark.jsp" class="dropdown-item active">즐겨찾기</a>                            
                             <!-- admin만 -->
 	                        <a href="#" class="dropdown-item">회원관리</a>
 	                        <!-- admin만 끝 -->
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
-                        </div>
-                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->                       
-                    </div>
-                </div>
+                            </div>
+                   		    </div>
+		                </c:otherwise>
+	               </c:choose>
+	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
+	                    </div>
+	                </div>               		 
             </nav>
             <!-- Navbar End -->
 
