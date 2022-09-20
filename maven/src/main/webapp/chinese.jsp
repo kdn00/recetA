@@ -164,8 +164,7 @@
 	               </c:choose>
 	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
 	                    </div>
-	                </div>
-               		 
+	                </div>               		 
             </nav>
             <!-- Navbar End -->
 
