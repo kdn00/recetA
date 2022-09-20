@@ -129,8 +129,7 @@
 		                     <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> --%>
 		                     <a href="signin.jsp" class="nav-link">
 		                        <i class="bi bi-person-check"></i>
-		                            <span class="d-none d-lg-inline-flex">로그인</span>
-		                     </a>
+		                            <span class="d-none d-lg-inline-flex">로그인</span>		                     </a>
 		                </c:when>
 	                    <%-- 지워야할 로그아웃 --%>
 		                <c:otherwise>
@@ -163,21 +162,40 @@
             </nav>
              <!-- Navbar End -->
 
-           <!-- Blank Start -->
+           <!-- 공지사항 Start -->
 			<div class="container-fluid pt-4 px-4">
             	<div class="row vh-198 rounded align-items-center justify-content-center mx-0">                
-                	<div class="col-sm-12" style="margin-top: opx;">
+                	<div class="col-sm-12 ">
                 		<div class="bg-light rounded h-100 p-4 text-center">
                             <span><h2>공지사항</h2></span>
                         </div>
                     </div>
             
-            <div class="container-fluid pt-4 px-4">  
-              <div class="col-md-6">
-               	<span>안녕하세요. recetA입니다.</span>                   
-              </div>
+		            <!-- 공지사항 -->
+		            <div class="container-fluid pt-4 px-4">  
+		              <div class="col-md-6">
+		               	<span>안녕하세요. recetA입니다.</span>                   
+		              </div>		              
+		             	<!-- 공지사항 끝  -->
+		              
+		              <!-- 문의사항 시작 -->
+		              <div class="bg-light rounded h-100 p-4" style="margin-top:50%">
+		              <div class="mb-3">
+		              	  <span><h6>문의사항</h6></span>
+						  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+						  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email address">
+						
+						<div class="mb-3">
+						  <label for="exampleFormControlTextarea1" class="form-label"><br>문의사항 입력해주세요</label>
+						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						  </div>
+						</div>
+		              </div>
+		              <!-- 문의사항 끝 -->            
+            		</div>
+            	</div>
             </div>
-            <!-- Blank End -->
+            <!-- 공지사항 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
