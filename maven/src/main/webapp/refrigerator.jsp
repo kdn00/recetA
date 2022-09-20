@@ -151,6 +151,9 @@
                        		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                            <!-- admin만 -->
+	                        <a href="#" class="dropdown-item">회원관리</a>
+	                        <!-- admin만 끝 -->                            
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                             </div>
                    		    </div>
