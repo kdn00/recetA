@@ -15,7 +15,7 @@
 	<!-- 회원가입 sql -->
 	<!-- 1. 회원가입 sql -->
 	<insert id="insertMember" parameterType="com.recetA.domain.Member">
-		insert into member values(member_seq.nextval,#{m_id},#{m_name},#{m_pw},#{m_tel})
+		insert into member values((SELECT NVL(MAX(m_key), 0) + 1 FROM member),#{m_id},#{m_name},#{m_pw},#{m_tel})
 	</insert>
 	
 	<!-- 2. 가입한 회원의 아이디를 조건으로 기본키 검색 -->
@@ -26,7 +26,7 @@
 	
 	<!-- 3. 검색한 기본키로 냉장고 테이블의 기본키 생성 -->
 	<insert id="insertMember3" parameterType="com.recetA.domain.Member">
-		insert into refri values(refri_seq.nextval,#{m_key})
+		insert into refri values((SELECT NVL(MAX(m_key), 0) + 1 FROM refri),#{m_key})
 	</insert>
 	
 	<!-- 로그인 sql -->
@@ -42,13 +42,13 @@
 	
 	<!-- 회원 탈퇴 sql = 외래 키로 되어있어서 자식 삭제 후 부모 삭제 테크타야함-->
 	<!-- 나만의 냉장고 삭제 및 회원 탈퇴 sql -->
-	<delete id ="deleteFridge" parameterType="String">
+	<delete id ="deleteFridge" parameterType="int">
 		delete from keep where r_key=#{m_key}
 	</delete>
-	<delete id="deleteMember1" parameterType="String">
+	<delete id="deleteMember1" parameterType="int">
 		delete from refri where r_key=#{m_key}
 	</delete>
-	<delete id="deleteMember" parameterType="String">
+	<delete id="deleteMember" parameterType="int">
 		delete from member where m_key=#{m_key}
 	</delete>
 	<!-- 회원 탈퇴 끝 -->

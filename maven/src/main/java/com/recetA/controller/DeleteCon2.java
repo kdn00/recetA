@@ -18,8 +18,8 @@ public class DeleteCon2 extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		
-		String m_key = (String) session.getAttribute("m_key");
+		System.out.println("del 들어왔어요");
+		int m_key = (int) session.getAttribute("r_key");
 		
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.deleteFridge(m_key);
@@ -44,6 +44,7 @@ public class DeleteCon2 extends HttpServlet {
 		} else {
 			System.out.println("회원삭제 실패");
 		}
+		session.removeAttribute("loginMember");
 		response.sendRedirect("main.jsp");
 	}
 }

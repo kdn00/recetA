@@ -112,7 +112,7 @@ public class MemberDAO {
 
 	// 회원 탈퇴
 	//나만의 냉장고 삭제 시작
-	public int deleteMember1(String m_key) {
+	public int deleteMember1(int m_key) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.update("deleteMember1", m_key);
@@ -146,7 +146,7 @@ public class MemberDAO {
 		} // finally 끝
 		return cnt;
 	} // 삭제 끝
-	public int deleteMember(String m_key) {
+	public int deleteMember(int m_key) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.update("deleteMember", m_key);
@@ -164,7 +164,7 @@ public class MemberDAO {
 		return cnt;
 	} // 회원 탈퇴 끝
 	
-	public int deleteFridge(String m_key) {
+	public int deleteFridge(int m_key) {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.update("deleteFridge", m_key);
