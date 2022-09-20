@@ -180,38 +180,70 @@
 	<select id="pagingsearch" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_name LIKE '%'||#{search}||'%'
 	</select>
-	
+
 	<!-- 대분류 페이징 -->
 	<select id="pagingbCtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype}
+		select b_code, b_name, b_url from (
+    		select rownum num, b.* from (
+        		select b.* from basic b where b.b_ctype=#{b_ctype} order by b_code
+        	) b
+    	)
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
+	
 	
 	<!-- 소분류 페이징 -->
-	<!-- 음식 분류 -->
+	<!-- 음식 분류 페이징 -->
 	<select id="pagingbFtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_ftype}
+		select b_code, b_name, b_url from (
+		    select rownum num, b.* from (
+		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_ftype=#{b_ftype} order by b_code
+		    ) b
+		)
+		where NUM BETWEEN #{start_page} AND #{end_page};
 	</select>
 	
-	<!-- 재료 분류 -->
+	<!-- 재료 분류 페이징 -->
 	<select id="pagingbItype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_itype}
+		select b_code, b_name, b_url from (
+		    select rownum num, b.* from (
+		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_itype=#{b_itype} order by b_code
+		    ) b
+		)
+		where NUM BETWEEN #{start_page} AND #{end_page};
 	</select>
 	
-	<!-- 조리 시간 -->
+	
+	<!-- 조리 시간 페이징 -->
 	<select id="pagingbTime" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_time}
+		select b_code, b_name, b_url from (
+		    select rownum num, b.* from (
+		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_time=#{b_time} order by b_code
+		    ) b
+		)
+		where NUM BETWEEN #{start_page} AND #{end_page};
 	</select>
-	
-	<!-- n인분 -->
+
+	<!-- n인분 페이징 -->
 	<select id="pagingbAmount" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_amount}
+		select b_code, b_name, b_url from (
+		    select rownum num, b.* from (
+		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_amount=#{b_amount} order by b_code
+		    ) b
+		)
+		where NUM BETWEEN #{start_page} AND #{end_page};
 	</select>
 	
-	<!-- 난이도 -->
-	<select id="pagingbbDifficulte" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_difficulte}
+	<!-- 난이도 페이징 -->
+	<select id="pagingbDifficulte" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from (
+		    select rownum num, b.* from (
+		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_difficulte=#{b_difficulte} order by b_code
+		    ) b
+		)
+		where NUM BETWEEN #{start_page} AND #{end_page};
 	</select>
-	
+
 
 	<!-- 재료 검색 -->
 	<select id="Ingred_search"	parameterType="com.recetA.domain.RefriMember"
