@@ -253,7 +253,7 @@
                                     </a>
                                   </div>
                                   
-                                  
+                                 
                                   <div class="carousel-item">
                                   <a href="RecipedetailpageCon?b_code=${randomrecipe2.b_code}">
                                     <img src="${randomrecipe2.b_url}" height="547" class="d-block w-100" alt="...">
