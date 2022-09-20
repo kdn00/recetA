@@ -2,22 +2,15 @@
 <%@page import="com.recetA.domain.Process"%>
 <%@page import="com.recetA.domain.Ingredient" %>
 <%@page import="com.recetA.domain.Basic" %>
-<%@page import="com.recetA.domain.Member"%>
-<%@page import="java.util.List"%>
-<%@page import="com.recetA.domain.Basic"%>
-<%@page import="com.recetA.domain.BasicDAO"%>
-<%@page import="java.util.Random"%>
-<%@page import="javax.servlet.http.HttpSession"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+    pageEncoding="UTF-8"%>
+<%@page import ="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-레시피</title>
+    <title>recetA-즐겨찾기</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,20 +36,15 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
 </head>
 
-	<body>
-	<%
-	// 로그인 세션 불러오기
-	Member loginMember = (Member)session.getAttribute("loginMember"); %>
-	<% 
-	request.setCharacterEncoding("UTF-8");
-	List<Ingredient> cnt2 = (List)session.getAttribute("cnt2");
-	List<Process> cnt = (List)session.getAttribute("cnt");
-	List<Basic> cnt3 = (List)session.getAttribute("cnt3");
-	%>
+<body>
+<% 
+request.setCharacterEncoding("UTF-8");
+List<Ingredient> cnt2 = (List)session.getAttribute("cnt2");
+List<Process> cnt = (List)session.getAttribute("cnt");
+List<Basic> cnt3 = (List)session.getAttribute("cnt3");
+%>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -106,79 +94,52 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-            	
-	                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-	                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-	                </a>
-	                <a href="#" class="sidebar-toggler flex-shrink-0">
-	                    <i class="fa fa-bars"></i>
-	                </a>
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
 	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
 	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
 	                </form>
-	                <div class="navbar-nav align-items-center ms-auto">
-	                <c:choose> 
-		                <c:when test="${empty loginMember}">
-		                     <div class="nav-item dropdown">
-		                        <a href="signup.jsp" class="nav-link" >
-		                            <i class="bi bi-person-circle"></i>
-		                            <span class="d-none d-lg-inline-flex">회원가입</span>
-		                        </a>
-		                     </div>
-		                     <div class="nav-item dropdown">
-		                     <%-- 로그인 후 드롭다운 되는 코드
-		                     <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> --%>
-		                     <a href="signin.jsp" class="nav-link">
-		                        <i class="bi bi-person-check"></i>
-		                            <span class="d-none d-lg-inline-flex">로그인</span>
-		                     </a>
-		                </c:when>
-	                    <%-- 지워야할 로그아웃 --%>
-		                <c:otherwise>
-		               		<div class="nav-item dropdown">
-		                    <%-- <a href="LogoutCon" class="dropdown-item">로그아웃</a> --%>
-		                        
-		                        <%-- 로그인 후 드롭다운 되는 코드 --%>
-		                        <%-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-		                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-		                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
-		                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
-		                        </div> --%>
-		                    <div class="nav-item dropdown">
-                      		<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                      			<i class="bi bi-person-bounding-box"></i>  
-                            		<span class="d-none d-lg-inline-flex">${loginMember.m_id} 님 환영합니다~!</span>
-                       		</a>
-                       		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-	                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-	                            <a href="Key_Con" class="dropdown-item">나의 냉장고</a>
-	                            <!-- admin만 -->
-	                             <a href="#" class="dropdown-item">회원관리</a>
-	                             <!-- admin만 끝 -->
-	                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
-                            </div>
-                   		    </div>
-		                </c:otherwise>
-	               </c:choose>
-	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
-	                    </div>
-	                </div>
-               		 
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="signup.jsp" class="nav-link" >
+                            <i class="bi bi-person-circle"></i>
+                            <span class="d-none d-lg-inline-flex">회원가입</span>
+                        </a>
+                    </div>                   
+                    <div class="nav-item dropdown">
+                    <!-- 로그인 후 드롭다운 되는 코드
+                    <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> -->
+                    <a href="signin.jsp" class="nav-link">
+                        <i class="bi bi-person-check"></i>
+                            <span class="d-none d-lg-inline-flex">로그인</span>
+                    </a>
+                        
+                        <!-- 로그인 후 드롭다운 되는 코드 -->
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
+                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                            <!-- admin만 -->
+	                        <a href="#" class="dropdown-item">회원관리</a>
+	                        <!-- admin만 끝 -->                            
+                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
+                        </div>
+                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->                         
+                    </div>
+                </div>
             </nav>
             <!-- Navbar End -->
 
-          <!-- Blank Start -->
+          <!-- 즐겨찾기 Start -->
               <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
                         <%for(Basic b : cnt3){ %>
-                            <span>
-                            <h2>
-                            <%=b.getB_name() %>
-                            <button type="button" class="btn btn-outline-warning"><i class="bi bi-star"></i></button>
-                            </h2>                            	
-                            </span>
+                            <span><h2><%=b.getB_name() %></h2></span>
                          <%} %>
                         </div>
                     </div>
@@ -225,7 +186,7 @@
                     <%} %>
                     </div>             
             </div>
-            <!-- Blank End -->
+            <!-- 즐겨찾기 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
