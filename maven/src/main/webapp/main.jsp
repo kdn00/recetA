@@ -190,9 +190,9 @@
                             		<span class="d-none d-lg-inline-flex">${loginMember.m_id} 님 환영합니다~!</span>
                        		</a>
                        		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-                            <a href="Key_Con" class="dropdown-item">나의 냉장고</a>
-                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
+	                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
+	                            <a href="Key_Con" class="dropdown-item">나의 냉장고</a>
+	                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                             </div>
                    		    </div>
 		                </c:otherwise>
