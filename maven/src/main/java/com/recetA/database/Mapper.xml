@@ -170,41 +170,66 @@
 	
 
 	<!-- 페이징 sql -->
-	<!-- 검색 결과 페이징 -->
+	<!-- 검색 결과 카운트 -->
 	<select id="pagingsearch" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_name LIKE '%'||#{search}||'%'
 	</select>
+	<!-- 검색 결과 페이징 -->
 	
-	<!-- 대분류 페이징 -->
+	
+	
+	<!-- 대분류 카운트 -->
 	<select id="pagingbCtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype}
 	</select>
+	<!-- 대분류 페이징 -->
+	<select id="pagingbCtype2" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
+		select b_code, b_name, b_url from (
+    		select rownum num, b.* from (
+        		select b.* from basic b where b.b_ctype=#{b_ctype} order by b_code
+        	) b
+    	)
+		where NUM BETWEEN #{start_page} AND #{end_page}
+	</select>
 	
-	<!-- 소분류 페이징 -->
-	<!-- 음식 분류 -->
+	
+	<!-- 소분류 카운트, 페이징 -->
+	<!-- 음식 분류 카운트 -->
 	<select id="pagingbFtype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_ftype}
 	</select>
+	<!-- 음식 분류 페이징 -->
 	
-	<!-- 재료 분류 -->
+	
+	<!-- 재료 분류 카운트 -->
 	<select id="pagingbItype" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_itype}
 	</select>
+	<!-- 재료 분류 페이징 -->
 	
-	<!-- 조리 시간 -->
+	
+	
+	<!-- 조리 시간 카운트 -->
 	<select id="pagingbTime" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_time}
 	</select>
+	<!-- 조리 시간 페이징 -->
 	
-	<!-- n인분 -->
+	
+	
+	<!-- n인분 카운트 -->
 	<select id="pagingbAmount" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_amount}
 	</select>
+	<!-- n인분 페이징 -->
 	
-	<!-- 난이도 -->
+	
+	
+	<!-- 난이도 카운트 -->
 	<select id="pagingbbDifficulte" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
 		select count(b_code) from basic where b_ctype=#{b_ctype} and b_ftype=#{b_difficulte}
 	</select>
+	<!-- 난이도 페이징 -->
 	
 
 	<!-- 재료 검색 -->
