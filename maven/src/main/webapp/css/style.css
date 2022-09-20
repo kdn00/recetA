@@ -292,8 +292,8 @@
 
 
 ul{
-	list-style:circle;
-	padding-left: 20px;	
+	list-style:none;
+	padding-left: 0px;	
 }
 
 /* 개수 카운트 */
@@ -331,4 +331,8 @@ opacity: 1;
 }
 body {
 	font-family: 'SUIT-Medium';
+}
+#test{list-style:circle;
+	padding-left: 20px;
+	
 }

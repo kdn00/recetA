@@ -33,6 +33,23 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
+<script>
+        function check_pw(){
+            var pw = document.getElementById('floatingPassword').value;
+            if(document.getElementById('floatingPassword').value !='' && document.getElementById('floatingPassword2').value!=''){
+                if(document.getElementById('floatingPassword').value==document.getElementById('floatingPassword2').value){
+                    document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                    document.getElementById('check').style.color='blue';
+                }
+                else{
+                    document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                    document.getElementById('check').style.color='red';
+                }
+            }
+        }
+    </script>
+
+
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
@@ -60,8 +77,13 @@
                             <label for="floatingInput">ID</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password" onchange="check_pw()">
                             <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="pw2" class="form-control" id="floatingPassword2" placeholder="Password" onchange="check_pw()">
+                            <label for="floatingPassword">Password Check</label>
+                            &nbsp;<span id="check"></span>
                         </div>
                         <!-- <div class="form-floating mb-3">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
