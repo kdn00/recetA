@@ -10,7 +10,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-레시피</title>
+    <title>recetA-즐겨찾기</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -133,18 +133,13 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
             </nav>
             <!-- Navbar End -->
 
-          <!-- Blank Start -->
+          <!-- 즐겨찾기 Start -->
               <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
                         <%for(Basic b : cnt3){ %>
-                            <span>
-                            <h2>
-                            <%=b.getB_name() %>
-                            <button type="button" class="btn btn-outline-warning"><i class="bi bi-star"></i></button>
-                            </h2>                            	
-                            </span>
+                            <span><h2><%=b.getB_name() %></h2></span>
                          <%} %>
                         </div>
                     </div>
@@ -191,7 +186,7 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                     <%} %>
                     </div>             
             </div>
-            <!-- Blank End -->
+            <!-- 즐겨찾기 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
