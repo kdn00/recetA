@@ -131,8 +131,8 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
             <!-- Navbar End -->
 
           <!-- Blank Start -->
-             <div class="container-fluid px-4 pt-4" style="margin-top: 50px;">
-                <div class="row g-4" style="margin-top: opx;">
+              <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
                     <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
                         <%for(Basic b : cnt3){ %>

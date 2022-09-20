@@ -163,13 +163,19 @@
             </nav>
              <!-- Navbar End -->
 
-            <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6 text-center">
-                        <h3>This is blank page</h3>
+           <!-- Blank Start -->
+			<div class="container-fluid pt-4 px-4">
+            	<div class="row vh-198 rounded align-items-center justify-content-center mx-0">                
+                	<div class="col-sm-12" style="margin-top: opx;">
+                		<div class="bg-light rounded h-100 p-4 text-center">
+                            <span><h2>공지사항</h2></span>
+                        </div>
                     </div>
-                </div>
+            
+            <div class="container-fluid pt-4 px-4">  
+              <div class="col-md-6">
+               	<span>안녕하세요. recetA입니다.</span>                   
+              </div>
             </div>
             <!-- Blank End -->
 
