@@ -43,10 +43,61 @@
     
 </head>
 
+<script>
+        function check_pw(){
+            var pw = document.getElementById('floatingPassword').value;
+            var SC = ["!","@","#","$","%"];
+            var check_SC = 0;
+            
+            if(document.getElementById('floatingPassword').value !='' && document.getElementById('floatingPassword2').value!=''){
+                if(document.getElementById('floatingPassword').value==document.getElementById('floatingPassword2').value){
+                    document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                    document.getElementById('check').style.color='blue';
+                }
+                else{
+                    document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                    document.getElementById('check').style.color='firebrick';
+                }
+            }
+        }
+    </script>
+    <script>
+	function update() {
+		var pw = document.getElementById('floatingPassword').value;
+		var SC = ["!","@","#","$","%","^","&","*"];
+        var check_SC = 0;
+		if(pw.length < 6 || pw.length>16){
+            window.alert('비밀번호는 6글자 이상, 16글자 이하만 이용 가능합니다.');
+            document.getElementById('pw').value='';
+            return false;
+        }
+        for(var i=0;i<SC.length;i++){
+            if(pw.indexOf(SC[i]) != -1){
+                check_SC = 1;
+            }
+        }
+        if(check_SC == 0){
+            window.alert('!,@,#,$,%,^,&,* 의 특수문자가 들어가 있지 않습니다.')
+            document.getElementById('pw').value='';
+            return false;
+        }
+        if(document.getElementById('floatingPassword').value !='' && document.getElementById('floatingPassword2').value!=''){
+            if(document.getElementById('floatingPassword').value==document.getElementById('floatingPassword2').value){
+            	window.alert('개인정보수정 성공');
+            	document.getElementById('update').submit();
+            }
+            else{
+            	window.alert('비밀번호가 일치하지 않습니다.');
+            	return false;
+            }
+        }
+	}
+</script>
+    
 <body>
-	<%
-	// 로그인 세션 불러오기
-	Member loginMember = (Member)session.getAttribute("loginMember"); %>
+   <%
+   // 로그인 세션 불러오기
+   Member loginMember = (Member)session.getAttribute("loginMember"); %>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -56,7 +107,7 @@
         </div>
         <!-- Spinner End -->
         
-		<!-- Sidebar Start -->
+      <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="main.jsp" class="navbar-brand mx-4 mb-3 navbar bg-danger row rounded">
@@ -70,16 +121,16 @@
                     </div>
                     <div class="ms-3">
                         <%-- JSTL  방식 --%>
-						<c:choose>
-							<c:when test="${empty loginMember}">
-								<h6 class="mb-0">ID</h6>
-								<span>이름</span>
-							</c:when>
-							<c:otherwise>
-								<h6 class="mb-0">${loginMember.m_id}</h6>
-								<%-- <span>이름</span> --%>
-							</c:otherwise>
-						</c:choose>
+                  <c:choose>
+                     <c:when test="${empty loginMember}">
+                        <h6 class="mb-0">ID</h6>
+                        <span>이름</span>
+                     </c:when>
+                     <c:otherwise>
+                        <h6 class="mb-0">${loginMember.m_id}</h6>
+                        <%-- <span>이름</span> --%>
+                     </c:otherwise>
+                  </c:choose>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
@@ -105,50 +156,50 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-            	
-	                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-	                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-	                </a>
-	                <a href="#" class="sidebar-toggler flex-shrink-0">
-	                    <i class="fa fa-bars"></i>
-	                </a>
-	                <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
-	                    <input class="form-control border-0" type="search" name="search" placeholder="검색">
-	                </form>
-	                <div class="navbar-nav align-items-center ms-auto">
-	                <c:choose> 
-		                <c:when test="${empty loginMember}">
-		                     <div class="nav-item dropdown">
-		                        <a href="signup.jsp" class="nav-link" >
-		                            <i class="bi bi-person-circle"></i>
-		                            <span class="d-none d-lg-inline-flex">회원가입</span>
-		                        </a>
-		                     </div>
-		                     <div class="nav-item dropdown">
-		                     <%-- 로그인 후 드롭다운 되는 코드
-		                     <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> --%>
-		                     <a href="signin.jsp" class="nav-link">
-		                        <i class="bi bi-person-check"></i>
-		                            <span class="d-none d-lg-inline-flex">로그인</span>
-		                     </a>
-		                </c:when>
-	                    <%-- 지워야할 로그아웃 --%>
-		                <c:otherwise>
-		               		<div class="nav-item dropdown">
-		                    <%-- <a href="LogoutCon" class="dropdown-item">로그아웃</a> --%>
-		                        
-		                        <%-- 로그인 후 드롭다운 되는 코드 --%>
-		                        <%-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-		                            <a href="information.jsp" class="dropdown-item">개인정보수정</a>
-		                            <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
-		                            <a href="LogoutCon" class="dropdown-item">로그아웃</a>
-		                        </div> --%>
-		                    <div class="nav-item dropdown">
-                      		<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                      			<i class="bi bi-person-bounding-box"></i>  
-                            		<span class="d-none d-lg-inline-flex">${loginMember.m_id} 님 환영합니다~!</span>
-                       		</a>
-                       		<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+               
+                   <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                       <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                   </a>
+                   <a href="#" class="sidebar-toggler flex-shrink-0">
+                       <i class="fa fa-bars"></i>
+                   </a>
+                   <form class="d-none d-md-flex ms-4" action="SearchCon" method="post">
+                       <input class="form-control border-0" type="search" name="search" placeholder="검색">
+                   </form>
+                   <div class="navbar-nav align-items-center ms-auto">
+                   <c:choose> 
+                      <c:when test="${empty loginMember}">
+                           <div class="nav-item dropdown">
+                              <a href="signup.jsp" class="nav-link" >
+                                  <i class="bi bi-person-circle"></i>
+                                  <span class="d-none d-lg-inline-flex">회원가입</span>
+                              </a>
+                           </div>
+                           <div class="nav-item dropdown">
+                           <%-- 로그인 후 드롭다운 되는 코드
+                           <a href="signin.jsp" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> --%>
+                           <a href="signin.jsp" class="nav-link">
+                              <i class="bi bi-person-check"></i>
+                                  <span class="d-none d-lg-inline-flex">로그인</span>
+                           </a>
+                      </c:when>
+                       <%-- 지워야할 로그아웃 --%>
+                      <c:otherwise>
+                           <div class="nav-item dropdown">
+                          <%-- <a href="LogoutCon" class="dropdown-item">로그아웃</a> --%>
+                              
+                              <%-- 로그인 후 드롭다운 되는 코드 --%>
+                              <%-- <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                  <a href="information.jsp" class="dropdown-item">개인정보수정</a>
+                                  <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                                  <a href="LogoutCon" class="dropdown-item">로그아웃</a>
+                              </div> --%>
+                          <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                               <i class="bi bi-person-bounding-box"></i>  
+                                  <span class="d-none d-lg-inline-flex">${loginMember.m_id} 님 환영합니다~!</span>
+                             </a>
+                             <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
                             <!-- admin만 -->
@@ -156,57 +207,55 @@
 	                        <!-- admin만 끝 -->                            
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                             </div>
-                   		    </div>
-		                </c:otherwise>
-	               </c:choose>
-	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
-	                    </div>
-	                </div>
-               		 
+                             </div>
+                      </c:otherwise>
+                  </c:choose>
+                           <!-- 로그인 후 드롭다운 되는 코드 끝 -->
+                       </div>
+                   </div>
+                      
             </nav>
             <!-- Navbar End -->
 
             <!-- Blank Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4" style="text-align: center;">
-                            <h6 class="mb-4">개인정보수정</h6>
-                            <div class="mb-3" style="text-align: center;">
-                                    <!-- <label for="exampleInputEmail1" class="form-label">ID</label> -->
-                                    <input placeholder="${loginMember.m_id}" type="text" class="form-control" id="exampleInputEmail1" style="width: 50%; margin-left: 25%;" disabled/>
-                                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
-                                    </div> -->
-                                </div>
-                            <form action="UpdateCon" method="post">
-                                <div class="mb-3" style="text-align: center;">
-                                    <!-- <label for="exampleInputPassword1" class="form-label">비밀번호</label> -->
-                                    <input name="pw" placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
-                                </div>
-                                <!-- <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">비밀번호확인</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>  -->
-                                <div class="mb-3" style="text-align: center;">
-                                    <!-- <label for="exampleInputPassword1" class="form-label">전화번호</label> -->
-                                    <input name="tel" placeholder="TEL" type="text" class="form-control" id="exampleInputPassword1" style="width: 50%; margin-left: 25%; ">
-                                </div>
-                                <!-- <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div> -->
-                                <table style="margin-left : 39%;">
-                                <th>
-                                <button type="submit" class="btn btn-primary">회원정보 수정</button>
-                                </form>
-                                </th>
-                                <th>
-                                <a href="DeleteCon2"><button class="btn btn-primary">회원탈퇴</button></a>
-                                </th>
-                                </table>
+            <div class="container-fluid ">
+                <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="">
+                    <div class="bg-light rounded p-4 p-sm-5 my-4" style="width:40%; margin-left:30%;">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="main.jsp" class="">
+                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i> recetA</h3>
+                            </a>
+                            <h3>개인정보수정</h3>
                         </div>
+                  <!-- LoginCon으로 보낼 form태그 위치 -->
+                  <form id="update" action="UpdateCon" method="post">
+                        <div class="form-floating mb-3">
+                            <input placeholder="<%=loginMember.getM_id() %>" type="text" class="form-control" id="floatingInput" disabled>
+                            <label for="floatingInput"><%=loginMember.getM_id() %></label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="pw" class="form-control" id="floatingPassword" placeholder="Password" onchange="check_pw()">
+                            <label for="floatingPassword">Password (특수문자 포함 6자 이상)</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                        <input type="password" name="pw2" class="form-control" id="floatingPassword2" placeholder="Password" onchange="check_pw()">
+                        <label for="floatingPassword">Password Check</label>
+                        &nbsp;<span id="check"></span>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="tel" name="tel" class="form-control" id="floatingPassword" placeholder="tel">
+                            <label for="floatingPassword">Tel</label>
+                        </div>
+                        </form>
+                        <a href="#" onclick="return update()" class="btn btn-primary py-3 w-100 mb-4">회원정보수정</a>
+                        
+                        
+                        <a href="Key_Con2?m_id=<%=loginMember.getM_id()%>"><button type="submit" class="btn btn-primary py-3 w-100 mb-4">회원탈퇴</button></a>
+                        
                     </div>
                 </div>
+            </div>
             </div>
 
 
