@@ -45,50 +45,8 @@
 	<%
 	// 로그인 세션 불러오기
 	Member loginMember = (Member)session.getAttribute("loginMember");
-	System.out.println(loginMember);
-	
-	//랜덤 메뉴 추천 1개
-	System.out.println("[RandomRecipe]");
-
-	// 0. post방식 인코딩
-	request.setCharacterEncoding("UTF-8");
-
-	// 1. 파라미터 수집
-	// 1-1. 랜덤 추천은 파라미터 수집x
-	Random rand = new Random();
-	int b_code = rand.nextInt(500);
-
-	// 2. 수집된 데이터를 객체에 담기
-	// 2-1. 수집한게 없어서 안 담음
-
-	// 3. Mapper.xml에서 SQL문 만들어 오기
-	// 레시피명, 레시피 url 검색
-
-	// 4. BasicDAO에 메소드 생성하기
-	// 4-1. 랜덤 레시피 출력 함수 : ArrayList<Basic> selectRandom()
-
-	// 5. BasicDAO에서 생성한 메소드 호출하기
-	// 5-1. 랜덤 레시피 분류 출력 함수 : ArrayList<Basic> selectRandom()
-	BasicDAO dao = new BasicDAO();
-	Basic randomrecipe = dao.selectRandom(b_code);
-	System.out.println(randomrecipe.getB_code());
-	System.out.println(randomrecipe.getB_name());
-	System.out.println(randomrecipe.getB_url());
-
-	// 6. 명령 후 처리
-	if (randomrecipe != null) {
-		// 정보 유지를 위해 세션에 로그인 정보 저장
-		// 1. 세션 객체 생성
-		/* HttpSession session = request.getSession(); */
-
-		// 2. 세션에 저장
-		session.setAttribute("randomrecipe", randomrecipe);
-		Basic randomrecipesession = (Basic) session.getAttribute("randomrecipe");
-
-	} else {
-
-	}
 	%>
+	
 	<div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -249,18 +207,69 @@
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 </div>
-                                <div class="carousel-inner">
+                                
+                                <%
+	                            	System.out.println("[RandomRecipe]");
+	
+	                            	request.setCharacterEncoding("UTF-8");
+	
+	                            	Random rand = new Random();
+	                            	int b_code = rand.nextInt(500);
+	                            	BasicDAO dao = new BasicDAO();
+	                            	Basic randomrecipe = dao.selectRandom(b_code);
+	                            	
+	                            	int b_code2 = rand.nextInt(500);
+	                            	dao = new BasicDAO();
+	                            	Basic randomrecipe2 = dao.selectRandom(b_code2);
+	                            	
+	                            	int b_code3 = rand.nextInt(500);
+	                            	dao = new BasicDAO();
+	                            	Basic randomrecipe3 = dao.selectRandom(b_code3);
+	                            	
+	                            	// 6. 명령 후 처리
+	                            	if (randomrecipe != null) {
+	                            		session.setAttribute("randomrecipe", randomrecipe);
+	                            		Basic randomrecipesession = (Basic) session.getAttribute("randomrecipe");
+	                            	} else { }
+	                            	
+	                            	if (randomrecipe2 != null) {
+	                            		session.setAttribute("randomrecipe2", randomrecipe2);
+	                            		Basic randomrecipesession2 = (Basic) session.getAttribute("randomrecipe2");
+	                            	} else { }
+	                            	
+	                            	if (randomrecipe3 != null) {
+	                            		session.setAttribute("randomrecipe3", randomrecipe3);
+	                            		Basic randomrecipesession3 = (Basic) session.getAttribute("randomrecipe3");
+	                            	} else { }
+	                            	%>
+	                            <div class="carousel-inner">
                                   <div class="carousel-item active">
                                   	<%-- a태그는 주석처리 해놨다가 레시피 상세 페이지 con파일 완성되면 주석 풀기 --%>
                                     <a href="RecipedetailpageCon?b_code=${randomrecipe.b_code}">
                                     <img src="${randomrecipe.b_url}" height="547" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+								        <span class="btn btn-light"><h4><%= randomrecipe.getB_name()%></h4></span>
+								     </div>
                                     </a>
                                   </div>
+                                  
+                                 
                                   <div class="carousel-item">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
+                                  <a href="RecipedetailpageCon?b_code=${randomrecipe2.b_code}">
+                                    <img src="${randomrecipe2.b_url}" height="547" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+								        <span class="btn btn-light"><h4><%= randomrecipe2.getB_name()%></h4></span>
+								     </div>
+                                  </a>
                                   </div>
+                                  
                                   <div class="carousel-item">
-                                    <img src="https://news.kbs.co.kr/data/news/2017/01/04/3405677_bH6.jpg" class="d-block w-100" alt="...">
+                                  <a href="RecipedetailpageCon?b_code=${randomrecipe3.b_code}">
+                                    <img src="${randomrecipe3.b_url}" height="547" class="d-block w-100" alt="...">
+                                 	 <div class="carousel-caption d-none d-md-block">
+								        <span class="btn btn-light"><h4><%= randomrecipe3.getB_name()%></h4></span>
+								     </div>
+								   </a>
                                   </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

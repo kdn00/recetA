@@ -24,7 +24,7 @@ public class UpdateCon extends HttpServlet {
 		// 세션 변수에 저장하기
 		Member loginMember = (Member) session.getAttribute("loginMember");
 		// 1. 파라미터 수집
-		String m_id = (String) session.getAttribute("id");
+		String m_id = loginMember.getM_id();
 		String m_pw = request.getParameter("pw");
 		String m_tel = request.getParameter("tel");
 		// 2. 수집한 데이터를 Member객체에 담기
@@ -37,7 +37,6 @@ public class UpdateCon extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		int cnt = dao.updateMember(updateMember);
 		
-
 		// 6. 명령 후 처리
 		if (cnt > 0) {
 			// 회원 수정이 잘 됐으면
@@ -46,10 +45,10 @@ public class UpdateCon extends HttpServlet {
 			// 메인에서 새로운 정보를 출력할 수 있다.
 			// 같은 이름의 세션에 덮어쓰기 하기
 			session.setAttribute("loginMember", updateMember);
-			response.sendRedirect("header.jsp");
+			response.sendRedirect("information.jsp");
 		} else {
 			
-			response.sendRedirect("mypage.jsp");
+			response.sendRedirect("information.jsp");
 		}
 	
 	}
