@@ -192,10 +192,15 @@
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                 </div> -->
+                                <table style="margin-left : 39%;">
+                                <th>
                                 <button type="submit" class="btn btn-primary">회원정보 수정</button>
                                 </form>
+                                </th>
+                                <th>
                                 <a href="DeleteCon2"><button class="btn btn-primary">회원탈퇴</button></a>
-                                
+                                </th>
+                                </table>
                         </div>
                     </div>
                 </div>
