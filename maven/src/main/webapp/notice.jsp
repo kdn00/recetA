@@ -193,7 +193,8 @@
 						<div class="mb-3">
 						  <label for="exampleFormControlTextarea1" class="form-label"><br>문의사항 입력해주세요</label>
 						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-						  </div>
+						  </div>	
+						  <input type="submit" value="보내기" class="btn btn-primary" style="margin-left: 90%">					
 						</div>
 		              </div>
 		              <!-- 문의사항 끝 -->            
