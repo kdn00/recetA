@@ -167,7 +167,7 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                     <%for(Process p : cnt){ %>
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-3 text-center">
-                            <span><h3><%=p.getP_order() %></h3></span>
+                            <span><h3>Step <%=p.getP_order() %></h3></span>
                         </div>
                     </div>
                     <div>
@@ -176,7 +176,9 @@ List<Basic> cnt3 = (List)session.getAttribute("cnt3");
                         <%="" %>
                         <%} %>
                         " class="float-start" id="step" width="300px">
-                        <span><ul><li><%=p.getP_explanation() %></li></ul></span> 
+                        <span>
+                        <ul><li><%=p.getP_explanation() %></li></ul> 
+                        </span>
                     </div>
                     <%} %>
                     </div>             
