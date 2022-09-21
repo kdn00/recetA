@@ -87,12 +87,12 @@
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="korean.jsp" class="dropdown-item">한식</a>
-                            <a href="chinese.jsp" class="dropdown-item">중식</a>
-                            <a href="japanese.jsp" class="dropdown-item">일식</a>
-                            <a href="western.jsp" class="dropdown-item">양식</a>
-                            <a href="asia.jsp" class="dropdown-item">동남아시아</a>
-                            <a href="fusion.jsp" class="dropdown-item">퓨전</a>
+                            <a href="PagingCon?b_ctype=korean&page=0" class="dropdown-item">한식</a>
+                            <a href="PagingCon?b_ctype=chinese&page=0" class="dropdown-item">중식</a>
+                            <a href="PagingCon?b_ctype=japanese&page=0" class="dropdown-item">일식</a>
+                            <a href="PagingCon?b_ctype=western&page=0" class="dropdown-item">양식</a>
+                            <a href="PagingCon?b_ctype=asia&page=0" class="dropdown-item">동남아시아</a>
+                            <a href="PagingCon?b_ctype=fusion&page=0" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
                     <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>
