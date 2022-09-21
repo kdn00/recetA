@@ -15,7 +15,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>recetA-즐겨찾기</title>
+    <title>💕recetA-즐겨찾기💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -169,7 +169,7 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 즐거찾기 Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                 
@@ -186,7 +186,6 @@
                     if(Favorites!=null){
                     for(int i=0; i<Favorites.size();i++){%>
                     	
-                    
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
                             <a href="RecipedetailpageCon?b_code=<%=Favorites.get(i).getB_code()%>">
@@ -201,8 +200,7 @@
             </div>
             <!-- 레시피 끝 -->
             </div>
-            <!-- Blank End -->
-
+            <!-- 즐겨찾기 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -221,7 +219,6 @@
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

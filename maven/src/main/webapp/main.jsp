@@ -12,7 +12,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA 홈페이지에 오신걸 환영합니다.</title>
+    <title>💕recetA 홈페이지에 오신걸 환영합니다.💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -167,7 +167,8 @@
                		 
             </nav>
             <!-- Navbar End -->
-
+			
+			<!-- 메인 뷰 시작 -->
             <!-- Sale & Revenue  Start 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -203,7 +204,7 @@
 
                 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    
+                    <!-- 메뉴 추천 시작 -->
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
                             <h2 class="mb-4 text-center">[메뉴 추천]</h2>
@@ -258,7 +259,6 @@
 								     </div>
                                     </a>
                                   </div>
-                                  
                                  
                                   <div class="carousel-item">
                                   <a href="RecipedetailpageCon?b_code=${randomrecipe2.b_code}">
@@ -289,7 +289,9 @@
                               </div>
                         </div>
                     </div>
+                    <!-- 메뉴 추천 끝 -->
                     
+                    <!-- 대분류 시작 -->
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=korean&page=0">
@@ -338,8 +340,10 @@
                                 </a>
                         </div>
                     </div>
+                    <!-- 대분류 끝  -->
                 </div>
             </div>
+            <!-- 메인 뷰 끝 -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

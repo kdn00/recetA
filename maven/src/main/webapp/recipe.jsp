@@ -17,7 +17,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <head>
 <meta charset="utf-8">
-<title>recetA-레시피</title>
+<title>💕recetA-레시피 상세 페이지💕</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -125,7 +125,6 @@
 			<!-- Navbar Start -->
 			<nav
 				class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-
 				<a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
 					<h2 class="text-primary mb-0">
 						<i class="fa fa-hashtag"></i>
@@ -189,12 +188,11 @@
 					</c:choose>
 					<!-- 로그인 후 드롭다운  되는 코드 끝 -->
 				</div>
-		</div>
-
+			</div>
 		</nav>
 		<!-- Navbar End -->
 
-		<!-- Blank Start -->
+		<!-- 레시피 상세 페이지 Start -->
 		<div class="container-fluid pt-4 px-4">
 			<div class="row g-4">
 				<div class="col-sm-12 ">
@@ -226,7 +224,7 @@
 
 				<div class="container-fluid px-4" style="display: flex;">
 					<div class="col-12">
-						<div class="text-center rounded p-4">
+						<div class="text-center rounded p-1">
 							<div
 								class="d-flex align-items-center justify-content-between mb-4">
 							</div>
@@ -330,7 +328,7 @@
 				%>
 			</div>
 		</div>
-		<!-- Blank End -->
+		<!-- 레시피 상세 페이지 End -->
 
 		<!-- Footer Start -->
 		<div class="container-fluid pt-4 px-4">

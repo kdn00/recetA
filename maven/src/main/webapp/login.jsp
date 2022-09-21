@@ -5,7 +5,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
 <meta charset="utf-8">
-<title>DASHMIN - Bootstrap Admin Template</title>
+<title>💕recetA-로그인💕</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta content="" name="keywords">
 <meta content="" name="description">
@@ -53,7 +53,6 @@
 		</div>
 		<!-- Spinner End -->
 
-
 		<!-- Sign In Start -->
 		<div class="container-fluid">
 			<div class="row h-100 align-items-center justify-content-center"
@@ -96,7 +95,6 @@
 				</div>
 			</div>
 		</div>
-		
 		<!-- Sign In End -->
 	</div>
 

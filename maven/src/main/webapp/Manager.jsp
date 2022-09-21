@@ -14,7 +14,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-회원관리</title>
+    <title>💕recetA-회원관리💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -41,7 +41,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
 </head>
 
 <body>
@@ -172,7 +171,7 @@
             </nav>
              <!-- Navbar End -->
 
-           <!-- Blank Start -->
+           <!-- 회원관리 Start -->
 			<div class="container-fluid pt-4 px-4">
             	<div class="row vh-198 rounded align-items-center justify-content-center mx-0">                
                 	<div class="col-sm-12" style="margin-top: opx;">
@@ -208,7 +207,7 @@
                         </table>
                     </div>
                 </div>
-            <!-- Blank End -->
+            <!-- 회원관리 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -227,7 +226,6 @@
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

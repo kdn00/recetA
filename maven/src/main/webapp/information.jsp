@@ -13,7 +13,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-개인정보수정</title>
+    <title>💕recetA-개인정보수정💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -216,11 +216,10 @@
                            <!-- 로그인 후 드롭다운 되는 코드 끝 -->
                        </div>
                    </div>
-                      
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 개인정보수정 Start -->
             <div class="container-fluid ">
                 <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="">
@@ -261,12 +260,6 @@
             </div>
             </div>
 
-
-
-
-
-
-
             <!-- <div >
                 <divid="tabs-4-2">
                                  <ul>
@@ -289,7 +282,7 @@
                                  </ul>
                               </div>
             </div> -->
-            <!-- Blank End -->
+            <!-- 개인정보수정 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

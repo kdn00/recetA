@@ -13,7 +13,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-레시피_동남아시아</title>
+    <title>💕recetA-레시피_동남아시아💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -40,7 +40,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
 </head>
 
 <body>
@@ -164,12 +163,11 @@
 	               </c:choose>
 	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
 	                    </div>
-	                </div>
-               		 
+	                </div>               		 
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 동남아시아 Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                     
@@ -495,7 +493,7 @@
 	        </nav>
             <!-- 페이지 번호 끝 -->             
             </div>
-            <!-- Blank End -->
+            <!-- 동남아시아 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

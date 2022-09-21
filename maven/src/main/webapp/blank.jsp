@@ -311,7 +311,6 @@ String id = (String)session.getAttribute("id");
          </div>
          <!-- Blank End -->
 
-
          <!-- Footer Start -->
          <div class="container-fluid pt-4 px-4">
             <div class="bg-light rounded-top p-4">
@@ -329,7 +328,6 @@ String id = (String)session.getAttribute("id");
          <!-- Footer End -->
       </div>
       <!-- Content End -->
-
 
       <!-- Back to Top -->
       <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i

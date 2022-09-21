@@ -10,7 +10,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA</title>
+    <title>💕recetA-검색 결과 페이지💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -162,7 +162,7 @@
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 검식 Start -->
             <%
             	String search = (String)session.getAttribute("search");
             %>
@@ -271,8 +271,7 @@
 	        </nav>
             <!-- 페이지 번호 끝 -->             
             </div>
-            <!-- Blank End -->
-
+            <!-- 검색 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -291,7 +290,6 @@
             <!-- Footer End -->
         </div>
         <!-- Content End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

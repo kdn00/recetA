@@ -13,7 +13,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-레시피_한식</title>
+    <title>💕recetA-레시피_한식💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -94,7 +94,6 @@
                             <a href="PagingCon?b_ctype=fusion&page=0" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
-
                     <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
                 </div>
             </nav>
@@ -165,11 +164,10 @@
 	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
 	                    </div>
 	                </div>
-               		 
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 한식 Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-198 rounded align-items-center justify-content-center mx-0">
                     
@@ -290,7 +288,6 @@
                 <div class="row g-4">
                 <!-- 소분류 세션 진행 -->
                 <%
-              		
                 // 소분류 세션 null 확인하기
                	// 1. selectbFtype 세션 null 확인하기
                	if(session.getAttribute("b_ftypepage")!=null){
@@ -371,7 +368,6 @@
                     <%}
                		}// selectbDifficulte 세션 null 확인 끝
                	
-               	
                 // 소분류 먼저 if로 null값 확인 후 대분류 null 확인 진행
                 // 소분류con에서 대분류 세션을 지우고 진행할 것임
               	if (session.getAttribute("b_ftypepage") == null &&
@@ -395,7 +391,6 @@
             </div>
             <!-- 레시피 끝 -->
             <!-- 여기까지 복사 붙여넣기 -->
-
             <!-- 페이지 번호 -->
             <nav aria-label="Page navigation" class="d-flex justify-content-center ">
                 <ul class="pagination">
@@ -454,7 +449,6 @@
 	            	if(endNum > pageCount){
 	            		endNum = pageCount-1;
 	            	}%>
-	            	
 	            	<!-- 페이지 버튼 대분류 소분류 분리해서 띄우기 -->
 	            	<!-- 앞으로 보내기 버튼 -->
 	            	<li class="page-item page-link" aria-label="Previous">
@@ -495,7 +489,7 @@
 	        </nav>
             <!-- 페이지 번호 끝 -->
             </div>
-            <!-- Blank End -->
+            <!-- 한식 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">

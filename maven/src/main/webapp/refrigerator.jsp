@@ -14,7 +14,7 @@
 <link  href="css/style.css"  rel="stylesheet"  type="text/css">
 <head>
     <meta charset="utf-8">
-    <title>recetA-개인정보수정</title>
+    <title>💕recetA-나의 냉장고💕</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -165,23 +165,18 @@
 	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
 	                    </div>
 	                </div>
-               		 
             </nav>
             <!-- Navbar End -->
 
-            <!-- Blank Start -->
+            <!-- 나의 냉장고 Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
                         <span><h2>나의 냉장고</h2></span>
                         <br>
-
                 <div id="tabs-4-1">
                     <ul style="word-spacing: 10px">
-               
-                        
-                        
                         <table class="table table-borderless" id="table-refrigerator-count">
                             <tr>
                                 <td>재료명</td>
@@ -281,11 +276,9 @@
                           }%> 
                     </ul>
                 </div>
-
-
             </div>
             </div>
-            <!-- Blank End -->
+            <!-- 나의 냉장고 End -->
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
