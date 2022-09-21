@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.recetA.domain.Member"%>
 <%@page import="java.util.List"%>
 <%@page import="com.recetA.domain.Basic"%>
@@ -170,47 +171,105 @@
                 
                 <div class="col-sm-12 ">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <span><h2><%=search%>의 검색결과입니다.</h2></span>
+                            <span><h2><%=search%>의 검색 결과입니다.</h2></span>
                         </div>
                     </div>
             <!-- 레시피  -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                  <%if (session.getAttribute("selectsearch") != null) {
-                	  List<Basic> selectsearch = (List) session.getAttribute("selectsearch");
-              			for(int i=0; i<selectsearch.size(); i++){ %>
+                  <%if (session.getAttribute("pagesearch") != null) {
+                	  List<Basic> pagesearch = (List) session.getAttribute("pagesearch");
+              			for(int i=0; i<pagesearch.size(); i++){ %>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectsearch.get(i).getB_code()%>">
-                            <img src="<%=selectsearch.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectsearch.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=pagesearch.get(i).getB_code()%>">
+                            <img src="<%=pagesearch.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= pagesearch.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <%} }  %>
+                    <%} } else{%>
+                    		<span><h2>검색 결과가 없습니다.</h2></span>
+                   		<%}  %>
                 </div>
             </div>
             <!-- 레시피 끝 -->
-
             <!-- 페이지 번호 -->
-            <nav aria-label="Page navigation" class="d-flex justify-content-center">
+            <nav aria-label="Page navigation" class="d-flex justify-content-center ">
                 <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- 페이지 번호 끝 -->                
+                <!-- 여기부터 붙여넣기 -->
+	            <%
+	            // 게시글 전체 갯수 변수 cnt 선언
+	            List<Basic> selectsearch = (List) session.getAttribute("selectsearch");
+	            int cnt = selectsearch.size();
+	            System.out.println(cnt);
+	            
+	            // 한 페이지에 출력될 글 수
+	            int pageSize = 10;
+	            
+	            // 현 페이지 정보 설정 --> nowpage가 currentPage
+	            // 소분류쪽은 세션마다 변경해야 함
+	            int nowpage = (int)session.getAttribute("nowpage")+1;
+	           
+	            // 페이지 번호 처리
+	            if(cnt != 0){
+	            	// 전체 페이지 번호 수 계산
+	            	int pageCount = (cnt / pageSize) + (cnt % pageSize == 0?0:1);
+	            	if(pageCount<0){
+	            		pageCount = 1;
+	            	}
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호
+	            	int pagenumber = 5;
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호 시작 번호 계산
+	            	int startNum = ((nowpage-1)/pagenumber)*pagenumber + 1;
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호 끝 번호 계산
+	            	int endNum = startNum + pagenumber -1;
+	            	if(endNum > pageCount){
+	            		endNum = pageCount-1;
+	            	}%>
+	            	
+	            	<!-- 페이지 버튼 대분류 소분류 분리해서 띄우기 -->
+	            	<!-- 앞으로 보내기 버튼 -->
+	            	<li class="page-item page-link" aria-label="Previous">
+	            	<%
+	            	if(startNum>1){ %>
+	            		<a href="SearchCon?search=<%=search%>&page=<%=startNum-pagenumber-1%>">
+	            	<%} %>
+			            <span aria-hidden="true">&lt;</span>
+			            	</a>
+			            </li>
+	            	<%
+	            	// i값은 0부터 시작해야 함
+	            	int i=startNum-1;
+	            	// 페이지 값이 부족해도 한 번은 돌아가야 페이지 번호 1값이 생기기 때문에 do while 사용
+	            	do{
+	            		// 만약 현재 페이지 번호의 세션과 i값이 같다면 active
+	            		if(i == nowpage-1){
+	            			// i는 0부터 시작하니까 페이지 번호의 i값은 +1을 해서 띄워놔야 한다.
+	            		%>
+	            		<li class="page-item active"><a class="page-link active"
+	            		href="SearchCon?search=<%= search %>&page=<%=i%>"><%=i+1%></a></li>
+	            	<%
+	            		} else{%>
+	            			<li class="page-item"><a class="page-link"
+	            		href="SearchCon?search=<%=search%>&page=<%=i%>"><%=i+1%></a></li>
+	            		<%} i++;
+	            	}while(i<=endNum);%>
+	            	<li class="page-item page-link" aria-label="Next">
+	            	<%
+	            	if(endNum<pageCount){ %>
+	            		<a href="SearchCon?search=<%=search%>&page=<%=startNum+pagenumber-1%>">
+					<%} %>
+	            		<span aria-hidden="true">&gt;</span>
+		                </a>
+		               	</li>
+	            	<% }  %>
+	            </ul>
+	        </nav>
+            <!-- 페이지 번호 끝 -->             
             </div>
             <!-- Blank End -->
 

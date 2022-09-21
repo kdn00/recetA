@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.recetA.domain.Basic;
 import com.recetA.domain.BasicDAO;
+import com.recetA.domain.PagingDAO;
+import com.recetA.domain.SearchVO;
 
 public class SearchCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,10 +27,19 @@ public class SearchCon extends HttpServlet {
 		session.removeAttribute("selectsearch");
 
 		// 1. 파라미터 수집
+		// 1-1. 페이징 처리를 위해 수집
+		int get_page = 0;
+		if(request.getParameter("page")!=null) {
+			get_page = Integer.parseInt(request.getParameter("page"));
+		}
+		int start_page = 1 + (get_page*10);
+		int end_page = 10 * (get_page+1);
+		// 1-2. 검색 값 수집
 		String search = request.getParameter("search");
 		System.out.println(search);
 
-		// 2. 수집된 데이터를 Basic 객체에 담기
+		// 2. 수집된 데이터를 SearchVO 객체에 담기
+		SearchVO searchvo = new SearchVO(search, start_page, end_page);
 
 		// 3. Mapper.xml에서 SQL문 만들어 오기
 
@@ -37,15 +48,18 @@ public class SearchCon extends HttpServlet {
 		// 5. DAO에서 생성한 메소드 호출하기
 		BasicDAO dao = new BasicDAO();
 		List<Basic> selectsearch = dao.selectsearch(search);
-
+		
+		PagingDAO dao2 = new PagingDAO();
+		List<Basic> pagesearch = dao2.pagingsearch(searchvo);
 
 		// 6. 명령 후 처리
 		if (selectsearch != null) {
 			// 1. 세션 객체 생성
-
 			// 2. 세션에 저장
 			session.setAttribute("selectsearch", selectsearch);
+			session.setAttribute("pagesearch", pagesearch);
 			session.setAttribute("search", search);
+			session.setAttribute("nowpage", get_page);
 			response.sendRedirect("search.jsp");
 
 		} else {

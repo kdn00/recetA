@@ -178,7 +178,12 @@
 	<!-- 페이징 sql -->
 	<!-- 검색 결과 페이징 -->
 	<select id="pagingsearch" parameterType="com.recetA.domain.Basic" resultType="com.recetA.domain.Basic">
-		select count(b_code) from basic where b_name LIKE '%'||#{search}||'%'
+		select b_code, b_name, b_url from (
+    		select rownum num, b.* from (
+        		select b.* from basic b where b.b_name like '%'||#{search}||'%' order by b_code
+        	) b
+    	)
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 
 	<!-- 대분류 페이징 -->

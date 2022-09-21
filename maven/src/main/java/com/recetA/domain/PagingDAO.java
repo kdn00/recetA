@@ -12,6 +12,25 @@ public class PagingDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 	
+	// 검색 처리 기능
+	public List<Basic> pagingsearch(SearchVO search) {
+		List<Basic> searchresult = null;
+		try {
+			searchresult = sqlSession.selectList("pagingsearch", search);
+			if (searchresult != null) {
+				System.out.println("검색 페이징 dao 성공");
+				System.out.println(searchresult.get(0).getB_name());
+				sqlSession.commit();
+			} else {
+				System.out.println("검색 페이징 dao 실패");
+				sqlSession.rollback();
+			}
+		} finally {
+			sqlSession.close();
+		} // finally 끝
+		return searchresult;
+	} // 검색 끝
+	
 	// 대분류 페이징
 	public List<Basic> pagingbCtype(Basic pageinfo) {
 		List<Basic> getpage = null;
