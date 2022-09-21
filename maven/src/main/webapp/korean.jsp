@@ -374,12 +374,11 @@
                	
                 // 소분류 먼저 if로 null값 확인 후 대분류 null 확인 진행
                 // 소분류con에서 대분류 세션을 지우고 진행할 것임
-              	if (session.getAttribute("selectbFtype") == null &&
-	            		session.getAttribute("selectbItype") == null &&
-	            		session.getAttribute("selectbTime") == null &&
-	            		session.getAttribute("selectbAmount") == null &&
-	            		session.getAttribute("selectbDifficulte") == null&&
-	            		session.getAttribute("bigpage") != null) {
+              	if (session.getAttribute("b_ftypepage") == null &&
+	            		session.getAttribute("b_itypepage") == null &&
+	            		session.getAttribute("b_timepage") == null &&
+	            		session.getAttribute("b_amountpage") == null &&
+	            		session.getAttribute("b_difficultepage") == null) {
               		List<Basic> bigpage = (List) session.getAttribute("bigpage");
               		for(int i=0; i<bigpage.size(); i++){ %>
                     <div class="col-sm-12 col-xl-6">
