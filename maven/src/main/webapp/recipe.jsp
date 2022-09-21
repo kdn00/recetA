@@ -180,7 +180,7 @@
                             <h2>
                             <%=b.getB_name() %>
 							<%if(loginMember!=null){ %>
-                            <a href="Favorites_DataCon?b_name=<%=b.getB_name()%>"><button type="button" class="btn btn-outline-warning"><i class="bi bi-star"></i></button></a>
+                            <a href="Favorites_DataCon?b_name=<%=b.getB_name()%>"><button type="button" class="btn btn-outline-warning" style="margin-bottom:8px;"><i class="bi bi-star"></i></button></a>
                             <% }%></h2>                            	
                             </span>
                          <%} %>
