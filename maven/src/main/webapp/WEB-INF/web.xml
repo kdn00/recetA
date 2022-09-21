@@ -178,6 +178,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.RecipedetailpageCon2</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>QnaCon</servlet-name>
+  	<display-name>QnaCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.QnaCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -293,5 +299,9 @@
   <servlet-mapping>
   	<servlet-name>RecipedetailpageCon2</servlet-name>
   	<url-pattern>/RecipedetailpageCon2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>QnaCon</servlet-name>
+  	<url-pattern>/QnaCon</url-pattern>
   </servlet-mapping> 
 </web-app>

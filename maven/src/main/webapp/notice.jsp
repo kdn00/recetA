@@ -187,15 +187,17 @@
 		              <div class="bg-light rounded h-100 p-4" style="margin-top:50%">
 		              <div class="mb-3">
 		              	  <span><h6>문의사항</h6></span>
+		              	  <form action="QnaCon" method="post">
 						  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-						  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email address">
+						  <input type="email" class="form-control" name="title" id="exampleFormControlInput1" placeholder="Email address">
 						
 						<div class="mb-3">
 						  <label for="exampleFormControlTextarea1" class="form-label"><br>문의사항 입력해주세요</label>
-						  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						  <textarea class="form-control"  name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
 						  </div>						  	
 						  <input type="submit" value="보내기" class="btn btn-primary" style="margin-left: 90%">
 						</div>
+						</form>
 		              </div>
 		              <!-- 문의사항 끝 -->            
             		</div>
