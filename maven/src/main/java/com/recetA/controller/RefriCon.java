@@ -45,6 +45,8 @@ public class RefriCon extends HttpServlet {
 			}
 			// Mypagejsp.jsp로 이동
 			response.sendRedirect("refrigerator.jsp");
+			
+			session.removeAttribute("Ingred_search");
 		} else {
 			System.out.println("불러오기 실패");
 			response.sendRedirect("refrigerator.jsp");

@@ -31,7 +31,7 @@ public class Ingred_delCon extends HttpServlet {
 					System.out.println("재료 삭제 실패");
 				}
 				// 6. 이동
-				response.sendRedirect("Favorites_LoadCon");
+				response.sendRedirect("RefriCon");
 				
 			}
 
