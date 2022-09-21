@@ -112,6 +112,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="information.jsp" class="dropdown-item">개인정보수정</a>
                             <a href="refrigerator.jsp" class="dropdown-item">나의 냉장고</a>
+                            <a href="Favorites_LoadCon" class="dropdown-item">즐겨찾기</a>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
                         </div>
                         <!-- 로그인 후 드롭다운 되는 코드 끝 -->                       
