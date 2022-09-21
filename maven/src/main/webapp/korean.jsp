@@ -461,30 +461,32 @@
 	            	<li class="page-item page-link" aria-label="Previous">
 	            	<%
 	            	if(startNum>1){ %>
-	            		<a href="PagingCon?b_ctype=korean&page=<%=startNum-pagenumber%>">
+	            		<a href="PagingCon?b_ctype=korean&page=<%=startNum-pagenumber-1%>">
 	            	<%} %>
 			            <span aria-hidden="true">&lt;</span>
 			            	</a>
 			            </li>
 	            	<%
-	            	int i=startNum;
+	            	// i값은 0부터 시작해야 함
+	            	int i=startNum-1;
 	            	// 페이지 값이 부족해도 한 번은 돌아가야 페이지 번호 1값이 생기기 때문에 do while 사용
 	            	do{
 	            		// 만약 현재 페이지 번호의 세션과 i값이 같다면 active
 	            		if(i == nowpage-1){
+	            			// i는 0부터 시작하니까 페이지 번호의 i값은 +1을 해서 띄워놔야 한다.
 	            		%>
 	            		<li class="page-item active"><a class="page-link active"
-	            		href="PagingCon?b_ctype=korean&page=<%=i%>"><%=i%></a></li>
+	            		href="PagingCon?b_ctype=korean&page=<%=i%>"><%=i+1%></a></li>
 	            	<%
 	            		} else{%>
 	            			<li class="page-item"><a class="page-link"
-	            		href="PagingCon?b_ctype=korean&page=<%=i%>"><%=i%></a></li>
+	            		href="PagingCon?b_ctype=korean&page=<%=i%>"><%=i+1%></a></li>
 	            		<%} i++;
-	            	}while(i<=endNum);%>
+	            	}while(i<endNum);%>
 	            	<li class="page-item page-link" aria-label="Next">
 	            	<%
-	            	if(endNum <pageCount){ %>
-	            		<a href="PagingCon?b_ctype=korean&page=<%=startNum+pagenumber%>">
+	            	if(endNum<pageCount){ %>
+	            		<a href="PagingCon?b_ctype=korean&page=<%=startNum+pagenumber-1%>">
 					<%} %>
 	            		<span aria-hidden="true">&gt;</span>
 		                </a>
