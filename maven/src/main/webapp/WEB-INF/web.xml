@@ -136,6 +136,12 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.AdminDeleteCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PagingsmallCon</servlet-name>
+  	<display-name>PagingsmallCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.PagingsmallCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -223,5 +229,9 @@
   <servlet-mapping>
   	<servlet-name>AdminDeleteCon</servlet-name>
   	<url-pattern>/AdminDeleteCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PagingsmallCon</servlet-name>
+  	<url-pattern>/PagingsmallCon</url-pattern>
   </servlet-mapping> 
 </web-app>

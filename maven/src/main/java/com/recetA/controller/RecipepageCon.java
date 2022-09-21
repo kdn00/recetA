@@ -85,7 +85,7 @@ public class RecipepageCon extends HttpServlet {
 //			}
 			// 레시피 분류 페이지로 이동
 			switch (b_ctype) {
-			case "한식": response.sendRedirect("korean.jsp"); break;
+			case "한식": response.sendRedirect("korean2.jsp"); break;
 			case "중식": response.sendRedirect("chinese.jsp"); break;
 			case "일식": response.sendRedirect("japanese.jsp"); break;
 			case "양식": response.sendRedirect("western.jsp"); break;

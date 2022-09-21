@@ -200,7 +200,7 @@
 		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_ftype=#{b_ftype} order by b_code
 		    ) b
 		)
-		where NUM BETWEEN #{start_page} AND #{end_page};
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 	
 	<!-- 재료 분류 페이징 -->
@@ -210,7 +210,7 @@
 		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_itype=#{b_itype} order by b_code
 		    ) b
 		)
-		where NUM BETWEEN #{start_page} AND #{end_page};
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 	
 	
@@ -221,7 +221,7 @@
 		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_time=#{b_time} order by b_code
 		    ) b
 		)
-		where NUM BETWEEN #{start_page} AND #{end_page};
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 
 	<!-- n인분 페이징 -->
@@ -231,7 +231,7 @@
 		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_amount=#{b_amount} order by b_code
 		    ) b
 		)
-		where NUM BETWEEN #{start_page} AND #{end_page};
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 	
 	<!-- 난이도 페이징 -->
@@ -241,7 +241,7 @@
 		        select b.* from basic b where b.b_ctype=#{b_ctype} and b.b_difficulte=#{b_difficulte} order by b_code
 		    ) b
 		)
-		where NUM BETWEEN #{start_page} AND #{end_page};
+		where NUM BETWEEN #{start_page} AND #{end_page}
 	</select>
 
 

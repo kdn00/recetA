@@ -86,7 +86,7 @@
                     <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
-                        <div class="dropdown-menu bg-transparent border-0">
+                        <div class="dropdown-menu bg-transparent border-0 collapse show">
                             <a href="PagingCon?b_ctype=korean&page=0" class="dropdown-item">한식</a>
                             <a href="PagingCon?b_ctype=chinese&page=0" class="dropdown-item active">중식</a>
                             <a href="PagingCon?b_ctype=japanese&page=0" class="dropdown-item">일식</a>

@@ -22,6 +22,11 @@ public class Basic {
 	private String b_difficulte;
 	// 대표 이미지
 	private String b_url;
+	// 페이징 시작 페이지
+	private int start_page;
+	// 페이징 끝 페이지
+	private int end_page;
+	
 	
 	// 전체 데이터를 담는 객체
 	public Basic(int b_code, String b_name, String b_short, String b_ftype, String b_ctype, String b_itype,
@@ -68,12 +73,39 @@ public class Basic {
 		this.b_ftype = b_ftype;
 	}
 	
+	// 대분류 페이징
+	public Basic(String b_ctype, int start_page, int end_page) {
+		super();
+		this.b_ctype = b_ctype;
+		this.start_page = start_page;
+		this.end_page = end_page;
+	}
+	
+	// 음식분류 페이징
+	public Basic(String b_ctype, String b_ftype,int start_page, int end_page) {
+		super();
+		this.b_ctype = b_ctype;
+		this.b_ftype = b_ftype;
+		this.start_page = start_page;
+		this.end_page = end_page;
+	}
+	
 	// 대분류, 소분류 게시글 띄우기
 	public Basic(int b_code, String b_name, String b_url) {
 		super();
 		this.b_code = b_code;
 		this.b_name = b_name;
 		this.b_url = b_url;
+	}
+	
+	// 페이징 정보 담기
+	public Basic(int b_code, String b_name, String b_url, int start_page, int end_page) {
+		super();
+		this.b_code = b_code;
+		this.b_name = b_name;
+		this.b_url = b_url;
+		this.start_page = start_page;
+		this.end_page = end_page;
 	}
 
 	// 오류 방지용 빈 객체
@@ -161,12 +193,28 @@ public class Basic {
 		this.b_url = b_url;
 	}
 
+	public int getStart_page() {
+		return start_page;
+	}
+
+	public void setStart_page(int start_page) {
+		this.start_page = start_page;
+	}
+
+	public int getEnd_page() {
+		return end_page;
+	}
+
+	public void setEnd_page(int end_page) {
+		this.end_page = end_page;
+	}
+
 	@Override
 	public String toString() {
 		return "Basic [b_code=" + b_code + ", b_name=" + b_name + ", b_short=" + b_short + ", b_ftype=" + b_ftype
 				+ ", b_ctype=" + b_ctype + ", b_itype=" + b_itype + ", b_time=" + b_time + ", b_amount=" + b_amount
-				+ ", b_difficulte=" + b_difficulte + ", b_url=" + b_url + "]";
+				+ ", b_difficulte=" + b_difficulte + ", b_url=" + b_url + ", start_page=" + start_page + ", end_page="
+				+ end_page + "]";
 	}
-	
 
 }

@@ -85,13 +85,13 @@
                     <a href="main.jsp" class="nav-item nav-link"><i class="bi bi-egg-fried"></i>HOME</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-cup"></i>레시피</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="RecipepageCon?b_ctype=korean" class="dropdown-item">한식</a>
-                            <a href="RecipepageCon?b_ctype=chinese" class="dropdown-item">중식</a>
-                            <a href="RecipepageCon?b_ctype=japanese" class="dropdown-item active">일식</a>
-                            <a href="RecipepageCon?b_ctype=western" class="dropdown-item">양식</a>
-                            <a href="RecipepageCon?b_ctype=asia" class="dropdown-item">동남아시아</a>
-                            <a href="RecipepageCon?b_ctype=fusion" class="dropdown-item">퓨전</a>
+                        <div class="dropdown-menu bg-transparent border-0 collapse show">
+                            <a href="PagingCon?b_ctype=korean&page=0" class="dropdown-item">한식</a>
+                            <a href="PagingCon?b_ctype=chinese&page=0" class="dropdown-item">중식</a>
+                            <a href="PagingCon?b_ctype=japanese&page=0" class="dropdown-item active">일식</a>
+                            <a href="PagingCon?b_ctype=western&page=0" class="dropdown-item">양식</a>
+                            <a href="PagingCon?b_ctype=asia&page=0" class="dropdown-item">동남아시아</a>
+                            <a href="PagingCon?b_ctype=fusion&page=0" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
                     <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
@@ -177,11 +177,13 @@
                         </div>
                     <br>
                 <!-- 소분류 -->    
-                <form action="RecipesmallpageCon" method="post">  
+                <form action="PagingsmallCon" method="post">  
                 <table class="table table-bordered" id="table"> 
                     <tr>
                         <td rowspan="3" style="vertical-align:middle;">1분류</td>
-                        <td><input type="hidden" name="b_ctype" value="japanese"><input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
+                        <td><input type="hidden" name="b_ctype" value="japanese">
+                        <input type="hidden" name="page" value="0">
+                        <input type="checkbox" name="b_ftype" value="양념장"> <span> 양념장</span></td>
                         <td><input type="checkbox" name="b_ftype" value="만두/면류"> <span> 만두/면류</span></td>
                         <td><input type="checkbox" name="b_ftype" value="빵/과자"> <span> 빵/과자</span></td>
                         <td><input type="checkbox" name="b_ftype" value="찜"> <span> 찜</span></td>
@@ -290,15 +292,14 @@
               		
                 // 소분류 세션 null 확인하기
                	// 1. selectbFtype 세션 null 확인하기
-               	if(session.getAttribute("selectbFtype")!=null){
-               		List<Basic> selectbFtype = (List) session.getAttribute("selectbFtype");
-               		
-               		for(int i=0; i<selectbFtype.size(); i++){ %>
+               	if(session.getAttribute("b_ftypepage")!=null){
+               		List<Basic> b_ftypepage = (List) session.getAttribute("b_ftypepage");
+               		for(int i=0; i<b_ftypepage.size(); i++){ %>
                		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectbFtype.get(i).getB_code()%>">
-                            <img src="<%=selectbFtype.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbFtype.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=b_ftypepage.get(i).getB_code()%>">
+                            <img src="<%=b_ftypepage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= b_ftypepage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
@@ -306,15 +307,15 @@
                		}// selectbFtype 세션 null 확인 끝
                	
                	// 2. selectbItype 세션 null 확인하기
-               	if(session.getAttribute("selectbItype")!=null){
-               		List<Basic> selectbItype = (List) session.getAttribute("selectbItype");
+               	if(session.getAttribute("b_itypepage")!=null){
+               		List<Basic> b_itypepage = (List) session.getAttribute("b_itypepage");
                		
-               		for(int i=0; i<selectbItype.size(); i++){ %>
+               		for(int i=0; i<b_itypepage.size(); i++){ %>
                		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectbItype.get(i).getB_code()%>">
-                            <img src="<%=selectbItype.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbItype.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=b_itypepage.get(i).getB_code()%>">
+                            <img src="<%=b_itypepage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= b_itypepage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
@@ -322,15 +323,15 @@
                		}// selectbItype 세션 null 확인 끝
                	
                	// 3. selectbTime 세션 null 확인하기
-               	if(session.getAttribute("selectbTime")!=null){
-               		List<Basic> selectbTime = (List) session.getAttribute("selectbTime");
+               	if(session.getAttribute("b_timepage")!=null){
+               		List<Basic> b_timepage = (List) session.getAttribute("b_timepage");
                		
-               		for(int i=0; i<selectbTime.size(); i++){ %>
+               		for(int i=0; i<b_timepage.size(); i++){ %>
                		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectbTime.get(i).getB_code()%>">
-                            <img src="<%=selectbTime.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbTime.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=b_timepage.get(i).getB_code()%>">
+                            <img src="<%=b_timepage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= b_timepage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
@@ -338,15 +339,15 @@
                		}// selectbTime 세션 null 확인 끝
                	
                	// 4. selectbAmount 세션 null 확인하기
-               	if(session.getAttribute("selectbAmount")!=null){
-               		List<Basic> selectbAmount = (List) session.getAttribute("selectbAmount");
+               	if(session.getAttribute("b_amountpage")!=null){
+               		List<Basic> b_amountpage = (List) session.getAttribute("b_amountpage");
                		
-               		for(int i=0; i<selectbAmount.size(); i++){ %>
+               		for(int i=0; i<b_amountpage.size(); i++){ %>
                		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectbAmount.get(i).getB_code()%>">
-                            <img src="<%=selectbAmount.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbAmount.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=b_amountpage.get(i).getB_code()%>">
+                            <img src="<%=b_amountpage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= b_amountpage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
@@ -354,15 +355,15 @@
                		}// selectbAmount 세션 null 확인 끝
                	
                	// 5. selectbDifficulte 세션 null 확인하기
-               	if(session.getAttribute("selectbDifficulte")!=null){
-               		List<Basic> selectbDifficulte = (List) session.getAttribute("selectbDifficulte");
+               	if(session.getAttribute("b_difficultepage")!=null){
+               		List<Basic> b_difficultepage = (List) session.getAttribute("b_difficultepage");
                		
-               		for(int i=0; i<selectbDifficulte.size(); i++){ %>
+               		for(int i=0; i<b_difficultepage.size(); i++){ %>
                		<div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=selectbDifficulte.get(i).getB_code()%>">
-                            <img src="<%=selectbDifficulte.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= selectbDifficulte.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=b_difficultepage.get(i).getB_code()%>">
+                            <img src="<%=b_difficultepage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= b_difficultepage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
@@ -372,18 +373,23 @@
                	
                 // 소분류 먼저 if로 null값 확인 후 대분류 null 확인 진행
                 // 소분류con에서 대분류 세션을 지우고 진행할 것임
-              	if (session.getAttribute("bigbasic") != null) {
-              		List<Basic> bigbasic = (List) session.getAttribute("bigbasic");
-              		for(int i=0; i<bigbasic.size(); i++){ %>
+              	if (session.getAttribute("selectbFtype") == null &&
+	            		session.getAttribute("selectbItype") == null &&
+	            		session.getAttribute("selectbTime") == null &&
+	            		session.getAttribute("selectbAmount") == null &&
+	            		session.getAttribute("selectbDifficulte") == null&&
+	            		session.getAttribute("bigpage") != null) {
+              		List<Basic> bigpage = (List) session.getAttribute("bigpage");
+              		for(int i=0; i<bigpage.size(); i++){ %>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon?b_code=<%=bigbasic.get(i).getB_code()%>">
-                            <img src="<%=bigbasic.get(i).getB_url() %>" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6><%= bigbasic.get(i).getB_name()%></h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=bigpage.get(i).getB_code()%>">
+                            <img src="<%=bigpage.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= bigpage.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <%} }  %>
+                <%} }  %> 
                     
                 </div>
             </div>
@@ -391,24 +397,103 @@
             <!-- 여기까지 복사 붙여넣기 -->
 
             <!-- 페이지 번호 -->
-            <nav aria-label="Page navigation" class="d-flex justify-content-center">
+            <nav aria-label="Page navigation" class="d-flex justify-content-center ">
                 <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- 페이지 번호 끝 -->                
+                <!-- 여기부터 붙여넣기 -->
+	            <%
+	            // 게시글 전체 갯수 변수 cnt 선언
+	            int cnt = 0;
+	            // 소분류 값이 없으면 대분류 값으로 진행
+	            if(session.getAttribute("selectbFtype") == null &&
+	            		session.getAttribute("selectbItype") == null &&
+	            		session.getAttribute("selectbTime") == null &&
+	            		session.getAttribute("selectbAmount") == null &&
+	            		session.getAttribute("selectbDifficulte") == null
+	            		){
+		            // 대분류의 게시글 수를 세션 size로 판단
+		            cnt = (int) session.getAttribute("bigbasic");
+	            } else if(session.getAttribute("selectbFtype")!=null) {
+	            		List<Basic> selectbFtype = (List) session.getAttribute("selectbFtype");
+	            		cnt += selectbFtype.size();
+	            	} else if(session.getAttribute("selectbItype")!=null) {
+	            		List<Basic> selectbItype= (List)session.getAttribute("selectbItype");
+	            		cnt += selectbItype.size();
+	            	} else if(session.getAttribute("selectbTime")!=null) {
+	            		List<Basic> selectbTime= (List)session.getAttribute("selectbTime");
+	            		cnt += selectbTime.size();
+	            	} else if(session.getAttribute("selectbAmount")!=null) {
+	            		List<Basic> selectbAmount= (List)session.getAttribute("selectbAmount");
+	            		cnt += selectbAmount.size();
+	            	} else if(session.getAttribute("selectbDifficulte")!=null) {
+	            		List<Basic> selectbDifficulte= (List)session.getAttribute("selectbDifficulte");
+	            		cnt += selectbDifficulte.size();
+	            	}
+	            // 한 페이지에 출력될 글 수
+	            int pageSize = 10;
+	            
+	            // 현 페이지 정보 설정 --> nowpage가 currentPage
+	            // 소분류쪽은 세션마다 변경해야 함
+	            int nowpage = (int)session.getAttribute("nowpage")+1;
+	           
+	            // 페이지 번호 처리
+	            if(cnt != 0){
+	            	// 전체 페이지 번호 수 계산
+	            	int pageCount = (cnt / pageSize) + (cnt % pageSize == 0?0:1);
+	            	if(pageCount<0){
+	            		pageCount = 1;
+	            	}
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호
+	            	int pagenumber = 5;
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호 시작 번호 계산
+	            	int startNum = ((nowpage-1)/pagenumber)*pagenumber + 1;
+	            	
+	            	// 한 페이지에 보여줄 페이지 번호 끝 번호 계산
+	            	int endNum = startNum + pagenumber -1;
+	            	if(endNum > pageCount){
+	            		endNum = pageCount-1;
+	            	}%>
+	            	
+	            	<!-- 페이지 버튼 대분류 소분류 분리해서 띄우기 -->
+	            	<!-- 앞으로 보내기 버튼 -->
+	            	<li class="page-item page-link" aria-label="Previous">
+	            	<%
+	            	if(startNum>1){ %>
+	            		<a href="PagingCon?b_ctype=japanese&page=<%=startNum-pagenumber-1%>">
+	            	<%} %>
+			            <span aria-hidden="true">&lt;</span>
+			            	</a>
+			            </li>
+	            	<%
+	            	// i값은 0부터 시작해야 함
+	            	int i=startNum-1;
+	            	// 페이지 값이 부족해도 한 번은 돌아가야 페이지 번호 1값이 생기기 때문에 do while 사용
+	            	do{
+	            		// 만약 현재 페이지 번호의 세션과 i값이 같다면 active
+	            		if(i == nowpage-1){
+	            			// i는 0부터 시작하니까 페이지 번호의 i값은 +1을 해서 띄워놔야 한다.
+	            		%>
+	            		<li class="page-item active"><a class="page-link active"
+	            		href="PagingCon?b_ctype=japanese&page=<%=i%>"><%=i+1%></a></li>
+	            	<%
+	            		} else{%>
+	            			<li class="page-item"><a class="page-link"
+	            		href="PagingCon?b_ctype=japanese&page=<%=i%>"><%=i+1%></a></li>
+	            		<%} i++;
+	            	}while(i<endNum);%>
+	            	<li class="page-item page-link" aria-label="Next">
+	            	<%
+	            	if(endNum<pageCount){ %>
+	            		<a href="PagingCon?b_ctype=japanese&page=<%=startNum+pagenumber-1%>">
+					<%} %>
+	            		<span aria-hidden="true">&gt;</span>
+		                </a>
+		               	</li>
+	            	<% }  %>
+	            </ul>
+	        </nav>
+            <!-- 페이지 번호 끝 -->             
             </div>
             <!-- Blank End -->
 
