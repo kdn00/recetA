@@ -88,7 +88,7 @@ public class RefriDAO {
 			sqlSession.close();
 			}//finally 끝
 			return cnt;
-		} // 회원삭제 끝
+		} // 재료삭제 끝
 		
 		// 재료 검색 기능 구현
 		public List<RefriMember> Ingred_search(String s_name) {

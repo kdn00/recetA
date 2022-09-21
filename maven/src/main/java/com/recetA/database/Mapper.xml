@@ -275,4 +275,16 @@
 		select * from basic where b_name=#{b_name}
 	</select>
 	
+	<!-- 즐겨찾기 m_key, b_name 검색 -->
+	<select id="Favorites_Check"		parameterType="com.recetA.domain.FavoritesMember"
+										resultType="com.recetA.domain.FavoritesMember">
+		select * from favorites where b_name=#{b_name} and m_key=#{m_key}
+	</select>
+	
+	<!-- 즐겨찾기 삭제 -->
+	<delete id="Favorites_del" parameterType="com.recetA.domain.FavoritesMember">
+		delete from favorites where b_name=#{b_name} and m_key=#{m_key}
+	</delete>
+	
+	
 </mapper>

@@ -30,8 +30,8 @@ public class Ingred_delCon extends HttpServlet {
 				}else {
 					System.out.println("재료 삭제 실패");
 				}
-				// 6. select.jsp로 이동
-				response.sendRedirect("RefriCon");
+				// 6. 이동
+				response.sendRedirect("Favorites_LoadCon");
 				
 			}
 

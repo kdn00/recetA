@@ -8,6 +8,12 @@ public class FavoritesMember {
 	private String b_url;
 	
 	
+	public FavoritesMember(int m_key, String b_name) {
+		this.m_key = m_key;
+		this.b_name = b_name;
+	}
+
+
 	public FavoritesMember(int m_key, int b_code, String b_name, String b_url) {
 		this.m_key = m_key;
 		this.b_code = b_code;
