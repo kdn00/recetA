@@ -206,7 +206,7 @@
                     
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h4 class="mb-4">메뉴 추천</h4>
+                            <h2 class="mb-4 text-center">[메뉴 추천]</h2>
                             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-indicators">
                                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -293,7 +293,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=korean&page=0">
-                                <h4>한식</h4><br>
+                                <h4>[한식]</h4><br>
                                 <img src="./img/korean.jpg" width="311" height="289">
                             </a>
                         </div>
@@ -301,7 +301,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=chinese&page=0">
-                                <h4>중식</h4><br>
+                                <h4>[중식]</h4><br>
                                 <img src="img/chinese3.jpg" width="311" height="289">
                                 </a>
                         </div>
@@ -309,7 +309,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=japanese&page=0">
-                                <h4>일식</h4><br>
+                                <h4>[일식]</h4><br>
                                 <img src="./img/japanese.jpg" width="311" height="289">
                             </a>
                         </div>
@@ -317,7 +317,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=western&page=0">
-                                <h4>양식</h4><br>
+                                <h4>[양식]</h4><br>
                                 <img src="./img/western.jpg" width="311" height="289">
                                 </a>
                         </div>
@@ -325,7 +325,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=asia&page=0">
-                                <h4>동남아시아</h4><br>
+                                <h4>[동남아시아]</h4><br>
                                 <img src="./img/asia.jpg" width="311" height="289">
                                 </a>
                         </div>
@@ -333,7 +333,7 @@
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center" >
                             <a href="PagingCon?b_ctype=fusion&page=0">
-                                <h4>퓨전</h4><br>
+                                <h4>[퓨전]</h4><br>
                                 <img src="http://file.okdab.com/UserFiles/searching/recipe/110800.jpg" width="311" height="289">
                                 </a>
                         </div>
