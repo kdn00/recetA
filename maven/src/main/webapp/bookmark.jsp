@@ -1,3 +1,4 @@
+<%@page import="com.recetA.domain.FavoritesMember"%>
 <%@page import="com.recetA.domain.RefriMember"%>
 <%@page import="com.recetA.domain.Member"%>
 <%@page import="java.util.List"%>
@@ -181,54 +182,21 @@
             <!-- 레시피  -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
+                    <%List<FavoritesMember> Favorites = (List) session.getAttribute("FavoritesMember");
+                    if(Favorites!=null){
+                    for(int i=0; i<Favorites.size();i++){%>
+                    	
+                    
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
+                            <a href="RecipedetailpageCon?b_code=<%=Favorites.get(i).getB_code()%>">
+                            <img src="<%=Favorites.get(i).getB_url() %>" alt="" width="311" height="289"><br>
+                            <button type="button" class="btn btn-outline-link m-2"><h6><%= Favorites.get(i).getB_name()%></h6></button>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="#">
-                            <img src="./img/aaa.jpg" alt="" width="311" height="289"><br>                            
-                            <button type="button" class="btn btn-outline-link m-2"><h6>레시피명</h6></button>
-                            </a>
-                        </div>
-                    </div>
+                    <%}
+                    }%>
                 </div>
             </div>
             <!-- 레시피 끝 -->

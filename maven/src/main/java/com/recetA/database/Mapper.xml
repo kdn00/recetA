@@ -256,4 +256,23 @@
 		INSERT INTO KEEP (k_key, r_key, k_volume, s_name, k_unit, k_edate) VALUES(refri_seq.nextval,#{r_key},#{k_volume},#{s_name},#{k_unit},null)
 	</insert>
 	
+	
+	<!-- 즐겨찾기 -->
+	<!-- 즐겨찾기 추가 -->
+	<insert id="Favorites_insert" parameterType="com.recetA.domain.FavoritesMember">
+		INSERT INTO favorites (f_key, m_key, b_code, b_name, b_url) VALUES((SELECT NVL(MAX(f_key), 0) + 1 FROM favorites),#{m_key},#{b_code},#{b_name},#{b_url})
+	</insert>
+	
+	<!-- 즐겨찾기 검색 -->
+	<select id="Favorites_search"		parameterType="com.recetA.domain.FavoritesMember"
+										resultType="com.recetA.domain.FavoritesMember">
+		select * from favorites where m_key=#{m_key}
+	</select>
+	
+	<!-- 즐겨찾기 code, url 검색 -->
+	<select id="Favorites_Data"		parameterType="com.recetA.domain.FavoritesMember"
+										resultType="com.recetA.domain.FavoritesMember">
+		select * from basic where b_name=#{b_name}
+	</select>
+	
 </mapper>

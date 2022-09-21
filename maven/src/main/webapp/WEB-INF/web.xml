@@ -142,6 +142,24 @@
   	<description></description>
   	<servlet-class>com.recetA.controller.PagingsmallCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Favorites_LoadCon</servlet-name>
+  	<display-name>Favorites_LoadCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Favorites_LoadCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FavoritesCon</servlet-name>
+  	<display-name>FavoritesCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.FavoritesCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Favorites_DataCon</servlet-name>
+  	<display-name>Favorites_DataCon</display-name>
+  	<description></description>
+  	<servlet-class>com.recetA.controller.Favorites_DataCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -233,5 +251,17 @@
   <servlet-mapping>
   	<servlet-name>PagingsmallCon</servlet-name>
   	<url-pattern>/PagingsmallCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Favorites_LoadCon</servlet-name>
+  	<url-pattern>/Favorites_LoadCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FavoritesCon</servlet-name>
+  	<url-pattern>/FavoritesCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Favorites_DataCon</servlet-name>
+  	<url-pattern>/Favorites_DataCon</url-pattern>
   </servlet-mapping> 
 </web-app>
