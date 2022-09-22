@@ -167,7 +167,6 @@
 	                        <!-- 로그인 후 드롭다운 되는 코드 끝 -->
 	                    </div>
 	                </div>
-               		 
             </nav>
              <!-- Navbar End -->
 
@@ -178,14 +177,12 @@
                 		<div class="bg-light rounded h-100 p-4 text-center" style="margin-bottom:23px;">
                             <span><h2>회원관리</h2></span>
                         </div>
-                    </div>
-            
-            <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0"></h6>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered  mb-0" id="managerment">
+                    
+                    <!-- 회원정보 시작 -->
+                     <div class="bg-light rounded h-100 p-4">
+                     	<div class="mb-3">
+                     	
+                     		<table class="table align-middle table-borderless">
                             <thead>
                                 <tr class="text-dark">
                                     <th scope="col">ID</th>
@@ -205,8 +202,12 @@
                                <%} %>
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                     	</div>
+		             </div>
+		             <!-- 회원정보 끝 -->
+		        	</div>
+		    	</div>
+		     </div>
             <!-- 회원관리 End -->
 
             <!-- Footer Start -->
