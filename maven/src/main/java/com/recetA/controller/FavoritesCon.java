@@ -50,7 +50,7 @@ public class FavoritesCon extends HttpServlet {
 		}else {
 			System.out.println("즐겨찾기 추가 실패");
 		}
-		response.sendRedirect("RecipedetailpageCon2");
+		response.sendRedirect("RecipedetailpageCon2?n=1");
 
 	}
 		

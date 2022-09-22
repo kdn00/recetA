@@ -47,7 +47,7 @@ public class Favorites_DelCon extends HttpServlet {
 			System.out.println("즐겨찾기 삭제 실패");
 		}
 		// 6. select.jsp로 이동
-		response.sendRedirect("RecipedetailpageCon2");
+		response.sendRedirect("RecipedetailpageCon2?n=2");
 
 	}
 

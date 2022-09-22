@@ -209,7 +209,15 @@
 								<a href="Favorites_DataCon?b_name=<%=b.getB_name()%>"><button
 										type="button" class="btn btn-outline-warning"
 										style="margin-bottom: 8px;">
+										<%String n = (String)session.getAttribute("n");
+										System.out.print(n+"ddddd");
+										if(n!=null){
+										if(n.equals("2")){%>
 										<i class="bi bi-star"></i>
+										 <%} else if(n.equals("1")){%>
+										 ★
+										 <%}}else
+										 {%><i class="bi bi-star"></i><%}%>
 									</button></a>
 								<%
 								}
