@@ -188,7 +188,7 @@
                     	
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4 text-center">
-                            <a href="RecipedetailpageCon2?b_code=<%=Favorites.get(i).getB_code()%>&n=1">
+                            <a href="RecipedetailpageCon2?b_code=<%=Favorites.get(i).getB_code()%>">
                             <img src="<%=Favorites.get(i).getB_url() %>" alt="" width="311" height="289"><br>
                             <button type="button" class="btn btn-outline-link m-2"><h6><%= Favorites.get(i).getB_name()%></h6></button>
                             </a>
