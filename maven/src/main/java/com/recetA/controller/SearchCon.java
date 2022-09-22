@@ -48,23 +48,29 @@ public class SearchCon extends HttpServlet {
 		// 5. DAO에서 생성한 메소드 호출하기
 		BasicDAO dao = new BasicDAO();
 		List<Basic> selectsearch = dao.selectsearch(search);
-		
-		PagingDAO dao2 = new PagingDAO();
-		List<Basic> pagesearch = dao2.pagingsearch(searchvo);
+		System.out.println(selectsearch);
+		System.out.println("데이터 수집 완료");
+		try {
+			PagingDAO dao2 = new PagingDAO();
+			List<Basic> pagesearch = dao2.pagingsearch(searchvo);
+					// 1. 세션 객체 생성
+					// 2. 세션에 저장
+				session.setAttribute("selectsearch", selectsearch);
+				session.setAttribute("pagesearch", pagesearch);
+				session.setAttribute("search", search);
+				session.setAttribute("nowpage", get_page);
+				response.sendRedirect("search.jsp");
 
-		// 6. 명령 후 처리
-		if (selectsearch != null) {
-			// 1. 세션 객체 생성
-			// 2. 세션에 저장
-			session.setAttribute("selectsearch", selectsearch);
-			session.setAttribute("pagesearch", pagesearch);
-			session.setAttribute("search", search);
-			session.setAttribute("nowpage", get_page);
-			response.sendRedirect("search.jsp");
-
-		} else {
+				
+		} catch (Exception e) {
 			System.out.println("Con 작동 실패");
+		response.sendRedirect("main.jsp");
 		}
+		
+		
+		
+		// 6. 명령 후 처리
+		
 
 		
 	}

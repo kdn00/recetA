@@ -163,15 +163,17 @@ public class BasicDAO {
 		List<Basic> searchresult = null;
 		try {
 			searchresult = sqlSession.selectList("selectsearch", search);
-			if (searchresult != null) {
+			if (searchresult.get(0).getB_name() != null) {
 				System.out.println("검색 dao 성공");
 				System.out.println(searchresult.get(0).getB_name());
 				sqlSession.commit();
-			} else {
-				System.out.println("검색 dao 실패");
-				sqlSession.rollback();
 			}
-		} finally {
+		}catch (Exception e) {
+			System.out.println("검색 dao 실패");
+			sqlSession.rollback();
+		}
+		
+		finally {
 			sqlSession.close();
 		} // finally 끝
 		return searchresult;
@@ -181,6 +183,7 @@ public class BasicDAO {
 	// 검색 카운트
 	public int pagingsearch(String search) {
 		int pagesearch = 0;
+		System.out.println("들어왔어요");
 		try {
 			pagesearch = sqlSession.selectOne("pagingsearch", search);
 			if (pagesearch != 0) {
