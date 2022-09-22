@@ -97,7 +97,7 @@
                             <a href="PagingCon?b_ctype=fusion&page=0" class="dropdown-item">퓨전</a>
                         </div>
                     </div>
-                    <a href="notice.jsp" class="nav-item nav-link active"><i class="bi bi-cup-straw"></i>공지사항</a>                    
+                    <a href="notice.jsp" class="nav-item nav-link"><i class="bi bi-cup-straw"></i>공지사항</a>                    
                 </div>
             </nav>
         </div>
@@ -156,7 +156,7 @@
                             <a href="Favorites_LoadCon" class="dropdown-item">즐겨찾기</a>
                              <c:if test="${loginMember.m_id eq 'admin'}">
 	                            <!-- admin만 -->
-	                             <a href="Manager.jsp" class="dropdown-item">회원관리</a>
+	                             <a href="Manager.jsp" class="dropdown-item active">회원관리</a>
 	                             <!-- admin만 끝 -->
 	                             </c:if>
                             <a href="LogoutCon" class="dropdown-item">로그아웃</a>
