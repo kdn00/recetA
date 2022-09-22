@@ -28,7 +28,7 @@ public class QnaCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		String from = "nikovella@naver.com";
 		String q_content = request.getParameter("content");
-		String to = "niconico3350@gmail.com";
+		String to = "smhrdrecetA@gmail.com";
 		String subject = request.getParameter("title");
 		
 		Properties p = new Properties();
