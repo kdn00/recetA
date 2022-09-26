@@ -106,7 +106,7 @@
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
             	
-	                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+	                <a href="main.jsp" class="navbar-brand d-flex d-lg-none me-4">
 	                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
 	                </a>
 	                <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -189,7 +189,7 @@
 		              	  <span><h6>문의사항</h6></span>
 		              	  <form action="QnaCon" method="post">
 						  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-						  <input type="email" class="form-control" name="title" id="exampleFormControlInput1" placeholder="Email address">
+						  <input type="email" class="form-control" name="title" id="exampleFormControlInput1" placeholder="smhrdrecetA@gamil.com" disabled>
 						
 						<div class="mb-3">
 						  <label for="exampleFormControlTextarea1" class="form-label"><br>문의사항 입력해주세요</label>
