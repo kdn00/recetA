@@ -74,17 +74,20 @@
 
 - 공지사항   
 
+## 6. My Role
+- 
 
-## 6. 팀원 역할 및 소개 // 제작한 기능 상세로 적는걸로 바꾸기 // 본인 역할만 적기
-|  이름  |  역할  |   Github 주소 |
-| :----: | :----: | :-----------: |
-| 송영지 | 프로젝트 및 웹 디자인 총괄, 웹페이지 기능 구현   | [Github](https://github.com/icecandywell) |
-| 김도연 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현 총괄   |   [Github](https://github.com/kdn00) |
-| 김기범 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현   |   [Github](https://github.com/colaage23) |
-| 김동현 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현   |    [Github](https://github.com/JamesKimberly) |
-| 강태준 | 웹 디자인, 웹 페이지 기능 구현   | [Github](https://github.com/xowns123)  |
+## 7. 팀원 소개
+|  이름  | Github 주소 |
+| :----: | :-----------: |
+| 송영지 | [Github](https://github.com/icecandywell) |
+| 김도연 | [Github](https://github.com/kdn00) |
+| 김기범 | [Github](https://github.com/colaage23) |
+| 김동현 | [Github](https://github.com/JamesKimberly) |
+| 강태준 | [Github](https://github.com/xowns123)  |
 
-## 7. 프로젝트를 진행하며 느낀 점과 학습한 것
+
+## 8. 프로젝트를 진행하며 느낀 점과 학습한 것
 - 학습한 기술
 
 - 느낀점
