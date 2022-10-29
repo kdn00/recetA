@@ -1,5 +1,4 @@
 # recetA
----
 
 ## 프로젝트 소개
 
@@ -38,12 +37,12 @@
   - 화면 설계서
 
 ## 1. 사용 기술
-1. 언어 : Java, Javascript, JSP, HTML, CSS, SQL
-2. DB : Oracle
-3. Framworks : Bootstrap
-4. IDEs : Eclipse
-5. 디자인 패턴 : MVC 패턴
-6. MyBatis 어딘지 아는 사람 / Apache Tomcat 써야하는지 아는 사람
+- 언어 : Java, Javascript, JSP, HTML, CSS, SQL
+- DB : Oracle
+- Framworks : Bootstrap
+- IDEs : Eclipse
+- 디자인 패턴 : MVC 패턴
+- MyBatis 어딘지 아는 사람 / Apache Tomcat 써야하는지 아는 사람
 
 ## 2. ER Diagram
 ![image](https://user-images.githubusercontent.com/89984853/198649694-9e975d06-8599-4fbc-8626-c9435d02f490.png)
@@ -61,17 +60,29 @@
 
 
 ## 5. 구현 화면
-- 메인 화면   
+- 메인   
+
+- 로그인   
+
+- 회원가입   
+
+- 마이페이지   
+
+- 레시피   
+
+- 검색 결과   
+
+- 공지사항   
 
 
-## 6. 팀원 역할 및 소개
+## 6. 팀원 역할 및 소개 // 제작한 기능 상세로 적는걸로 바꾸기 // 본인 역할만 적기
 |  이름  |  역할  |   Github 주소 |
 | :----: | :----: | :-----------: |
-| 송영지 |    | [Github](https://github.com/icecandywell) |
-| 김도연 |    |   [Github](https://github.com/kdn00) |
-| 김기범 |    |   [Github](https://github.com/colaage23) |
-| 김동현 |    |    [Github](https://github.com/JamesKimberly) |
-| 강태준 |    | [Github](https://github.com/xowns123)  |
+| 송영지 | 프로젝트 및 웹 디자인 총괄, 웹페이지 기능 구현   | [Github](https://github.com/icecandywell) |
+| 김도연 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현 총괄   |   [Github](https://github.com/kdn00) |
+| 김기범 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현   |   [Github](https://github.com/colaage23) |
+| 김동현 | DB 설계 및 구축, 데이터 수집 및 전처리, 백엔드 기능 구현   |    [Github](https://github.com/JamesKimberly) |
+| 강태준 | 웹 디자인, 웹 페이지 기능 구현   | [Github](https://github.com/xowns123)  |
 
 ## 7. 프로젝트를 진행하며 느낀 점과 학습한 것
 - 학습한 기술
