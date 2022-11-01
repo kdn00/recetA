@@ -36,46 +36,81 @@
   - 데이터베이스 요구사항 분석서
   - 화면 설계서
 
+---
+
 ## 1. 사용 기술
-- 언어 : Java, Javascript, JSP, HTML, CSS, SQL
-- DB : Oracle
-- Framworks : Bootstrap
-- IDEs : Eclipse
-- 디자인 패턴 : MVC 패턴
-- MyBatis 어딘지 아는 사람 / Apache Tomcat 써야하는지 아는 사람
+- 언어   
+![Java](https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white)
+![Javascript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![JSP](https://img.shields.io/badge/JSP-%2300599C.svg?style=for-the-badge&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+- DB   
+![Oracle](https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+
+- Framworks   
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+- IDEs   
+![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
+
+---
 
 ## 2. ER Diagram
 ![image](https://user-images.githubusercontent.com/89984853/198649694-9e975d06-8599-4fbc-8626-c9435d02f490.png)
 
+---
 
 ## 3. 흐름도 및 메뉴 구성도
-- 서비스 흐름도
+- 서비스 흐름도   
 ![image](https://user-images.githubusercontent.com/89984853/198645290-2fe5f29b-7eba-4f67-81bb-72be47fb57eb.png)   
 
-- 메뉴 구성도
+- 메뉴 구성도   
 ![image](https://user-images.githubusercontent.com/89984853/198645738-cd9c4823-e3c6-4cbc-971c-c870bcc8519e.png)   
+
+---
 
 ## 4. 프로젝트 일정
 ![image](https://user-images.githubusercontent.com/89984853/198654840-1af0df68-a262-4d93-82a4-ae77b238908f.png)
 
+---
 
 ## 5. 구현 화면
-- 메인   
+- 메인(슬라이드 배너 활용)   
+![image](https://user-images.githubusercontent.com/89984853/199217082-c2264511-dbbe-472d-87b1-e2114002a903.png)
+![image](https://user-images.githubusercontent.com/89984853/199217162-aa6075dd-6641-4034-b96c-47b3f3af9640.png)
+![image](https://user-images.githubusercontent.com/89984853/199217215-b8e044fd-5ab5-420a-8a6d-0349684a69ab.png)
+
 
 - 로그인   
+![image](https://user-images.githubusercontent.com/89984853/199217647-d7664433-374e-4d78-9fa0-326c5908abdf.png)
 
 - 회원가입   
+![image](https://user-images.githubusercontent.com/89984853/199217612-607d4450-9658-4ccc-899e-0768f409a375.png)
 
 - 마이페이지   
 
-- 레시피   
+
+- 레시피(체크박스, 페이징 활용)   
+![image](https://user-images.githubusercontent.com/89984853/199217870-5629db06-18a0-4797-9d7f-0b1af237cc29.png)
+![image](https://user-images.githubusercontent.com/89984853/199217922-efc37b3d-193d-484c-95fe-77103431a547.png)
+![image](https://user-images.githubusercontent.com/89984853/199217945-96cb5080-3615-460f-a760-350f0482a0a2.png)
+![image](https://user-images.githubusercontent.com/89984853/199218027-86a42244-c71e-4b9a-8f30-7ab8277f6fcc.png)
+
 
 - 검색 결과   
 
+
 - 공지사항   
+
+
+---
 
 ## 6. My Role
 - 
+
+---
 
 ## 7. 팀원 소개
 |  이름  | Github 주소 |
@@ -86,8 +121,11 @@
 | 김동현 | [Github](https://github.com/JamesKimberly) |
 | 강태준 | [Github](https://github.com/xowns123)  |
 
+---
 
 ## 8. 프로젝트를 진행하며 느낀 점과 학습한 것
 - 학습한 기술
-
+  - 
+  
 - 느낀점
+  - 
