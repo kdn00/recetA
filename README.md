@@ -104,7 +104,8 @@
 
   
   #### - 회원 관리   
-  # 회원 정보 넣은 후에 진행
+  ![image](https://user-images.githubusercontent.com/89984853/199862189-c60eedee-9e64-4936-8431-098d2ad6960b.png)   
+
 
 
 ### 레시피(드롭박스, 페이징 활용)   
