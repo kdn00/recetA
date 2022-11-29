@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=transparent&height=100&text=My%20Role_Java,%20JDBC&fontColor=0055ff&fontSize=50)
+![header](https://capsule-render.vercel.app/api?type=transparent&height=100&text=My%20Role_Java,%20DB&fontColor=0055ff&fontSize=50)
 ### 1. DB 설계 및 구축, 데이터 수집 및 전처리
 ### 2. Java와 JDBC를 활용해 웹 서비스의 백엔드 기능 구현  
  
